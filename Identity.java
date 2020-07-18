@@ -7,8 +7,9 @@
  * This class holds some fields about person identity
  * 
  * 
- * @author Mohammad Mahdi MalMasi , Sevda Imany
- * @version 0.0.1
+ * @author Mohammad Mahdi MalMasi
+ * @author Sevda Imany
+ * @version 0.0.2
  */
 public class Identity
 {
