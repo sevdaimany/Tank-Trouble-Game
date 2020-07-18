@@ -4,15 +4,15 @@
 
 
 /**
- * This class hold some feilds about person identity
+ * This class holds some fields about person identity
  * 
  * 
- * @author Mohammad Mahdi MalMasi
- * @version 0.0.0
+ * @author Mohammad Mahdi MalMasi , Sevda Imany
+ * @version 0.0.1
  */
 public class Identity
 {
-            /*  Feilds  */
+            /*  Fields  */
 
     // person name
     private String name;
@@ -95,7 +95,7 @@ public class Identity
     
 
     /**
-     * This method check the given password
+     * This method checks the given password
      * 
      * 
      * @param passwordToCheck : a password to check
