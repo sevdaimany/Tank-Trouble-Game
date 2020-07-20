@@ -34,6 +34,15 @@ public class Identity
 
          /* Constructor */
 
+    /**
+     * Create a new identity for a person with given details
+     * 
+     * 
+     * @param name : name of the person
+     * @param lastName : last name of the person
+     * @param username : a username for this person
+     * @param password : a password for this person
+     */
     public Identity(String name, String lastName, String username, String password)
     {
         this.name = name;
