@@ -121,5 +121,23 @@ public class Gui extends Application {
         ImageView imageViewRegister = new ImageView(iconRegister);
         Button registerBTN = new Button("   REGISTER   ",imageViewRegister);
 
+        //creating info button
+        FileInputStream inputInfo = new FileInputStream(".//icons//info.png");
+        Image iconInfo = new Image(inputInfo);
+        ImageView imageViewInfo = new ImageView(iconInfo);
+        Button infoBTN = new Button("     INFO     ",imageViewInfo);
+
+        //creating setting button
+        FileInputStream inputSetting = new FileInputStream(".//icons//setting.png");
+        Image iconSetting = new Image(inputSetting);
+        ImageView imageViewSetting = new ImageView(iconSetting);
+        Button settingBTN = new Button("  SETTING  ",imageViewSetting);
+
+
+        //set info and setting button in VBox
+        VBox vBoxTopRight = new VBox(infoBTN,settingBTN);
+        vBoxTopRight.setAlignment(Pos.BASELINE_RIGHT);
+        vBoxTopRight.setSpacing(5);
+
     }
 }
