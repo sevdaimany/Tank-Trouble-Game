@@ -143,6 +143,16 @@ public class Gui extends Application {
         vBoxTopRight.setSpacing(5);
 
 
+        //background picture
+        FileInputStream input = new FileInputStream(".//icons//pic.jpg");
+        Image image = new Image(input);
+        BackgroundImage backgroundimage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+
+
         //creating a borderpane object
         BorderPane borderPane = new BorderPane();
         //Arranging all the nodes in the borderpane
@@ -151,6 +161,9 @@ public class Gui extends Application {
         borderPane.setLeft(registerBTN);
         //setting the padding
          borderPane.setPadding(new Insets(5,5,5,5));
+         //setting background
+         borderPane.setBackground(new Background(backgroundimage));
+
        //Creating a scene object 
         Scene scene = new Scene(borderPane);
         //Adding scene to the stage 
