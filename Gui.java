@@ -15,6 +15,9 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+
 
 
 
@@ -138,6 +141,27 @@ public class Gui extends Application {
         VBox vBoxTopRight = new VBox(infoBTN,settingBTN);
         vBoxTopRight.setAlignment(Pos.BASELINE_RIGHT);
         vBoxTopRight.setSpacing(5);
+
+
+        //creating a borderpane object
+        BorderPane borderPane = new BorderPane();
+        //Arranging all the nodes in the borderpane
+        borderPane.setCenter(vBox);
+        borderPane.setRight(vBoxTopRight);
+        borderPane.setLeft(registerBTN);
+        //setting the padding
+         borderPane.setPadding(new Insets(5,5,5,5));
+       //Creating a scene object 
+        Scene scene = new Scene(borderPane);
+        //Adding scene to the stage 
+        primaryStage.setScene(scene);
+        //setting stage's min size
+        primaryStage.setMinHeight(600);
+        primaryStage.setMinWidth(700);
+        //Setting title to the Stage 
+        primaryStage.setTitle("Tank Trouble"); 
+        //Displaying the contents of the stage 
+        primaryStage.show();
 
     }
 }
