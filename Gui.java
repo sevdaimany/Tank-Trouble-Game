@@ -115,5 +115,11 @@ public class Gui extends Application {
         vBox.setAlignment(Pos.CENTER);
         vBox.setSpacing(173);
 
+        //creating register button
+        FileInputStream inputRegister = new FileInputStream(".//icons//shotOrange.png");
+        Image iconRegister = new Image(inputRegister);
+        ImageView imageViewRegister = new ImageView(iconRegister);
+        Button registerBTN = new Button("   REGISTER   ",imageViewRegister);
+
     }
 }
