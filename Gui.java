@@ -7,6 +7,16 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.geometry.Pos;
 import javafx.scene.layout.*;
+import javafx.animation.FadeTransition;
+import javafx.animation.Transition;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+
+
 
 
 
@@ -84,6 +94,26 @@ public class Gui extends Application {
         hBox.setAlignment(Pos.CENTER);
         //setting the spacing
         hBox.setSpacing(10);
+
+
+        //creating 'tank trouble' text
+        Text gameTXT = new Text("TANK TROUBLE");
+        gameTXT.setFill(Color.ORANGE);
+        gameTXT.setStroke(Color.BLACK);
+        gameTXT.setStrokeWidth(4);
+        gameTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 80));
+
+        FadeTransition textTransition = new FadeTransition(Duration.seconds(0.3), gameTXT);
+        textTransition.setAutoReverse(true);
+        textTransition.setFromValue(0);
+        textTransition.setToValue(1);
+        textTransition.setCycleCount(Transition.INDEFINITE);
+        textTransition.play();
+
+        // set hBox and gameTXT to VBox
+        VBox vBox = new VBox(gameTXT,hBox);
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setSpacing(173);
 
     }
 }
