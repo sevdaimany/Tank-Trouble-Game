@@ -11,7 +11,7 @@
  * @author Mohammad Mahdi MalMasi
  * @author Sevda Imany
  *
- * @version 0.0.2
+ * @version 0.0.3
  */
 public class Identity
 {
@@ -118,5 +118,27 @@ public class Identity
     public boolean isPasswordCorrect(String passwordToCheck)
     {
         return this.password.equals(passwordToCheck);
+    }
+
+
+    /**
+     * This method checks equality by username
+     * 
+     * @param o : an object to check ({@code Player} or {@code Identity})
+     * @return {@code true} both of them has the same username
+     */
+    @Override
+    public boolean equals(Object o)
+    {
+        if (o == this)
+            return true;
+
+        if (!(o instanceof Identity))
+            return false;
+
+
+        Identity hold = (Identity) o;
+
+        return this.username.equals(hold.getUsername());
     }
 }
