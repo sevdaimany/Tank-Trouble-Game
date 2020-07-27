@@ -128,5 +128,5 @@ public class RegisterView extends GridPane {
 
 
     }
-
 }
+
