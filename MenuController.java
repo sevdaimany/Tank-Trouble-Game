@@ -11,10 +11,19 @@ public class MenuController {
         try {
             menuview = new Menuview();
         }catch (Exception e){}
+
+        registerBTNAction();
+
         this.stage = stage;
     }
 
-   
+    public void registerBTNAction(){
+        RegisterController registerController = new RegisterController();
+        menuview.getRegisterBTN().setOnAction(event -> {
+            stage.setScene(new Scene(registerController.getRegisterView()));
+            stage.setTitle("Register");
+        });
+    }
 
     public Menuview getMenuview() {
         return menuview;
