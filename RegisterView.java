@@ -2,6 +2,16 @@
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.geometry.Pos;
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import java.io.FileInputStream;
+
+
 
 /**
  * this class represent register page's view
@@ -92,10 +102,27 @@ public class RegisterView extends GridPane {
         registerVBox.setAlignment(Pos.CENTER);
 
 
+          //background picture
+          FileInputStream input = null;
+          try {
+              input = new FileInputStream(".//icons//pic.jpg");
+          }catch (Exception e){}
+          Image image = new Image(input);
+          BackgroundImage backgroundimage = new BackgroundImage(image,
+                  BackgroundRepeat.NO_REPEAT,
+                  BackgroundRepeat.NO_REPEAT,
+                  BackgroundPosition.DEFAULT,
+                  BackgroundSize.DEFAULT);
+  
+
+
         //arranging  register vbox in gridpane
         this.add(registerVBox,0,0);
         this.setMinSize(1480,800);
         this.setAlignment(Pos.CENTER);
+        //set background picture
+        this.setBackground(new Background(backgroundimage));
+
 
 
 
