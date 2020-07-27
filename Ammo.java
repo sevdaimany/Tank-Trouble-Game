@@ -9,14 +9,14 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.0
+ * @version 0.0.1
  */
 public class Ammo 
 {
             /*  Fields  */
 
     // the image of Ammo that shown in GUI
-    private File Image;
+    private File image;
 
     // damage of this Ammo
     private int damage;
@@ -52,7 +52,7 @@ public class Ammo
      */
     public Ammo(String imagePath, int x, int y, float teta, float ammoRadius)
     {
-        this.Image = new File(imagePath);
+        this.image = new File(imagePath);
 
         this.x = x;
         this.y = y;
@@ -77,7 +77,7 @@ public class Ammo
     /**
      * @return image {@code File} of Ammo 
      */
-    public File getImage() { return Image; }
+    public File getImage() { return image; }
     /**
      * @return x of Ammo
      */
@@ -99,5 +99,5 @@ public class Ammo
      */
     public int getDamage() { return damage; }
 
-    
+
 }
