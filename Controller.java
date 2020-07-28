@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.5
+ * @version 0.3.5
  */
 public class Controller
 {
@@ -150,5 +150,19 @@ public class Controller
             this.tank.xDelta(-1 * x_delta);
             this.tank.yDelta(-1 * y_delta);
         }
+    }
+
+
+    // this method turns tank to the right
+    private void turnRight()
+    {
+        this.tank.tetaDelta(-Math.round(rotationSpeed));
+    }
+
+
+    // this method turns tank to the left
+    private void turnLeft()
+    {
+        this.tank.tetaDelta(Math.round(rotationSpeed));
     }
 }
