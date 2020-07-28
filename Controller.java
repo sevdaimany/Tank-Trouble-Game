@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.6
+ * @version 0.4.6
  */
 public class Controller
 {
@@ -121,6 +121,26 @@ public class Controller
 
         if (keyCode == turnLeftKey)
             isTurnLeftPressed = false;
+    }
+
+
+    /**
+     * This method updates the state of the tank according to player pressed keys
+     * Call this method in each game loop
+     */
+    public void updateTankState()
+    {
+        if (isMoveAheadPressed)
+            moveTank(true);
+
+        if (isMoveBackwardsPressed)
+            moveTank(false);
+
+        if (isTurnRightPressed)
+            turnRight();
+
+        if (isTurnLeftPressed)
+            turnLeft();
     }
 
     
