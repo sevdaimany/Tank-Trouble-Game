@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.5
+ * @version 0.2.5
  */
 public class Controller
 {
@@ -23,7 +23,7 @@ public class Controller
     private int moveAheadKey, moveBackwardsKey, turnRightKey, turnLeftKey;
 
     // this booleans save the keys status
-    private boolean isUpPressed, isDownPressed, isRightPressed, isLeftPressed;
+    private boolean isMoveAheadPressed, isMoveBackwardsPressed, isTurnRightPressed, isTurnLeftPressed;
 
     // move speed of the tank (pixel/second)
     private float moveSpeed;
@@ -63,7 +63,7 @@ public class Controller
         this.turnLeftKey = turnLeftKey;
 
 
-        isUpPressed = isDownPressed = isRightPressed = isLeftPressed = false;
+        isMoveAheadPressed = isMoveBackwardsPressed = isTurnRightPressed = isTurnLeftPressed = false;
 
         moveSpeed = 10;
         rotationSpeed = 10;
@@ -80,7 +80,54 @@ public class Controller
     
             /*  Methods  */
 
+    /**
+     * This method handle the key press event
+     * If the pressed key doesn't belong to the tank of this controller, the call will ignored
+     * 
+     * @param keyCode : code of the key that pressed
+     */
+    public void keyPressEvent(int keyCode)
+    {
+        if (keyCode == moveAheadKey)
+            isMoveAheadPressed = true;
+
+        if (keyCode == moveBackwardsKey)
+            isMoveBackwardsPressed = true;
+
+        if (keyCode == turnRightKey)
+            isTurnRightPressed = true;
+
+        if (keyCode == turnLeftKey)
+            isTurnLeftPressed = true;
+    }
+
+
+    /**
+     * This method handle the key release event
+     * If the released key doesn't belong to the tank of this controller, the call will ignored
+     * 
+     * @param keyCode : code of the key that released
+     */
+    public void keyReleasedEvent(int keyCode)
+    {
+        if (keyCode == moveAheadKey)
+            isMoveAheadPressed = false;
+
+        if (keyCode == moveBackwardsKey)
+            isMoveBackwardsPressed = false;
+
+        if (keyCode == turnRightKey)
+            isTurnRightPressed = false;
+
+        if (keyCode == turnLeftKey)
+            isTurnLeftPressed = false;
+    }
+
     
+
+
+
+
 
 
     // this method moves the tank
