@@ -9,7 +9,7 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.1
+ * @version 0.3.1
  */
 public class Tank
 {
@@ -103,6 +103,39 @@ public class Tank
 
 
 
+    /**
+     * This method change the x of the tank by given delta(amount of changes)
+     * 
+     * @param x_delta : amount of changes of x
+     */
+    public void xDelta(int x_delta)
+    {
+        this.x += x_delta;
+    }
+
+
+    /**
+     * This method change the y of the tank by given delta(amount of changes)
+     * 
+     * @param y_delta : amount of changes of y
+     */
+    public void yDelta(int y_delta)
+    {
+        this.y += y_delta;
+    }
+
+
+    /**
+     * This method change the angle of the tank by given delta(amount of changes)
+     * 
+     * @param teta_delta : amount of changes of teta(in degree)
+     */
+    public void tetaDelta(int teta_delta)
+    {
+        this.teta += teta_delta;
+    }    
+    
+    
     /**
      * This method checks that the given ammo has hit the tank or not
      * If the given ammo has hit the tank the health of will be reduced
