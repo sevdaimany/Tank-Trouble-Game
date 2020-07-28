@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.5
+ * @version 0.3.6
  */
 public class Controller
 {
@@ -136,8 +136,8 @@ public class Controller
     {
         float teta = this.tank.getTeta();
 
-        int x_delta = (int) Math.ceil(moveSpeed * (Math.cos(Math.toRadians(teta))));
-        int y_delta = -1 * (int) Math.ceil(moveSpeed * (Math.sin(Math.toRadians(teta))));
+        int x_delta = (int) Math.round(moveSpeed * (Math.cos(Math.toRadians(teta))));
+        int y_delta = -1 * (int) Math.round(moveSpeed * (Math.sin(Math.toRadians(teta))));
 
 
         if (ahead)
