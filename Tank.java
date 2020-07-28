@@ -9,7 +9,7 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.1
+ * @version 0.2.1
  */
 public class Tank
 {
@@ -65,6 +65,22 @@ public class Tank
 
             /*  Methods */
             
+
+    // * setter methods *
+
+    /**
+     * @param x : new x of this tank to set
+     */
+    public void setX(int x) { this.x = x; }
+    /**
+     * @param y : new y of this tank to set
+     */
+    public void setY(int y) { this.y = y; }
+    /**
+     * @param teta : new teta of this tank to set
+     */
+    public void setTeta(float teta) { this.teta = teta; }
+
 
     // * getter methods *
     
