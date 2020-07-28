@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.5
+ * @version 0.1.5
  */
 public class Controller
 {
@@ -69,4 +69,39 @@ public class Controller
         rotationSpeed = 10;
     }
     
+
+
+
+
+
+
+
+
+    
+            /*  Methods  */
+
+    
+
+
+    // this method moves the tank
+    // param ahead : set this true to go ahead. if you set it false, tanks will go backwards
+    private void moveTank(boolean ahead)
+    {
+        float teta = this.tank.getTeta();
+
+        int x_delta = (int) Math.ceil(moveSpeed * (Math.cos(Math.toRadians(teta))));
+        int y_delta = -1 * (int) Math.ceil(moveSpeed * (Math.sin(Math.toRadians(teta))));
+
+
+        if (ahead)
+        {
+            this.tank.xDelta(x_delta);
+            this.tank.yDelta(y_delta);
+        }
+        else
+        {
+            this.tank.xDelta(-1 * x_delta);
+            this.tank.yDelta(-1 * y_delta);
+        }
+    }
 }
