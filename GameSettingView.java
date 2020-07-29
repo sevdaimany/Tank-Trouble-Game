@@ -64,5 +64,12 @@ public class GameSettingView extends BorderPane {
         gameSettingTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 50));
         gameSettingTXT.setStrokeWidth(2);
 
+        VBox gameSetting = new VBox(gameSettingTXT,new Label(" "),new Label(" "),new Label(" "),tank,bullet,wall);
+        gameSetting.setAlignment(Pos.CENTER);
+        gameSetting.setMaxWidth(320);
+        gameSetting.setSpacing(5);
+
+        this.setCenter(gameSetting);
+
     }
 }
