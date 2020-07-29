@@ -10,7 +10,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.5
+ * @version 0.0.6
  */
 public class Player extends Identity
 {
@@ -33,12 +33,17 @@ public class Player extends Identity
 
     /**
      * Create new Player with his/her identity
+     * After constructor you should call {@link Player#createPlayerTank(String)}.
+     * And then call {@link Player#createPlayerController(int, int, int, int)}
      * 
      * 
      * @param name : name of the player
      * @param lastName : last name of the player
      * @param username : a username for player
      * @param password : a password for player
+     * 
+     * @see Player#createPlayerTank(String)
+     * @see Player#createPlayerController(int, int, int, int)
      */
     public Player(String name, 
                   String lastName, 
