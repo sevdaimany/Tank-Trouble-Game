@@ -10,6 +10,10 @@ import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.scene.control.Label;
 import javafx.geometry.Rectangle2D;
+import java.io.FileInputStream;
+import javafx.scene.image.Image;
+
+
 
 
 
@@ -64,14 +68,28 @@ public class LoginView extends BorderPane {
         loginTXT.setStrokeWidth(2);
 
 
+
         //set nodes
         VBox login = new VBox(loginTXT,new Label(" "),username,password,loginBTN);
         login.setAlignment(Pos.CENTER);
         login.setMaxWidth(320);
         login.setSpacing(5);
 
+        //background
+        FileInputStream input = null;
+        try {
+            input = new FileInputStream(".//icons//pic.jpg");
+        }catch (Exception e){}
+        Image image = new Image(input);
+        BackgroundImage backgroundimage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+
         //set login vbox in borderpane
         this.setCenter(login);
+        this.setBackground(new Background(backgroundimage));
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
 
