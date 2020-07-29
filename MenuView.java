@@ -13,6 +13,10 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import java.io.FileInputStream;
+import javafx.stage.Screen;
+import javafx.geometry.Rectangle2D;
+
+
 
 
 
@@ -186,6 +190,9 @@ public class MenuView extends BorderPane
 
         //setting background
         this.setBackground(new Background(backgroundimage));
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+
     }
 
 
