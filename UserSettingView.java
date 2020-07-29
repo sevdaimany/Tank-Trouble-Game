@@ -36,6 +36,77 @@ public class UserSettingView extends BorderPane{
 
     public UserSettingView(){
 
+        //create name lable
+        Label nameLabel = new Label("username :");
+        nameLabel.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+        answerNameLable = new Label();
+        HBox name = new HBox(nameLabel, answerNameLable);
+        name.setAlignment(Pos.CENTER);
+        
+
+        //create playing hours lable
+        Label hourLable = new Label("How many hour user play game : ");
+        hourLable.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+        answerHourLable = new Label();
+        HBox hour = new HBox(hourLable, answerHourLable);
+        hour.setAlignment(Pos.CENTER);
+
+
+        //create play with computer lable
+        Label computerLabel = new Label("Play with computer : ");
+        computerLabel.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+
+
+        //create num wins with computer lable
+        Label numWinComputer = new Label("Number of wins :");
+        numWinComputer.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+        answerNumWinComputer = new Label();
+        HBox winComputer = new HBox(numWinComputer, answerNumWinComputer);
+        winComputer.setAlignment(Pos.CENTER);
+
+
+        //create num failure with computer lable
+        Label numFailureComputer = new Label("Number of failures :");
+        numFailureComputer.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+        answerNumFailureComputer = new Label();
+        HBox failureComputer = new HBox(numFailureComputer, answerNumFailureComputer);
+        failureComputer.setAlignment(Pos.CENTER);
+
+        //create play in server lable
+        Label serverLable = new Label("Play in Server");
+        serverLable.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+
+
+        //create num wins in server lable
+        Label numWinServer = new Label("Number of wins :");
+        numWinServer.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+        answerNumWinServer = new Label();
+        HBox winServer = new HBox(numWinServer, answerNumWinServer);
+        winServer.setAlignment(Pos.CENTER);
+
+        //create num failure in server lable
+        Label numFailureServer = new Label("Number of failures :");
+        numFailureServer.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+        answerNumFailureServer = new Label();
+        HBox failureServer = new HBox(numFailureServer, answerNumFailureServer);
+        failureServer.setAlignment(Pos.CENTER);
+
+        //create user's tank lable
+        Label tankLabel = new Label("User's tank :");
+        tankLabel.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
+        tankButton = new Button();
+        HBox tank = new HBox(tankLabel, tankButton);
+        tank.setAlignment(Pos.CENTER);
+
+
+        //create user setting text
+        Text userSettingTXT = new Text("User Setting");
+        userSettingTXT.setFill(Color.ORANGE);
+        userSettingTXT.setStroke(Color.BLACK);
+        userSettingTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 50));
+        userSettingTXT.setStrokeWidth(2);
+
+
 
       
     }
