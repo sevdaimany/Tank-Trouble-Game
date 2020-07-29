@@ -41,17 +41,20 @@ public class MenuController
      *  
      * @param stage
      */
-    public MenuController(Stage stage)
+    public MenuController()
     {
         try
         {
             menuview = new Menuview();
         }
         catch (Exception e){}
+        
+        this.stage = StageConnection.getStage();
+
 
         registerBTNAction();
 
-        this.stage = stage;
+
     }
 
 

@@ -35,7 +35,9 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception 
     {
-        MenuController menuController = new MenuController(primaryStage);
+        StageConnection stageConnection = new StageConnection(primaryStage);
+        
+        MenuController menuController = new MenuController();
 
 
         //Creating a scene object
