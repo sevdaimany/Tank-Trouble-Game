@@ -9,9 +9,10 @@ import java.io.File;
  * <br>Walls can reflect the {@link Ammo}s </br>
  * <br>{@link Tank}s can not moves over walls</br>
  * 
+
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.0
+ * @version 0.0.2
  */
 public class Wall 
 {
@@ -56,5 +57,32 @@ public class Wall
         this.y = y;
 
         this.state = (Character.toLowerCase(state) == 'h');
+    }
+
+
+
+
+
+
+
+
+
+            /*  Methods  */
+
+    /**
+     * @return {@code true} if the state of wall is horizontal
+     */
+    public boolean isHorizontal()
+    {
+        return state;
+    }
+
+
+    /**
+     * @return {@code true} if the state of wall is vertical
+     */
+    public boolean isVertical()
+    {
+        return !state;
     }
 }
