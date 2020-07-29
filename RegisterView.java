@@ -13,14 +13,21 @@ import java.io.FileInputStream;
 
 
 
-/**
- * this class represent register page's view
- * @author Sevda Imany
- * @version 0.0.0
- */
-public class RegisterView extends GridPane {
 
-    /* Fields */
+
+
+
+/**
+ * This class represent register page's view
+ * 
+ * 
+ * @author Sevda Imany
+ * @version 0.0.2
+ */
+public class RegisterView extends GridPane 
+{
+
+            /*  Fields  */
     
     // username's text field
     private TextField username;
@@ -41,13 +48,21 @@ public class RegisterView extends GridPane {
     private Button registerBTN;
 
 
-    /* Constructor */
+
+
+
+
+
+
+
+         /* Constructor */
 
 
     /**
      * create register page's view
      */
-    public RegisterView() {
+    public RegisterView() 
+    {
 
         //create username text field
         username = new TextField();
@@ -84,7 +99,6 @@ public class RegisterView extends GridPane {
         registerBTN.setAlignment(Pos.CENTER);
 
 
-
         //create register text
         Text registerTXT = new Text("REGISTER");
         registerTXT.setFill(Color.ORANGE);
@@ -96,37 +110,38 @@ public class RegisterView extends GridPane {
         //set first and last name in hbox
         HBox fullnameHBox = new HBox(firstname,lastname);
 
+
         //set fields in vbox
         VBox registerVBox = new VBox(registerTXT,fullnameHBox,username,password,repeatPassword,registerBTN);
         registerVBox.setSpacing(5);
         registerVBox.setAlignment(Pos.CENTER);
 
 
-          //background picture
-          FileInputStream input = null;
-          try {
-              input = new FileInputStream(".//icons//pic.jpg");
-          }catch (Exception e){}
-          Image image = new Image(input);
-          BackgroundImage backgroundimage = new BackgroundImage(image,
-                  BackgroundRepeat.NO_REPEAT,
-                  BackgroundRepeat.NO_REPEAT,
-                  BackgroundPosition.DEFAULT,
-                  BackgroundSize.DEFAULT);
-  
+        //background picture
+        FileInputStream input = null;
+
+        try 
+        {
+            input = new FileInputStream(".//icons//pic.jpg");
+        }catch (Exception e){}
+
+        Image image = new Image(input);
+        BackgroundImage backgroundimage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
 
 
-        //arranging  register vbox in gridpane
+
+        //arranging  register vbox in grid pane
         this.add(registerVBox,0,0);
         this.setMinSize(1480,800);
         this.setAlignment(Pos.CENTER);
+
+        
         //set background picture
         this.setBackground(new Background(backgroundimage));
-
-
-
-
-
     }
 }
 
