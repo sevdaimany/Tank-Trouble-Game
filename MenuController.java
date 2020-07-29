@@ -37,9 +37,6 @@ public class MenuController
 
     /**
      * create menu controller
-     * 
-     *  
-     * @param stage
      */
     public MenuController()
     {
