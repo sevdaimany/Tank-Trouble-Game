@@ -1,28 +1,49 @@
+
+
+
+
+
 /**
- * this class represent register page's controller
+ * This class represent register page's controller
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.2
  */
+public class RegisterController
+{
 
-public class RegisterController{
-
-    /* Fields */
+            /*  Fields  */
     
     // register page's view
     RegisterView registerView;
 
-    /* Constructor */
+
+
+
+
+
+
+
+         /* Constructor */
 
     /**
      * create register page's controller
      */
-    public RegisterController() {
+    public RegisterController() 
+    {
         registerView = new RegisterView();
     }
 
 
-    /* Methods */
+
+
+
+
+
+
+
+            /*  Methods  */
 
 
     // * getter methods *
@@ -30,7 +51,5 @@ public class RegisterController{
     /**
      * @return register page's view
      */
-    public RegisterView getRegisterView() {
-        return registerView;
-    }
+    public RegisterView getRegisterView() { return registerView; }
 }
