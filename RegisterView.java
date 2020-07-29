@@ -10,6 +10,10 @@ import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import java.io.FileInputStream;
+import javafx.stage.Screen;
+import javafx.geometry.Rectangle2D;
+
+
 
 
 
@@ -136,7 +140,10 @@ public class RegisterView extends GridPane
 
         //arranging  register vbox in grid pane
         this.add(registerVBox,0,0);
-        this.setMinSize(1480,800);
+        
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+       
         this.setAlignment(Pos.CENTER);
 
         
