@@ -2,6 +2,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.geometry.Pos;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
+import javafx.stage.Screen;
+import javafx.scene.control.Label;
+import javafx.geometry.Rectangle2D;
+
+
+
+
 
 
 /**
@@ -43,6 +55,27 @@ public class LoginView extends BorderPane {
         loginBTN = new Button("Login");
         loginBTN.setAlignment(Pos.CENTER);
         loginBTN.setMinWidth(70);
+
+        //create login text
+        Text loginTXT = new Text("LOGIN");
+        loginTXT.setFill(Color.ORANGE);
+        loginTXT.setStroke(Color.BLACK);
+        loginTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 50));
+        loginTXT.setStrokeWidth(2);
+
+
+        //set nodes
+        VBox login = new VBox(loginTXT,new Label(" "),username,password,loginBTN);
+        login.setAlignment(Pos.CENTER);
+        login.setMaxWidth(320);
+        login.setSpacing(5);
+
+        //set login vbox in borderpane
+        this.setCenter(login);
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+
+
 
       
     }
