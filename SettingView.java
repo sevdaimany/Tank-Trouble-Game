@@ -31,4 +31,23 @@ public class SettingView extends TabPane {
        
     }
 
+
+          /*  Methods  */
+
+    /**
+     * @return loginView 
+     */
+    public BorderPane register(){
+        loginController = new LoginController();
+        return loginController.getLoginView();
+    }
+
+    /**
+     * @return gameSetting view
+     */
+    public BorderPane gameSetting(){
+        gameSettingController =new GameSettingController();
+        return gameSettingController.getGameSettingView();
+    }
+
 }
