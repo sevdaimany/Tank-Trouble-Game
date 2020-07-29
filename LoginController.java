@@ -20,11 +20,23 @@ public class LoginController {
     public  LoginController(){
         this.stage =StageConnection.getStage();
         loginView = new LoginView();
+        loginAction();
     }
 
     
     
             /*  Methods  */
+
+
+    /**
+     * set login button's action
+     */
+     public void loginAction(){
+        loginView.getLoginBTN().setOnAction(event -> {
+            UserSettingController userSettingController = new UserSettingController();
+            stage.setScene(new Scene(userSettingController.getUserSettingView()));
+        });
+    }
 
 
     // * getter methods *
