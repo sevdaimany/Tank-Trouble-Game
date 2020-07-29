@@ -51,7 +51,7 @@ public class MenuController
         
         this.stage = StageConnection.getStage();
 
-
+        settingBTNActon();
         registerBTNAction();
 
 
@@ -76,6 +76,18 @@ public class MenuController
     public Menuview getMenuview() { return menuview; }
 
 
+
+    /**
+     * set setting button's action
+     */
+    public void settingBTNActon(){
+        SettingController settingController = new SettingController();
+        menuview.getSettingBTN().setOnAction(event -> {
+            Scene scene = new Scene(settingController.getSettingView());
+            stage.setScene(scene);
+            stage.setTitle("Setting");
+        });
+    }
 
 
 
