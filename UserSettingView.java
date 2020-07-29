@@ -108,6 +108,32 @@ public class UserSettingView extends BorderPane{
 
 
 
+        //set nodes in tilepane
+        TilePane tilePane =new TilePane(Orientation.VERTICAL);
+        tilePane.getChildren().addAll(userSettingTXT,name, hour, computerLabel, winComputer, failureComputer, serverLable, winServer, failureServer, tank);
+        tilePane.setAlignment(Pos.CENTER);
+
+
+        //background pic
+       FileInputStream input = null;
+       try {
+           input = new FileInputStream(".//icons//pic.jpg");
+       }catch (Exception e){}
+       Image image = new Image(input);
+       BackgroundImage backgroundimage = new BackgroundImage(image,
+               BackgroundRepeat.NO_REPEAT,
+               BackgroundRepeat.NO_REPEAT,
+               BackgroundPosition.DEFAULT,
+               BackgroundSize.DEFAULT);
+
+
+       Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+       this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+
+       this.setBackground(new Background(backgroundimage));
+
+       this.setCenter(tilePane);
+
       
     }
 }
