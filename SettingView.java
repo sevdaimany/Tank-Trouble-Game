@@ -28,7 +28,38 @@ public class SettingView extends TabPane {
      * create setting view page
      */
     public SettingView() {
-       
+
+        //create user tab
+        Tab userSettingTab = new Tab("User");
+        userSettingTab.setContent(register());
+
+        //create game tab
+        Tab gameSettingTab = new Tab("Game");
+        gameSettingTab.setContent(gameSetting());
+
+        //add tabs to tabpane
+        this.getTabs().add(userSettingTab);
+        this.getTabs().add(gameSettingTab);
+
+
+        //background
+        FileInputStream input = null;
+        try {
+            input = new FileInputStream(".//icons//pic.jpg");
+        }catch (Exception e){}
+        Image image = new Image(input);
+        BackgroundImage backgroundimage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+
+        this.setBackground(new Background(backgroundimage));
+
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+
+
     }
 
 
