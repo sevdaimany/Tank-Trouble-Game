@@ -2,6 +2,8 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 
 
 
@@ -47,8 +49,9 @@ public class Main extends Application
         primaryStage.setScene(scene);
 
         //setting stage's min size
-        primaryStage.setMinHeight(800);
-        primaryStage.setMinWidth(1480);
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            primaryStage.setMinHeight(screenBounds.getHeight()-60);
+            primaryStage.setMinWidth(screenBounds.getWidth());
 
         //Setting title to the Stage
         primaryStage.setTitle("Tank Trouble");
