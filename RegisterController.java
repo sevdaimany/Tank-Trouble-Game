@@ -1,6 +1,4 @@
-
-
-
+import javafx.stage.Stage;
 
 
 /**
@@ -16,7 +14,10 @@ public class RegisterController
             /*  Fields  */
     
     // register page's view
-    RegisterView registerView;
+   private  RegisterView registerView;
+
+   private Stage stage;
+
 
 
 
@@ -33,6 +34,8 @@ public class RegisterController
     public RegisterController() 
     {
         registerView = new RegisterView();
+        this.stage =StageConnection.getStage();
+
     }
 
 
