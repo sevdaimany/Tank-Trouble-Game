@@ -22,7 +22,7 @@ public class SettingController {
      */
     public SettingController(){
         settingView = new SettingView();
-        this.stage =StageConnection.getStage();
+        this.stage =Main.getStage();
     }
 
 

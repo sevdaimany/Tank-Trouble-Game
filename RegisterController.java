@@ -34,7 +34,7 @@ public class RegisterController
     public RegisterController() 
     {
         registerView = new RegisterView();
-        this.stage =StageConnection.getStage();
+        this.stage =Main.getStage();
 
     }
 

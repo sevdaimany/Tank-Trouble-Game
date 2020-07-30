@@ -18,7 +18,7 @@ public class LoginController {
          /* Constructor */
 
     public  LoginController(){
-        this.stage =StageConnection.getStage();
+        this.stage =Main.getStage();
         loginView = new LoginView();
         loginAction();
     }

@@ -46,7 +46,7 @@ public class MenuController
         }
         catch (Exception e){}
         
-        this.stage = StageConnection.getStage();
+        this.stage = Main.getStage();
 
         settingBTNActon();
         registerBTNAction();

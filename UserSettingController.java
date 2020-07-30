@@ -18,7 +18,7 @@ public class UserSettingController {
 
     public UserSettingController() {
         userSettingView = new UserSettingView();
-        this.stage =StageConnection.getStage();
+        this.stage =Main.getStage();
     }
 
 

@@ -18,7 +18,7 @@ public class GameSettingController {
 
 
     public GameSettingController() {
-        this.stage =StageConnection.getStage();
+        this.stage =Main.getStage();
         gameSettingView =new GameSettingView();
     }
 

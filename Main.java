@@ -18,6 +18,8 @@ import javafx.stage.Screen;
 public class Main extends Application 
 {
 
+    private static Stage stage;
+
     public static void main(String[] args) 
     {
 
@@ -37,7 +39,7 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception 
     {
-        StageConnection stageConnection = new StageConnection(primaryStage);
+        stage = primaryStage;
         
         MenuController menuController = new MenuController();
 
