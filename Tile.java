@@ -48,6 +48,24 @@ public class Tile {
 
     }
 
+            /*  Methods  */
+
+
+    /**
+     * Draw method add a tile to playGround's root
+     */
+    public void Draw(){
+
+        Rectangle rectangle = new Rectangle(x,y,width,height);
+        rectangle.setFill(new ImagePattern(image));
+
+        Main.getRootPlayGround().getChildren().add(rectangle);
+    }
+
+
+
+    // * getter methods *
+
    
     /**
      * @return texture image's file name
@@ -92,6 +110,12 @@ public class Tile {
     public float getHeight() {
         return height;
     }
+
+
+
+    // * setter methods *
+
+
 
     /**
      * @param textureName
