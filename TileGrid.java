@@ -40,4 +40,21 @@ public class TileGrid {
 
     }
 
+
+
+            /*  Methods  */
+
+
+    /**
+     * this method set a tile with given informaton in game's playGround
+     * @param xcoord
+     * @param ycoord
+     * @param textureName
+     */
+    public void setTile(int xcoord, int  ycoord,String textureName){
+        map[xcoord][ycoord] = new Tile(xcoord*64,ycoord*67,64,67,textureName);
+        map[xcoord][ycoord].Draw();
+
+    }
+
 }
