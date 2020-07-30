@@ -1,7 +1,3 @@
-import javafx.scene.effect.Blend;
-import javafx.scene.effect.BlendMode;
-import javafx.scene.image.ImageView;
-
 /**
  * this class represent a tile grid in game
  * 
@@ -67,5 +63,16 @@ public class TileGrid {
         return map[xcoord][ycoord];
     }
 
+
+    /**
+     * this method draw tile grid in map playGround
+     */
+    public void Draw(){
+        for(int i = 0 ; i < map.length; i++){
+            for(int j = 0; j<map[i].length ;  j++){
+                map[i][j].Draw();
+            }
+        }
+    }
 
 }
