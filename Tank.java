@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.Serializable;
 
 
 
@@ -9,9 +10,9 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.1
+ * @version 0.4.1
  */
-public class Tank
+public class Tank implements Serializable
 {
             /*  Fields  */
 
@@ -32,6 +33,10 @@ public class Tank
 
     // radius of tank body
     private float tankRadius;
+
+
+
+    private static final long serialVersionUID = 8365500129362383843L;
 
 
 
