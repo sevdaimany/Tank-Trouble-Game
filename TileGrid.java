@@ -57,4 +57,15 @@ public class TileGrid {
 
     }
 
+
+    /**
+     * @param xcoord
+     * @param ycoord
+     * @return tile with given coordinate
+     */
+    public Tile getTile(int xcoord, int ycoord){
+        return map[xcoord][ycoord];
+    }
+
+
 }
