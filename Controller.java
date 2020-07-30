@@ -1,4 +1,5 @@
 import java.awt.event.KeyEvent;
+import java.io.Serializable;
 
 
 
@@ -10,9 +11,9 @@ import java.awt.event.KeyEvent;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.4.6
+ * @version 0.5.6
  */
-public class Controller
+public class Controller implements Serializable
 {
             /*  Fields  */
 
@@ -30,6 +31,10 @@ public class Controller
 
     // rotation speed of the tank (degree/second)
     private float rotationSpeed;
+
+
+    
+    private static final long serialVersionUID = 585728211822624899L;
 
 
 
