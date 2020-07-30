@@ -10,7 +10,7 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.0
+ * @version 0.1.0
  */
 public abstract class Reward 
 {
@@ -51,4 +51,20 @@ public abstract class Reward
 
         this.lifeTime = lifeTime;
     }
+
+
+
+
+
+
+
+            /*  Methods  */
+            
+    /**
+     * This method apply the reward to tank
+     * 
+     * 
+     * @param tankToApply : tank to apply reward
+     */
+    public abstract void applyRewardToTank(Tank tankToApply);
 }
