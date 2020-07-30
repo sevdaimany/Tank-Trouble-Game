@@ -4,6 +4,8 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
+import javafx.scene.Group;
+
 
 
 
@@ -19,6 +21,8 @@ public class Main extends Application
 {
 
     private static Stage stage;
+    private static Group rootPlayGround;
+
 
     public static void main(String[] args) 
     {
@@ -39,6 +43,7 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception 
     {
+        rootPlayGround = new Group();
         stage = primaryStage;
         
         MenuController menuController = new MenuController();
@@ -60,5 +65,14 @@ public class Main extends Application
 
         //Displaying the contents of the stage
         primaryStage.show();
+    }
+
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static Group getRootPlayGround() {
+        return rootPlayGround;
     }
 }
