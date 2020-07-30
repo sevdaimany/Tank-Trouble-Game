@@ -1,6 +1,4 @@
-
-
-
+import java.io.Serializable;
 
 /**
  * This class represent a Player in game
@@ -10,9 +8,9 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.6
+ * @version 0.1.6
  */
-public class Player extends Identity
+public class Player extends Identity implements Serializable
 {
             /*  Fields  */
 
@@ -24,6 +22,11 @@ public class Player extends Identity
 
     // player's controller
     private Controller playerController;
+
+
+    private static final long serialVersionUID = 615788720176053870L;
+
+
 
 
 
