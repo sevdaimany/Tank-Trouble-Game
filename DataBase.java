@@ -1,7 +1,6 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
+import java.util.*;
+
 
 
 /**
@@ -9,7 +8,7 @@ import java.io.ObjectInputStream;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.1
+ * @version 0.2.1
  */
 public class DataBase
 {
@@ -72,5 +71,41 @@ public class DataBase
 
 
         return false;
+    }
+
+
+    /**
+     * This method save a {@code Player} object in file
+     * 
+     * 
+     * @param playerToSave : player that you want save it
+     * @throws IOException : if can't open file
+     * 
+     * @see DataBase#savePlayers(List)
+     */
+    public static void savePlayer(Player playerToSave) throws IOException
+    {
+        ObjectOutputStream playerFile = new ObjectOutputStream(
+                                        new FileOutputStream(
+                                        new File(PLAYERS_FOLDER + playerToSave.getUsername() + PLAYER_FILE_FORMAT)));
+                                         
+        playerFile.writeObject(playerToSave);
+        playerFile.close();
+    }
+
+
+    /**
+     * This method gives a {@code List} of players and save them
+     * 
+     * 
+     * @param playersToSave : a {@code List} of players to save
+     * @throws IOException : if can't open file
+     * 
+     * @see DataBase#savePlayer(Player)
+     */
+    public static void savePlayers(List<Player> playersToSave) throws IOException
+    {
+        for (Player player: playersToSave)
+            savePlayer(player);
     }
 }
