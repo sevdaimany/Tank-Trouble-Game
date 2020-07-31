@@ -3,11 +3,15 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 
+
+
+
 /**
- * this class represent a game page's view
+ * This class represent a game page's view
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0 
+ * @version 0.0.5 
  */
 public class GameView extends BorderPane {
 
@@ -17,16 +21,24 @@ public class GameView extends BorderPane {
     private GamePlayGround gamePlayGround;
 
 
+
+
+
+
+
          /* Constructor */
 
     /**
      * create new game page's view
      */
-    public GameView(){
+    public GameView()
+    {
         gamePlayGround = new GamePlayGround();
-        this.setCenter(Main.getRootPlayGround());
-        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
 
+        this.setCenter(Main.getRootPlayGround());
+
+        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+        
+        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
     }
 }
