@@ -21,12 +21,14 @@ import javafx.scene.image.Image;
 
 
 /**
- * this class represent login page
+ * This class represent login page
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.5
  */
-public class LoginView extends BorderPane {
+public class LoginView extends BorderPane 
+{
 
             /*  Fields  */
 
@@ -40,25 +42,34 @@ public class LoginView extends BorderPane {
     //login button
     private Button loginBTN;
 
-            /*  Constructor  */
 
 
-    public LoginView() {
 
+
+
+
+
+         /* Constructor */
+
+    public LoginView() 
+    {
         //create username field
         username = new TextField();
         username.setPromptText("username");
         username.setAlignment(Pos.CENTER);
+
 
         //create password field
         password = new TextField();
         password.setPromptText("password");
         password.setAlignment(Pos.CENTER);
 
+
         //create login button
         loginBTN = new Button("Login");
         loginBTN.setAlignment(Pos.CENTER);
         loginBTN.setMinWidth(70);
+
 
         //create login text
         Text loginTXT = new Text("LOGIN");
@@ -68,18 +79,20 @@ public class LoginView extends BorderPane {
         loginTXT.setStrokeWidth(2);
 
 
-
         //set nodes
         VBox login = new VBox(loginTXT,new Label(" "),username,password,loginBTN);
         login.setAlignment(Pos.CENTER);
         login.setMaxWidth(320);
         login.setSpacing(5);
 
+
         //background
         FileInputStream input = null;
-        try {
+        try 
+        {
             input = new FileInputStream(".//icons//pic.jpg");
         }catch (Exception e){}
+
         Image image = new Image(input);
         BackgroundImage backgroundimage = new BackgroundImage(image,
                 BackgroundRepeat.NO_REPEAT,
@@ -87,45 +100,35 @@ public class LoginView extends BorderPane {
                 BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT);
 
+
         //set login vbox in borderpane
         this.setCenter(login);
         this.setBackground(new Background(backgroundimage));
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
-
-
-
-      
+        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);      
     }
+
+
+
+
+
 
 
             /*  Methods  */
 
+
     // * getter methods *
-
-
 
     /**
      * @return player's username
      */
-    public TextField getUsername() {
-        return username;
-    }
-
-
+    public TextField getUsername() { return username; }
     /** 
      * @return player's password
      */
-    public TextField getPassword() {
-        return password;
-    }
-
-
-
+    public TextField getPassword() { return password; }
     /**
      * @return login button
      */
-    public Button getLoginBTN() {
-        return loginBTN;
-    }
+    public Button getLoginBTN() { return loginBTN; }
 }
