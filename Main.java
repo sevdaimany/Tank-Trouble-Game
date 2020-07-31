@@ -14,14 +14,21 @@ import javafx.scene.Group;
 /**
  * Main class represent  tank trouble game
  *
+ * 
  * @author Sevda Imany
- * @version 0.0.2
+ * @version 0.0.5
  */
 public class Main extends Application 
 {
+            /*  Fields  */
 
     private static Stage stage;
     private static Group rootPlayGround;
+
+
+
+
+
 
 
     public static void main(String[] args) 
