@@ -77,7 +77,7 @@ public class MenuView extends BorderPane
      * 
      * @throws Exception
      */      
-    public Menuview() throws  Exception
+    public MenuView() throws  Exception
     {
         FileInputStream input1 = new FileInputStream(".//icons//tank_blue.png");
         Image icon1 = new Image(input1);
