@@ -1,13 +1,19 @@
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+
+
+
+
 /**
- * this class represent login page's controller
+ * This class represent login page's controller
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.5
  */
-public class LoginController {
+public class LoginController 
+{
 
             /*  Fields  */
 
@@ -15,23 +21,35 @@ public class LoginController {
     private LoginView loginView ;
 
 
+
+
+
+
+
+
          /* Constructor */
 
-    public  LoginController(){
+    public  LoginController()
+    {
         this.stage =Main.getStage();
         loginView = new LoginView();
         loginAction();
     }
 
     
+
+
+
+
     
             /*  Methods  */
 
 
     /**
-     * set login button's action
+     * Set login button's action
      */
-     public void loginAction(){
+     public void loginAction()
+     {
         loginView.getLoginBTN().setOnAction(event -> {
             UserSettingController userSettingController = new UserSettingController();
             stage.setScene(new Scene(userSettingController.getUserSettingView()));
@@ -41,11 +59,8 @@ public class LoginController {
 
     // * getter methods *
 
-
     /**
-     * @return logiin's view
+     * @return login's view
      */
-    public LoginView getLoginView() {
-        return loginView;
-    }
+    public LoginView getLoginView() { return loginView; }
 }
