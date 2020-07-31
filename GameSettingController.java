@@ -1,10 +1,15 @@
 import javafx.stage.Stage;
 
+
+
+
 /**
- * this class gameSetting page's controller
+ * This class gameSetting page's controller
+ * 
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.5
  */
 public class GameSettingController {
 
@@ -14,16 +19,29 @@ public class GameSettingController {
     private Stage stage;
 
 
+
+
+
+
+
          /* Constructor */
 
 
-    public GameSettingController() {
+    public GameSettingController() 
+    {
         this.stage =Main.getStage();
         gameSettingView =new GameSettingView();
     }
 
 
-    /*  Methods  */
+
+
+
+
+
+
+
+            /*  Methods  */
 
 
     // * getter methods *
@@ -31,7 +49,5 @@ public class GameSettingController {
     /**
      * @return gameSetting's view
      */
-    public GameSettingView getGameSettingView() {
-        return gameSettingView;
-    }
+    public GameSettingView getGameSettingView() { return gameSettingView; }
 }
