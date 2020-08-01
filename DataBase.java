@@ -8,7 +8,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.1
+ * @version 0.3.1
  */
 public class DataBase
 {
@@ -37,7 +37,7 @@ public class DataBase
     private static final String REGISTER_ICON = ICONS_FOLDER + "register.png";
     private static final String LEADERBOARDS_ICON = ICONS_FOLDER + "leaderboards.png";
     private static final String ONE_PLAYER_ICON = ICONS_FOLDER + "onePlayerMode.png";
-    private static final String TWO_PALYERS_ICON = ICONS_FOLDER + "twoPlayersMode.png";
+    private static final String TWO_PLAYERS_ICON = ICONS_FOLDER + "twoPlayersMode.png";
     private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayersMode.png";
     private static final String SERVER_MODE_ICON = ICONS_FOLDER + "serverMode.png";
 
@@ -120,4 +120,46 @@ public class DataBase
         for (Player player: playersToSave)
             savePlayer(player);
     }
+
+
+
+
+    // * icon files getters *
+
+    /**
+     * @return path of the info icon image
+     */
+    public static String getInfoIconPath() { return INFO_ICON; }
+    /**
+     * @return path of the background icon image
+     */
+    public static String getBackgroundIconPath() { return BACKGROUND_ICON; }
+    /**
+     * @return path of the setting icon image
+     */
+    public static String getSettingIconPath() { return SETTING_ICON; }
+    /**
+     * @return path of the register icon image
+     */
+    public static String getRegisterIconPath() { return REGISTER_ICON; }
+    /**
+     * @return path of the leaderboards icon image
+     */
+    public static String getLeaderboardsIconPath() { return LEADERBOARDS_ICON; }
+    /**
+     * @return path of the one player mode icon image
+     */
+    public static String getOnePlayerIconPath() { return ONE_PLAYER_ICON; }
+    /**
+     * @return path of the two player mode icon image
+     */
+    public static String getTwoPLAyersIconPath() { return TWO_PLAYERS_ICON; }
+    /**
+     * @return path of the three player mode icon image
+     */    
+    public static String getThreePlayersIconPath() { return THREE_PLAYERS_ICON; }
+    /**
+     * @return path of the server mode icon image
+     */
+    public static String getServerModeIconPath() { return SERVER_MODE_ICON; }
 }
