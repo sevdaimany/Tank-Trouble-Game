@@ -29,6 +29,18 @@ public class DataBase
     private static final String AMMO_IMAGES = PHOTOS_FOLDER + "AMMOS/";
     private static final String AWARD_IMAGES = PHOTOS_FOLDER + "AWARDS/";
 
+    // path of the icons
+    private static final String ICONS_FOLDER = MAIN_FOLDER + "ICONS/";
+    private static final String INFO_ICON = ICONS_FOLDER + "info.png";
+    private static final String BACKGROUND_ICON = ICONS_FOLDER + "background.jpg";
+    private static final String SETTING_ICON = ICONS_FOLDER + "setting.png";
+    private static final String REGISTER_ICON = ICONS_FOLDER + "register.png";
+    private static final String LEADERBOARDS_ICON = ICONS_FOLDER + "leaderboards.png";
+    private static final String ONE_PLAYER_ICON = ICONS_FOLDER + "onePlayerMode.png";
+    private static final String TWO_PALYERS_ICON = ICONS_FOLDER + "twoPlayersMode.png";
+    private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayersMode.png";
+    private static final String SERVER_MODE_ICON = ICONS_FOLDER + "serverMode.png";
+
 
 
 
