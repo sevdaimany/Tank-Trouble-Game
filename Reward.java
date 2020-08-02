@@ -1,4 +1,4 @@
-import java.io.File;
+
 
 
 
@@ -10,14 +10,14 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.0
+ * @version 0.1.5
  */
 public abstract class Reward 
 {
             /*  Fields  */
 
-    // image file of this reward
-    private File image;
+    // address of image file of this reward
+    private String imagePath;
 
     // reward cordite
     private int x, y;
@@ -44,7 +44,7 @@ public abstract class Reward
      */
     public Reward(String imageFilePath, int x, int y, float lifeTime)
     {
-        image = new File(imageFilePath);
+        imagePath = imageFilePath;
 
         this.x = x;
         this.y = y;
