@@ -18,8 +18,8 @@ public class Wall
 {
             /*  Fields  */
 
-    // image file of the wall
-    private File image;
+    // address of image file of the wall
+    private String imagePath;
 
     // wall cordite (center of the wall)
     private int x, y;
@@ -51,7 +51,7 @@ public class Wall
      */
     public Wall(String imagePath, int x, int y, char state)
     {
-        this.image = new File(imagePath);
+        this.imagePath = imagePath;
 
         this.x = x;
         this.y = y;
