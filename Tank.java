@@ -1,4 +1,3 @@
-import java.io.File;
 import java.io.Serializable;
 
 
@@ -10,14 +9,14 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.4.1
+ * @version 0.4.5
  */
 public class Tank implements Serializable
 {
             /*  Fields  */
 
     // the image of tank that shown in GUI
-    private File image;
+    private String imagePath;
 
     // health of the tank - an int in range:  0 <= x <= 100
     private int health;
@@ -55,7 +54,7 @@ public class Tank implements Serializable
      */
     public Tank(String imageFilePath)
     {
-        this.image = new File(imageFilePath);
+        this.imagePath = imageFilePath;
         health = 100;
         ammo = null;
     }
@@ -90,9 +89,9 @@ public class Tank implements Serializable
     // * getter methods *
     
     /**
-     * @return image {@code File} of Tank 
+     * @return path of the image file of Tank 
      */
-    public File getImage() { return image; }
+    public String getImage() { return imagePath; }
     /**
      * @return x of Tank
      */
