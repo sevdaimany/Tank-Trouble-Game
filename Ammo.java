@@ -1,4 +1,4 @@
-import java.io.File;
+
 
 
 
@@ -9,14 +9,14 @@ import java.io.File;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.1
+ * @version 0.0.5
  */
 public class Ammo 
 {
             /*  Fields  */
 
     // the image of Ammo that shown in GUI
-    private File image;
+    private String imagePath;
 
     // damage of this Ammo
     private int damage;
@@ -52,7 +52,7 @@ public class Ammo
      */
     public Ammo(String imagePath, int x, int y, float teta, float ammoRadius)
     {
-        this.image = new File(imagePath);
+        this.imagePath = imagePath;
 
         this.x = x;
         this.y = y;
@@ -75,9 +75,9 @@ public class Ammo
     // * getter methods *
 
     /**
-     * @return image {@code File} of Ammo 
+     * @return path of the image file of Ammo 
      */
-    public File getImage() { return image; }
+    public String getImage() { return imagePath; }
     /**
      * @return x of Ammo
      */
@@ -98,6 +98,4 @@ public class Ammo
      * @return damage of Ammo
      */
     public int getDamage() { return damage; }
-
-
 }
