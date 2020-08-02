@@ -8,7 +8,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.4.1
+ * @version 0.5.1
  */
 public class DataBase
 {
@@ -139,6 +139,24 @@ public class DataBase
         try { return (Player) player.readObject(); }
         catch (ClassNotFoundException e) { return null; }
         finally { player.close(); }
+    }
+
+
+    /**
+     * This method checks the given password and username
+     * 
+     * 
+     * @param username
+     * @param password
+     * 
+     * @return {@code true} if username and password are ok
+     * 
+     * @throws IOException if can not open file
+     */
+    public static boolean isPasswordCorrect(String username, String password) throws IOException
+    {
+        Player player = getPlayer(username);
+        return player.isPasswordCorrect(password);
     }
 
 
