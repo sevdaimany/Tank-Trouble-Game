@@ -1,4 +1,4 @@
-import java.io.File;
+
 
 
 
@@ -12,7 +12,7 @@ import java.io.File;
 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.2
+ * @version 0.0.5
  */
 public class Wall 
 {
