@@ -8,7 +8,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.1
+ * @version 0.4.1
  */
 public class DataBase
 {
@@ -122,6 +122,26 @@ public class DataBase
     }
 
 
+    /**
+     * This method return the {@code Player} object of given username
+     * 
+     * 
+     * @param username : username of the player that you want
+     * @return {@code Player} of given username
+     * 
+     * @throws IOException if can not open player file
+     */
+    public static Player getPlayer(String username) throws IOException
+    {
+        ObjectInputStream player = new ObjectInputStream(new FileInputStream(new File(getPlayerPath(username))));
+
+
+        try { return (Player) player.readObject(); }
+        catch (ClassNotFoundException e) { return null; }
+        finally { player.close(); }
+    }
+
+
 
 
     // * icon files getters *
@@ -162,4 +182,14 @@ public class DataBase
      * @return path of the server mode icon image
      */
     public static String getServerModeIconPath() { return SERVER_MODE_ICON; }
+
+
+
+
+
+    // return the path of the file of the player with given username
+    private static String getPlayerPath(String username)
+    {
+        return PLAYERS_FOLDER + username + PLAYER_FILE_FORMAT;
+    }
 }
