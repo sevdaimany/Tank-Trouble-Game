@@ -28,6 +28,7 @@ public class RegisterController {
         registerView = new RegisterView();
         this.stage = Main.getStage();
         registerAction();
+        menuAction();
 
     }
 
@@ -46,7 +47,7 @@ public class RegisterController {
                 String username = registerView.getUsername().getText();
                 String password = registerView.getPassword().getText();
                 String repeatPassword = registerView.getRepeatPassword().getText();
-                
+
                 if (name != null && lastname != null && username != null && password != null
                         && repeatPassword != null) {
                     if (!dataBase.isRegistered(username)) {
@@ -69,6 +70,17 @@ public class RegisterController {
             } catch (IOException e) {
             }
 
+        });
+    }
+
+    /**
+     * this method set menu button's action listener
+     */
+    public void menuAction() {
+        registerView.getMenu().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
         });
     }
 
