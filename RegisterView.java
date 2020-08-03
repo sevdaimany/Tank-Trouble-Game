@@ -23,7 +23,7 @@ import javafx.geometry.Rectangle2D;
  * @author Sevda Imany
  * @version 0.0.2
  */
-public class RegisterView extends GridPane {
+public class RegisterView extends BorderPane{
 
     /* Fields */
 
@@ -105,6 +105,8 @@ public class RegisterView extends GridPane {
                 repeatPassword, registerBTN);
         registerVBox.setSpacing(5);
         registerVBox.setAlignment(Pos.CENTER);
+        registerVBox.setMaxWidth(300);
+
 
         // background picture
         FileInputStream input = null;
@@ -119,12 +121,10 @@ public class RegisterView extends GridPane {
                 BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
         // arranging register vbox in grid pane
-        this.add(registerVBox, 0, 0);
+        this.setCenter(registerVBox);
 
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         this.setPrefSize(screenBounds.getWidth(), screenBounds.getHeight() - 60);
-
-        this.setAlignment(Pos.CENTER);
 
         // set background picture
         this.setBackground(new Background(backgroundimage));
