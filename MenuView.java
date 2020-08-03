@@ -130,12 +130,12 @@ public class MenuView extends BorderPane
         // gameTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 80));
 
 
-        FadeTransition textTransition = new FadeTransition(Duration.seconds(0.3), gameTXT);
-        textTransition.setAutoReverse(true);
-        textTransition.setFromValue(0);
-        textTransition.setToValue(1);
-        textTransition.setCycleCount(Transition.INDEFINITE);
-        textTransition.play();
+        // FadeTransition textTransition = new FadeTransition(Duration.seconds(0.3), gameTXT);
+        // textTransition.setAutoReverse(true);
+        // textTransition.setFromValue(0);
+        // textTransition.setToValue(1);
+        // textTransition.setCycleCount(Transition.INDEFINITE);
+        // textTransition.play();
 
 
         FileInputStream inputLogo = new FileInputStream(".//icons//logo.png");
