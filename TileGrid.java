@@ -68,7 +68,7 @@ public class TileGrid
     public void setTile(int xcoord, int  ycoord,String textureName)
     {
         map[xcoord][ycoord] = new Tile(xcoord*64,ycoord*67,64,67,textureName);
-        map[xcoord][ycoord].Draw();
+        map[xcoord][ycoord].draw();
 
     }
 
@@ -87,10 +87,10 @@ public class TileGrid
     /**
      * This method draw tile grid in map playGround
      */
-    public void Draw()
+    public void draw()
     {
         for (int i = 0 ; i < map.length; i++)
             for (int j = 0; j<map[i].length ;  j++)
-                map[i][j].Draw();
+                map[i][j].draw();
     }
 }

@@ -54,7 +54,7 @@ public class Tile {
     /**
      * Draw method add a tile to playGround's root
      */
-    public void Draw(){
+    public void draw(){
 
         Rectangle rectangle = new Rectangle(x,y,width,height);
         rectangle.setFill(new ImagePattern(image));

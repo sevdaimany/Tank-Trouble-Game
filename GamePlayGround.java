@@ -29,7 +29,7 @@ public class GamePlayGround {
      */
     public GamePlayGround(){
         TileGrid tileGrid =new TileGrid(newMap);
-        tileGrid.Draw();
+        tileGrid.draw();
 
 
     }
