@@ -7,12 +7,15 @@ import javafx.scene.layout.*;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import java.io.FileInputStream;
+import java.io.IOException;
+
 import javafx.stage.Screen;
 import javafx.geometry.Rectangle2D;
 
@@ -47,6 +50,10 @@ public class RegisterView extends BorderPane{
 
     // error label
     private Label errorLable;
+
+     //menu button
+     private Button menu;
+
 
     /* Constructor */
 
@@ -107,6 +114,17 @@ public class RegisterView extends BorderPane{
         registerVBox.setAlignment(Pos.CENTER);
         registerVBox.setMaxWidth(300);
 
+        //set menu button
+        FileInputStream input1 = null;
+        try {
+            input1 = new FileInputStream(".//icons//go_back.png");
+        }
+        catch (IOException e){}
+            Image icon1 = new Image(input1);
+            ImageView imageView1 = new ImageView(icon1);
+             menu = new Button("Menu" , imageView1);
+
+
 
         // background picture
         FileInputStream input = null;
@@ -120,8 +138,12 @@ public class RegisterView extends BorderPane{
         BackgroundImage backgroundimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
-        // arranging register vbox in grid pane
+        // arranging register vbox in borderpane
         this.setCenter(registerVBox);
+
+        this.setLeft(menu);
+        this.setPadding(new Insets(5, 5, 5, 5));
+
 
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         this.setPrefSize(screenBounds.getWidth(), screenBounds.getHeight() - 60);
@@ -179,5 +201,13 @@ public class RegisterView extends BorderPane{
      */
     public Label getErrorLable() {
         return errorLable;
+    }
+
+
+    /**
+     * @return menu button
+     */
+    public Button getMenu() {
+        return menu;
     }
 }
