@@ -3,6 +3,7 @@ import javafx.animation.Transition;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.effect.BlendMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -122,11 +123,11 @@ public class MenuView extends BorderPane
 
 
         //creating 'tank trouble' text
-        Text gameTXT = new Text("TANK TROUBLE");
-        gameTXT.setFill(Color.ORANGE);
-        gameTXT.setStroke(Color.BLACK);
-        gameTXT.setStrokeWidth(4);
-        gameTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 80));
+        // Text gameTXT = new Text("TANK TROUBLE");
+        // gameTXT.setFill(Color.ORANGE);
+        // gameTXT.setStroke(Color.BLACK);
+        // gameTXT.setStrokeWidth(4);
+        // gameTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 80));
 
 
         FadeTransition textTransition = new FadeTransition(Duration.seconds(0.3), gameTXT);
@@ -137,10 +138,15 @@ public class MenuView extends BorderPane
         textTransition.play();
 
 
+        FileInputStream inputLogo = new FileInputStream(".//icons//logo.png");
+        Image imageLogo = new Image(inputLogo);
+        ImageView imageViewLogo = new ImageView(imageLogo);
+        imageViewLogo.setBlendMode(BlendMode.DARKEN);
+
         // set hBox and gameTXT to VBox
-        VBox vBox = new VBox(gameTXT, hBox);
+        VBox vBox = new VBox(imageViewLogo, hBox);
         vBox.setAlignment(Pos.CENTER);
-        vBox.setSpacing(173);
+        // vBox.setSpacing(173);
 
 
         //creating register button
@@ -148,6 +154,11 @@ public class MenuView extends BorderPane
         Image iconRegister = new Image(inputRegister);
         ImageView imageViewRegister = new ImageView(iconRegister);
         registerBTN = new Button("   REGISTER   ", imageViewRegister);
+
+        VBox vboxRegister = new VBox(registerBTN);
+        vboxRegister.setAlignment(Pos.BASELINE_RIGHT);
+        vboxRegister.setSpacing(5);
+
 
 
         //creating info button
@@ -183,7 +194,7 @@ public class MenuView extends BorderPane
         //Arranging all the nodes in the border pane
         this.setCenter(vBox);
         this.setRight(vBoxTopRight);
-        this.setLeft(registerBTN);
+        this.setLeft(vboxRegister);
 
         //setting the padding
         this.setPadding(new Insets(5, 5, 5, 5));
