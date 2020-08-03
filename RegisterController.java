@@ -27,7 +27,7 @@ public class RegisterController {
     public RegisterController() {
         registerView = new RegisterView();
         this.stage = Main.getStage();
-        registerController();
+        registerAction();
 
     }
 
@@ -36,7 +36,7 @@ public class RegisterController {
     /**
      * this method sets register button's action listener
      */
-    public void registerController() {
+    public void registerAction() {
         registerView.getRegisterBTN().setOnAction(event -> {
 
             try {
