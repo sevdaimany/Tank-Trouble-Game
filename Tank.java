@@ -5,11 +5,11 @@ import java.io.Serializable;
 
 /**
  * This class represent a Tank in game
- * each tank has a specific image
+ * Each tank has a specific image
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.4.5
+ * @version 0.5.5
  */
 public class Tank implements Serializable
 {
@@ -55,6 +55,7 @@ public class Tank implements Serializable
     public Tank(String imageFilePath)
     {
         this.imagePath = imageFilePath;
+
         health = 100;
         ammo = null;
     }
@@ -104,6 +105,15 @@ public class Tank implements Serializable
      * @return degree of Tank
      */
     public float getTeta() { return teta; }
+
+
+    /**
+     * @return {@code true} if tank.health > 0
+     */
+    public boolean isAlive() 
+    {
+        return  (this.health > 0);
+    }
 
 
 
