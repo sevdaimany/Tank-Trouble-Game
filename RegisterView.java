@@ -15,20 +15,24 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import javafx.stage.Screen;
 import javafx.geometry.Rectangle2D;
+
+
+
+
+
 
 /**
  * This class represent register page's view
  * 
  * 
  * @author Sevda Imany
- * @version 0.0.2
+ * @version 0.0.5
  */
-public class RegisterView extends BorderPane{
-
-    /* Fields */
+public class RegisterView extends BorderPane
+{
+            /* Fields */
 
     // username's text field
     private TextField username;
@@ -55,13 +59,17 @@ public class RegisterView extends BorderPane{
      private Button menu;
 
 
-    /* Constructor */
+
+
+
+
+         /* Constructor */
 
     /**
-     * create register page's view
+     * Create register page's view
      */
-    public RegisterView() {
-
+    public RegisterView() 
+    {
         // create username text field
         username = new TextField();
         username.setPromptText("username");
@@ -116,23 +124,21 @@ public class RegisterView extends BorderPane{
 
         //set menu button
         FileInputStream input1 = null;
-        try {
-            input1 = new FileInputStream(".//icons//go_back.png");
-        }
+
+        try { input1 = new FileInputStream(".//icons//go_back.png"); }
         catch (IOException e){}
-            Image icon1 = new Image(input1);
-            ImageView imageView1 = new ImageView(icon1);
-             menu = new Button("Menu" , imageView1);
+
+        Image icon1 = new Image(input1);
+        ImageView imageView1 = new ImageView(icon1);
+        menu = new Button("Menu" , imageView1);
 
 
 
         // background picture
         FileInputStream input = null;
 
-        try {
-            input = new FileInputStream(".//icons//pic.jpg");
-        } catch (Exception e) {
-        }
+        try { input = new FileInputStream(".//icons//pic.jpg"); } 
+        catch (Exception e) {}
 
         Image image = new Image(input);
         BackgroundImage backgroundimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
@@ -152,62 +158,41 @@ public class RegisterView extends BorderPane{
         this.setBackground(new Background(backgroundimage));
     }
 
+
+
+    
+    // * getter methods *
+
     /**
      * @return username TextField
      */
-    public TextField getUsername() {
-        return username;
-    }
-
+    public TextField getUsername() { return username; }
     /**
      * @return password PasswordField
      */
-    public PasswordField getPassword() {
-        return password;
-    }
-
+    public PasswordField getPassword() { return password; }
     /**
      * @return password confirmation
      */
-    public PasswordField getRepeatPassword() {
-        return repeatPassword;
-    }
-
+    public PasswordField getRepeatPassword() { return repeatPassword; }
     /**
      * @return firstname textField
      */
-    public TextField getFirstname() {
-        return firstname;
-    }
-
-
+    public TextField getFirstname() { return firstname; }
     /**
      * @return lastname TextField
      */
-    public TextField getLastname() {
-        return lastname;
-    }
-
+    public TextField getLastname() { return lastname; }
     /**
      * @return register Button
      */
-    public Button getRegisterBTN() {
-        return registerBTN;
-    }
-
-
+    public Button getRegisterBTN() { return registerBTN; }
     /**
      * @return error Label
      */
-    public Label getErrorLable() {
-        return errorLable;
-    }
-
-
+    public Label getErrorLable() { return errorLable; }
     /**
      * @return menu button
      */
-    public Button getMenu() {
-        return menu;
-    }
+    public Button getMenu() { return menu; }
 }
