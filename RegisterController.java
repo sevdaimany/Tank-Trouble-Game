@@ -46,11 +46,7 @@ public class RegisterController {
                 String username = registerView.getUsername().getText();
                 String password = registerView.getPassword().getText();
                 String repeatPassword = registerView.getRepeatPassword().getText();
-                System.out.println(name);
-                System.out.println(lastname);
-                System.out.println(username);
-                System.out.println(password);
-                System.out.println(repeatPassword);
+                
                 if (name != null && lastname != null && username != null && password != null
                         && repeatPassword != null) {
                     if (!dataBase.isRegistered(username)) {
