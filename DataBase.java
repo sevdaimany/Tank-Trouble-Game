@@ -8,7 +8,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.5.1
+ * @version 0.6.1
  */
 public class DataBase
 {
@@ -40,6 +40,10 @@ public class DataBase
     private static final String TWO_PLAYERS_ICON = ICONS_FOLDER + "twoPlayersMode.png";
     private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayersMode.png";
     private static final String SERVER_MODE_ICON = ICONS_FOLDER + "serverMode.png";
+
+
+    // for create random numbers
+    private static final Random rand = new Random();
 
 
 
@@ -200,6 +204,31 @@ public class DataBase
      * @return path of the server mode icon image
      */
     public static String getServerModeIconPath() { return SERVER_MODE_ICON; }
+
+
+
+    // * ground files getters *
+
+    /**
+     * Get path of ground image files
+     * there are to kind of ground image: 1. grass,  2. sand
+     * 
+     * 
+     * @param which : with kind of ground do you want? (grass or sand)
+     * @return path of the image file. return {@code null} if your given kind is invalid
+     */
+    public static String getGroundImageFilePath(String which)
+    {
+        which = which.toLowerCase();
+
+        if (!(which.equals("grass") || which.equals("sand")))
+            return null;
+
+
+        return PHOTOS_FOLDER + GROUND_IMAGES + which + "Ground" + (rand.nextInt()%2 + 1) + ".png";
+    }
+
+
 
 
 
