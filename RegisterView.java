@@ -1,5 +1,6 @@
 
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.geometry.Pos;
@@ -37,10 +38,10 @@ public class RegisterView extends GridPane
     private TextField username;
 
     // password's text field
-    private TextField password;
+    private PasswordField password;
 
     // repeat password's text field
-    private TextField repeatPassword;
+    private PasswordField repeatPassword;
 
     // firstname's text field
     private TextField firstname;
@@ -75,14 +76,14 @@ public class RegisterView extends GridPane
 
 
         //create password text field
-        password = new TextField();
+        password = new PasswordField();
         password.setPromptText("password");
         password.setAlignment(Pos.CENTER);
 
 
         //create repeat password text field
-        repeatPassword = new TextField();
-        repeatPassword.setPromptText("repeat password");
+        repeatPassword = new PasswordField();
+        repeatPassword.setPromptText("password confirmation");
         repeatPassword.setAlignment(Pos.CENTER);
 
 
