@@ -13,18 +13,24 @@ import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import java.io.FileInputStream;
 
+
+
+
+
+
 /**
- * this class represent usersetting page's view
+ * This class represent user setting page's view
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.5
  */
 
-public class UserSettingView extends BorderPane{
+public class UserSettingView extends BorderPane
+{
 
             /*  Fields  */
 
-    
     private Label answerHourLable;
     private Label answerNameLable;
     private Label answerNumWinComputer;
@@ -34,8 +40,15 @@ public class UserSettingView extends BorderPane{
     private Button tankButton;
 
 
-    public UserSettingView(){
 
+
+
+
+
+         /* Constructor */
+
+    public UserSettingView()
+    {
         //create name lable
         Label nameLabel = new Label("username :");
         nameLabel.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
@@ -72,6 +85,7 @@ public class UserSettingView extends BorderPane{
         HBox failureComputer = new HBox(numFailureComputer, answerNumFailureComputer);
         failureComputer.setAlignment(Pos.CENTER);
 
+
         //create play in server lable
         Label serverLable = new Label("Play in Server");
         serverLable.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
@@ -84,12 +98,14 @@ public class UserSettingView extends BorderPane{
         HBox winServer = new HBox(numWinServer, answerNumWinServer);
         winServer.setAlignment(Pos.CENTER);
 
+
         //create num failure in server lable
         Label numFailureServer = new Label("Number of failures :");
         numFailureServer.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
         answerNumFailureServer = new Label();
         HBox failureServer = new HBox(numFailureServer, answerNumFailureServer);
         failureServer.setAlignment(Pos.CENTER);
+
 
         //create user's tank lable
         Label tankLabel = new Label("User's tank :");
@@ -107,7 +123,6 @@ public class UserSettingView extends BorderPane{
         userSettingTXT.setStrokeWidth(2);
 
 
-
         //set nodes in tilepane
         TilePane tilePane =new TilePane(Orientation.VERTICAL);
         tilePane.getChildren().addAll(userSettingTXT,name, hour, computerLabel, winComputer, failureComputer, serverLable, winServer, failureServer, tank);
@@ -116,9 +131,10 @@ public class UserSettingView extends BorderPane{
 
         //background pic
        FileInputStream input = null;
-       try {
-           input = new FileInputStream(".//icons//pic.jpg");
-       }catch (Exception e){}
+
+       try { input = new FileInputStream(".//icons//pic.jpg"); }
+       catch (Exception e){}
+
        Image image = new Image(input);
        BackgroundImage backgroundimage = new BackgroundImage(image,
                BackgroundRepeat.NO_REPEAT,
@@ -133,7 +149,5 @@ public class UserSettingView extends BorderPane{
        this.setBackground(new Background(backgroundimage));
 
        this.setCenter(tilePane);
-
-      
     }
 }
