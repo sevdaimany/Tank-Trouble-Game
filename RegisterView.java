@@ -16,14 +16,6 @@ import java.io.FileInputStream;
 import javafx.stage.Screen;
 import javafx.geometry.Rectangle2D;
 
-
-
-
-
-
-
-
-
 /**
  * This class represent register page's view
  * 
@@ -31,11 +23,10 @@ import javafx.geometry.Rectangle2D;
  * @author Sevda Imany
  * @version 0.0.2
  */
-public class RegisterView extends GridPane 
-{
+public class RegisterView extends GridPane {
 
-            /*  Fields  */
-    
+    /* Fields */
+
     // username's text field
     private TextField username;
 
@@ -54,115 +45,139 @@ public class RegisterView extends GridPane
     // register's button
     private Button registerBTN;
 
-    //error label
+    // error label
     private Label errorLable;
 
-
-
-
-
-
-
-
-
-         /* Constructor */
-
+    /* Constructor */
 
     /**
      * create register page's view
      */
-    public RegisterView() 
-    {
+    public RegisterView() {
 
-        //create username text field
+        // create username text field
         username = new TextField();
         username.setPromptText("username");
         username.setAlignment(Pos.CENTER);
 
-
-        //create password text field
+        // create password text field
         password = new PasswordField();
         password.setPromptText("password");
         password.setAlignment(Pos.CENTER);
 
-
-        //create repeat password text field
+        // create repeat password text field
         repeatPassword = new PasswordField();
         repeatPassword.setPromptText("password confirmation");
         repeatPassword.setAlignment(Pos.CENTER);
 
-
-        //create firstname text field
+        // create firstname text field
         firstname = new TextField();
         firstname.setPromptText("firstname");
         firstname.setAlignment(Pos.CENTER);
 
-
-        //create lastname text field
+        // create lastname text field
         lastname = new TextField();
         lastname.setPromptText("lastname");
         lastname.setAlignment(Pos.CENTER);
 
-
-        //create register button
+        // create register button
         registerBTN = new Button("Register");
         registerBTN.setAlignment(Pos.CENTER);
 
-        //create error button
+        // create error button
         errorLable = new Label();
         errorLable.setTextFill(Color.RED);
         errorLable.setFont(Font.font(15));
-        errorLable.setBackground(new Background(new BackgroundFill(Color.BLACK,
-                CornerRadii.EMPTY, Insets.EMPTY)));
+        errorLable.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
 
-
-
-        //create register text
+        // create register text
         Text registerTXT = new Text("REGISTER");
         registerTXT.setFill(Color.ORANGE);
         registerTXT.setStroke(Color.BLACK);
         registerTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 50));
         registerTXT.setStrokeWidth(2);
 
+        // set first and last name in hbox
+        HBox fullnameHBox = new HBox(firstname, lastname);
 
-        //set first and last name in hbox
-        HBox fullnameHBox = new HBox(firstname,lastname);
-
-
-        //set fields in vbox
-        VBox registerVBox = new VBox(registerTXT,new Label(" "),errorLable,fullnameHBox,username,password,repeatPassword,registerBTN);
+        // set fields in vbox
+        VBox registerVBox = new VBox(registerTXT, new Label(" "), errorLable, fullnameHBox, username, password,
+                repeatPassword, registerBTN);
         registerVBox.setSpacing(5);
         registerVBox.setAlignment(Pos.CENTER);
 
-
-        //background picture
+        // background picture
         FileInputStream input = null;
 
-        try 
-        {
+        try {
             input = new FileInputStream(".//icons//pic.jpg");
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
 
         Image image = new Image(input);
-        BackgroundImage backgroundimage = new BackgroundImage(image,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundRepeat.NO_REPEAT,
-                BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
+        BackgroundImage backgroundimage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, BackgroundSize.DEFAULT);
 
+        // arranging register vbox in grid pane
+        this.add(registerVBox, 0, 0);
 
-
-        //arranging  register vbox in grid pane
-        this.add(registerVBox,0,0);
-        
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
-        this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
-       
+        this.setPrefSize(screenBounds.getWidth(), screenBounds.getHeight() - 60);
+
         this.setAlignment(Pos.CENTER);
 
-        
-        //set background picture
+        // set background picture
         this.setBackground(new Background(backgroundimage));
     }
-}
 
+    /**
+     * @return username TextField
+     */
+    public TextField getUsername() {
+        return username;
+    }
+
+    /**
+     * @return password PasswordField
+     */
+    public PasswordField getPassword() {
+        return password;
+    }
+
+    /**
+     * @return password confirmation
+     */
+    public PasswordField getRepeatPassword() {
+        return repeatPassword;
+    }
+
+    /**
+     * @return firstname textField
+     */
+    public TextField getFirstname() {
+        return firstname;
+    }
+
+
+    /**
+     * @return lastname TextField
+     */
+    public TextField getLastname() {
+        return lastname;
+    }
+
+    /**
+     * @return register Button
+     */
+    public Button getRegisterBTN() {
+        return registerBTN;
+    }
+
+
+    /**
+     * @return error Label
+     */
+    public Label getErrorLable() {
+        return errorLable;
+    }
+}
