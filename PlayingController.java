@@ -11,9 +11,9 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.5.6
+ * @version 0.6.6
  */
-public class Controller implements Serializable
+public class PlayingController implements Serializable
 {
             /*  Fields  */
 
