@@ -1,46 +1,61 @@
 import java.io.IOException;
-
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+
+
+
+
 
 /**
  * This class represent register page's controller
  * 
  * 
  * @author Sevda Imany
- * @version 0.0.2
+ * @version 0.0.5
  */
-public class RegisterController {
-
-    /* Fields */
+public class RegisterController 
+{
+            /*  Fields  */
 
     // register page's view
     private RegisterView registerView;
 
     private Stage stage;
 
-    /* Constructor */
+
+
+
+
+         /* Constructor */
 
     /**
-     * create register page's controller
+     * Create register page's controller
      */
-    public RegisterController() {
+    public RegisterController() 
+    {
         registerView = new RegisterView();
         this.stage = Main.getStage();
         registerAction();
         menuAction();
-
     }
 
-    /* Methods */
+
+
+
+
+
+            /*  Methods  */
 
     /**
-     * this method sets register button's action listener
+     * This method sets register button's action listener
      */
-    public void registerAction() {
+    public void registerAction() 
+    {
         registerView.getRegisterBTN().setOnAction(event -> {
 
-            try {
+            try 
+            {
                 DataBase dataBase = new DataBase();
                 String name = registerView.getFirstname().getText();
                 String lastname = registerView.getLastname().getText();
@@ -73,10 +88,12 @@ public class RegisterController {
         });
     }
 
+
     /**
-     * this method set menu button's action listener
+     * This method set menu button's action listener
      */
-    public void menuAction() {
+    public void menuAction() 
+    {
         registerView.getMenu().setOnAction(event -> {
             MenuController menuController = new MenuController();
             stage.setScene(new Scene(menuController.getMenuview()));
@@ -84,12 +101,12 @@ public class RegisterController {
         });
     }
 
+
+
     // * getter methods *
 
     /**
      * @return register page's view
      */
-    public RegisterView getRegisterView() {
-        return registerView;
-    }
+    public RegisterView getRegisterView() { return registerView; }
 }
