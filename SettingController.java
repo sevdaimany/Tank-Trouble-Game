@@ -1,33 +1,50 @@
 import javafx.stage.Stage;
 
+
+
+
+
 /**
- * this class represent a setting page's view
+ * This class represent a setting page's view
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.5
  */
-public class SettingController {
+public class SettingController 
+{
             /*  Fields  */
 
-    //settingView object
+    // settingView object
     private SettingView settingView;
     private Stage stage;
+
+
+
+
 
 
 
          /* Constructor */
 
     /**
-     * create setting controller
+     * Create setting controller
      */
-    public SettingController(){
+    public SettingController()
+    {
         settingView = new SettingView();
         this.stage =Main.getStage();
     }
 
 
 
-       /*  Methods  */
+
+
+
+
+
+
+            /*  Methods  */
 
 
     // * getter methods *
@@ -35,7 +52,5 @@ public class SettingController {
     /**
      * @return  Setting's view
      */
-    public SettingView getSettingView() {
-        return settingView;
-    }
+    public SettingView getSettingView() { return settingView; }
 }
