@@ -1,8 +1,10 @@
 
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
@@ -51,6 +53,9 @@ public class RegisterView extends GridPane
 
     // register's button
     private Button registerBTN;
+
+    //error label
+    private Label errorLable;
 
 
 
@@ -103,6 +108,14 @@ public class RegisterView extends GridPane
         registerBTN = new Button("Register");
         registerBTN.setAlignment(Pos.CENTER);
 
+        //create error button
+        errorLable = new Label();
+        errorLable.setTextFill(Color.RED);
+        errorLable.setFont(Font.font(15));
+        errorLable.setBackground(new Background(new BackgroundFill(Color.BLACK,
+                CornerRadii.EMPTY, Insets.EMPTY)));
+
+
 
         //create register text
         Text registerTXT = new Text("REGISTER");
@@ -117,7 +130,7 @@ public class RegisterView extends GridPane
 
 
         //set fields in vbox
-        VBox registerVBox = new VBox(registerTXT,fullnameHBox,username,password,repeatPassword,registerBTN);
+        VBox registerVBox = new VBox(registerTXT,new Label(" "),errorLable,fullnameHBox,username,password,repeatPassword,registerBTN);
         registerVBox.setSpacing(5);
         registerVBox.setAlignment(Pos.CENTER);
 
