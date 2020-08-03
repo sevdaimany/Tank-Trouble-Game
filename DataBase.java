@@ -8,7 +8,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.1
+ * @version 0.6.3
  */
 public class DataBase
 {
@@ -40,6 +40,7 @@ public class DataBase
     private static final String TWO_PLAYERS_ICON = ICONS_FOLDER + "twoPlayersMode.png";
     private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayersMode.png";
     private static final String SERVER_MODE_ICON = ICONS_FOLDER + "serverMode.png";
+    private static final String GO_BACK_ICON = ICONS_FOLDER + "goBack.png";
 
 
     // for create random numbers
@@ -204,6 +205,10 @@ public class DataBase
      * @return path of the server mode icon image
      */
     public static String getServerModeIconPath() { return SERVER_MODE_ICON; }
+    /**
+     * @return path of the back button icon image
+     */
+    public static String getGoBackIcon() { return GO_BACK_ICON; }
 
 
 
