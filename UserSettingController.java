@@ -1,12 +1,17 @@
 import javafx.stage.Stage;
 
+
+
+
 /**
- * this class represent userSetting page's controller
+ * This class represent userSetting page's controller
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.5
  */
-public class UserSettingController {
+public class UserSettingController 
+{
 
             /*  Fields  */
 
@@ -14,12 +19,26 @@ public class UserSettingController {
     private Stage stage;
 
 
+
+
+
+
+
+
          /* Constructor */
 
-    public UserSettingController() {
+    public UserSettingController() 
+    {
         userSettingView = new UserSettingView();
         this.stage =Main.getStage();
     }
+
+
+
+
+
+
+
 
 
           /*  Methods  */
@@ -30,7 +49,5 @@ public class UserSettingController {
     /**
      * @return userSetting's view
      */
-    public UserSettingView getUserSettingView() {
-        return userSettingView;
-    }
+    public UserSettingView getUserSettingView() { return userSettingView; }
 }
