@@ -21,7 +21,7 @@ public class Player extends Identity implements Serializable
     private Tank playerTank;
 
     // player's controller
-    private Controller playerController;
+    private PlayingController playerController;
 
 
     private static final long serialVersionUID = 615788720176053870L;
@@ -102,7 +102,7 @@ public class Player extends Identity implements Serializable
         if (playerTank == null)
             throw new NullPointerException("player's tank not created");
 
-        playerController = new Controller(playerTank, 
+        playerController = new PlayingController(playerTank, 
                                             moveAheadKey, moveBackwardsKey, 
                                             turnRightKey, turnLeftKey);
     }

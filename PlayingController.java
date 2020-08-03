@@ -58,7 +58,7 @@ public class PlayingController implements Serializable
      * 
      * @see {@link KeyEvent} for keys code (example: KeyEvent.VK_W == code of the 'w' key)
      */
-    public Controller(Tank playerTank, int moveAheadKey, int moveBackwardsKey, int turnRightKey, int turnLeftKey) 
+    public PlayingController(Tank playerTank, int moveAheadKey, int moveBackwardsKey, int turnRightKey, int turnLeftKey) 
     {
         this.tank = playerTank;
 

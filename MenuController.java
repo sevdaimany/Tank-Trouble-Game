@@ -20,7 +20,7 @@ public class MenuController
             /*  Fields  */
 
     // menu page's view
-    private Menuview menuview;
+    private MenuView menuview;
 
     // game 's stage'
     private Stage stage;
@@ -42,7 +42,7 @@ public class MenuController
     {
         try
         {
-            menuview = new Menuview();
+            menuview = new MenuView();
         }
         catch (Exception e){}
         
@@ -70,7 +70,7 @@ public class MenuController
     /**
      * @return menu page's view
      */
-    public Menuview getMenuview() { return menuview; }
+    public MenuView getMenuview() { return menuview; }
 
 
 
