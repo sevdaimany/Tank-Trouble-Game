@@ -5,29 +5,41 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.Screen;
 import java.io.FileInputStream;
+
+
+
+
+
 /**
- * this class represent setting page's view
+ * This class represent setting page's view
+ * 
  * 
  * @author Sevda Imany
- * @version 0.0.0
+ * @version 0.0.5
  */
-public class SettingView extends TabPane {
-
+public class SettingView extends TabPane 
+{
             /*  Fields  */
 
-    //loginController object
+    // loginController object
     private LoginController loginController;
 
-    //GameSettingController object
+    // GameSettingController object
     private GameSettingController gameSettingController;
+
+
+
+
+
 
 
          /* Constructor */
 
     /**
-     * create setting view page
+     * Create setting view page
      */
-    public SettingView() {
+    public SettingView() 
+    {
 
         //create user tab
         Tab userSettingTab = new Tab("User");
@@ -44,9 +56,10 @@ public class SettingView extends TabPane {
 
         //background
         FileInputStream input = null;
-        try {
-            input = new FileInputStream(".//icons//pic.jpg");
-        }catch (Exception e){}
+
+        try { input = new FileInputStream(".//icons//pic.jpg"); }
+        catch (Exception e){}
+
         Image image = new Image(input);
         BackgroundImage backgroundimage = new BackgroundImage(image,
                 BackgroundRepeat.NO_REPEAT,
@@ -58,27 +71,33 @@ public class SettingView extends TabPane {
 
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
-
-
     }
 
 
-          /*  Methods  */
+
+
+
+
+
+
+            /*  Methods  */
 
     /**
      * @return loginView 
      */
-    public BorderPane register(){
+    public BorderPane register()
+    {
         loginController = new LoginController();
         return loginController.getLoginView();
     }
 
+
     /**
      * @return gameSetting view
      */
-    public BorderPane gameSetting(){
+    public BorderPane gameSetting()
+    {
         gameSettingController =new GameSettingController();
         return gameSettingController.getGameSettingView();
     }
-
 }
