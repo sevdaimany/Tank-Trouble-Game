@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.3
+ * @version 0.7.6
  */
 public class DataBase
 {
@@ -49,10 +49,13 @@ public class DataBase
     private static final String GO_BACK_ICON = ICONS_FOLDER + "goBack.png";
 
 
+    // hold all folders path
+    private static final ArrayList<String> folders = new ArrayList<>(
+                                                        Arrays.asList(
+                                                            MAIN_FOLDER, PHOTOS_FOLDER, 
+                                                            ICONS_FOLDER, PLAYERS_FOLDER));
     // for create random numbers
     private static final Random rand = new Random();
-
-
 
 
 
@@ -255,11 +258,11 @@ public class DataBase
     // this method downloads file from given link and save it to given file address
     private static void downloader(String downloadLink, String saveLocation, String fileName)
     {
-        URL url;
+        URL url = null;
         try { url = new URL(downloadLink); }
         catch (MalformedURLException e) {}
 
-        HttpURLConnection connection;
+        HttpURLConnection connection = null;
         try{ connection = (HttpURLConnection) url.openConnection(); }
         catch (IOException e) {}
 
@@ -269,7 +272,7 @@ public class DataBase
         try { connection.connect(); }
         catch (IOException e) {}
 
-        InputStream in;
+        InputStream in = null;
         try { in = connection.getInputStream(); }
         catch (IOException e) {}
 
