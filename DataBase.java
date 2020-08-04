@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.6
+ * @version 0.7.7
  */
 public class DataBase
 {
@@ -53,7 +53,10 @@ public class DataBase
     private static final ArrayList<String> folders = new ArrayList<>(
                                                         Arrays.asList(
                                                             MAIN_FOLDER, PHOTOS_FOLDER, 
-                                                            ICONS_FOLDER, PLAYERS_FOLDER));
+                                                            ICONS_FOLDER, PLAYERS_FOLDER,
+                                                            TANK_IMAGES, GROUND_IMAGES,
+                                                            WALL_IMAGES, AMMO_IMAGES,
+                                                            AWARD_IMAGES));
     // for create random numbers
     private static final Random rand = new Random();
 
@@ -65,6 +68,21 @@ public class DataBase
 
 
             /*  Methods  */
+
+    /**
+     * This method is a kind of constructor for this class
+     * This method makes all specific files and folders of the game
+     */
+    public static void init()
+    {
+        File holdToMake;
+        for (String folder: folders)
+        {
+            holdToMake = new File(folder);
+            holdToMake.mkdirs();
+        }
+    }
+
 
     /**
      * This method checks that is there any player with given username or not
