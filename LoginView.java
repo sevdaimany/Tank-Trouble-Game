@@ -1,6 +1,9 @@
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BlendMode;
 import javafx.scene.layout.*;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -9,9 +12,13 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.geometry.Rectangle2D;
 import java.io.FileInputStream;
+import java.io.IOException;
+
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 
 
@@ -131,4 +138,183 @@ public class LoginView extends BorderPane
      * @return login button
      */
     public Button getLoginBTN() { return loginBTN; }
+
+    /**
+     * this inner class represent a tank and controller chooser page in game after player login
+     */
+    class TankControllerChooser extends BorderPane{
+
+        //choose tank's color
+        private ChoiceBox<String> choiceBox;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private RadioButton radioButton3;
+        //start game button
+        private Button button;
+
+
+        public TankControllerChooser(){
+
+
+            // create radio buttons
+            radioButton1 = new RadioButton("WASD");
+            radioButton1.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+            radioButton2 = new RadioButton("UP DOWN");
+            radioButton2.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+            radioButton3 = new RadioButton("MOUSE");
+            radioButton3.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+
+
+
+            FileInputStream input = null;
+            try {
+                input = new FileInputStream(".//icons//q.png");
+            }catch(IOException e){}
+            Image imageQ = new Image(input);
+            ImageView imageViewQ = new ImageView(imageQ);
+            imageViewQ.setBlendMode(BlendMode.DARKEN);
+
+            FileInputStream input1 = null;
+            try {
+                input1 = new FileInputStream(".//icons//wasd.png");
+            }catch(IOException e){}
+            Image imageWASD = new Image(input1);
+            ImageView imageViewWASD = new ImageView(imageWASD);
+            imageViewWASD.setBlendMode(BlendMode.DARKEN);
+
+            HBox hBoxWSDF = new HBox(imageViewQ,imageViewWASD);
+
+
+
+            FileInputStream input2 = null;
+            try {
+                input2 = new FileInputStream(".//icons//m.png");
+            }catch(IOException e){}
+            Image imageM = new Image(input2);
+            ImageView imageViewM = new ImageView(imageM);
+            imageViewM.setBlendMode(BlendMode.DARKEN);
+
+
+            FileInputStream input3 = null;
+            try {
+                input3 = new FileInputStream(".//icons//updown.png");
+            }catch(IOException e){}
+            Image imageUPDOWN = new Image(input3);
+            ImageView imageViewUPDOWN = new ImageView(imageUPDOWN);
+            imageViewUPDOWN.setBlendMode(BlendMode.DARKEN);
+
+            HBox hBoxUPDOWN = new HBox(imageViewM,imageViewUPDOWN);
+
+            FileInputStream input4 = null;
+            try {
+                input4 = new FileInputStream(".//icons//mouse.png");
+            }catch(IOException e){}
+            Image imageMOUSE = new Image(input4);
+            ImageView imageViewMOUSE = new ImageView(imageMOUSE);
+            imageViewMOUSE.setBlendMode(BlendMode.DARKEN);
+
+
+            //create a choicebox
+            choiceBox = new ChoiceBox<String>();
+            choiceBox.getItems().addAll("Red","Blue","Green","Sand","Perpel","Pink","Yellow","White");
+            Label label = new Label("Choose your tank's color");
+            label.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+            HBox hBox = new HBox(label,choiceBox);
+            hBox.setSpacing(10);
+
+
+
+            //create top page's text
+             Text chooseTXT = new Text("                  PLEASE CHOOSE");
+             chooseTXT.setFill(Color.ORANGE);
+             chooseTXT.setStroke(Color.BLACK);
+             chooseTXT.setStrokeWidth(4);
+             chooseTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 70));
+
+             //create start game's button
+             button = new Button("START GAME");
+             button.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
+             button.setTextFill(Color.DARKORANGE);
+             button.setAlignment(Pos.CENTER);
+             button.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY) ));
+
+            //arranging nodes in gridpane
+            GridPane gridPane = new GridPane();
+            gridPane.add(hBoxWSDF , 0,0);
+            gridPane.add(hBoxUPDOWN,1,0);
+            gridPane.add(imageViewMOUSE,2,0);
+            gridPane.add(radioButton1,0,1);
+            gridPane.add(radioButton2,1,1);
+            gridPane.add(radioButton3,2,1);
+            gridPane.add(hBox,0,3);
+            gridPane.add(button,0,4);
+            gridPane.setHgap(20);
+            gridPane.setVgap(30);
+            gridPane.setAlignment(Pos.CENTER);
+
+
+
+            this.setCenter(gridPane);
+            this.setTop(chooseTXT);
+
+            //background
+            FileInputStream input5 = null;
+            try
+            {
+                input5 = new FileInputStream(".//icons//pic.jpg");
+            }catch (Exception e){}
+
+            Image image = new Image(input5);
+            BackgroundImage backgroundimage = new BackgroundImage(image,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.DEFAULT,
+                    BackgroundSize.DEFAULT);
+
+            this.setBackground(new Background(backgroundimage));
+            Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+            this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+
+        }
+
+
+        /** 
+         * @return choicebox
+         */
+        public ChoiceBox<String> getChoiceBox() {
+            return choiceBox;
+        }
+
+        /**
+         * @return radiobutton1
+         */
+        public RadioButton getRadioButton1() {
+            return radioButton1;
+        }
+
+        /**
+         * @return radiobutton2
+         */
+        public RadioButton getRadioButton2() {
+            return radioButton2;
+        }
+
+        /**
+         * @return radiobutton3
+         */
+        public RadioButton getRadioButton3() {
+            return radioButton3;
+        }
+
+        /**
+         * @return start game's button
+         */
+        public Button getButton() {
+            return button;
+        }
+        
+ 
+
+    }
+
 }
