@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.9
+ * @version 0.7.10
  */
 public class DataBase
 {
@@ -71,6 +71,14 @@ public class DataBase
     private static final String threePlayersIconLink = GITHUB_SERVER + THREE_PLAYERS_ICON;
     private static final String serverModeIconLink = GITHUB_SERVER + SERVER_MODE_ICON;
     private static final String goBackIconLink = GITHUB_SERVER + GO_BACK_ICON;
+    private static final String logoImageLink = GITHUB_SERVER + LOGO_IMAGE;
+    private static final String mouseImageLink = GITHUB_SERVER + MOUSE_IMAGE;
+    private static final String wsadKeysImageLink = GITHUB_SERVER + WSAD_KEYS_IMAGE;
+    private static final String updownKeysImageLink = GITHUB_SERVER + UpDown_KEYS_IMAGE;
+    private static final String qButtonImageLink = GITHUB_SERVER + Q_BUTTON_IMAGE;
+    private static final String mButtonImageLink = GITHUB_SERVER + M_BUTTON_IMAGE;
+
+
 
 
 
@@ -84,6 +92,9 @@ public class DataBase
                                                             AWARD_IMAGES));
     // for create random numbers
     private static final Random rand = new Random();
+
+
+
 
 
 
