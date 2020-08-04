@@ -1,7 +1,4 @@
-
-
-
-
+import java.io.Serializable;
 
 /**
  * This class holds some fields about person identity
@@ -11,9 +8,9 @@
  * @author Mohammad Mahdi MalMasi
  * @author Sevda Imany
  *
- * @version 0.0.3
+ * @version 0.1.3
  */
-public class Identity
+public class Identity implements Serializable
 {
             /*  Fields  */
 
@@ -26,6 +23,9 @@ public class Identity
 
     // person password
     private String password;
+    
+
+    private static final long serialVersionUID = 7016083161314518703L;
 
 
 
