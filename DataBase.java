@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.12
+ * @version 0.8.0
  */
 public class DataBase
 {
@@ -43,8 +43,8 @@ public class DataBase
     private static final String REGISTER_ICON = ICONS_FOLDER + "register.png";
     private static final String LEADERBOARDS_ICON = ICONS_FOLDER + "leaderboards.png";
     private static final String ONE_PLAYER_ICON = ICONS_FOLDER + "onePlayerMode.png";
-    private static final String TWO_PLAYERS_ICON = ICONS_FOLDER + "twoPlayersMode.png";
-    private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayersMode.png";
+    private static final String TWO_PLAYERS_ICON = ICONS_FOLDER + "twoPlayerMode.png";
+    private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayerMode.png";
     private static final String SERVER_MODE_ICON = ICONS_FOLDER + "serverMode.png";
     private static final String GO_BACK_ICON = ICONS_FOLDER + "goBack.png";
     private static final String LOGO_IMAGE = ICONS_FOLDER + "logo.png";
@@ -114,7 +114,6 @@ public class DataBase
 
 
 
-
             /*  Methods  */
 
     /**
@@ -128,6 +127,13 @@ public class DataBase
         {
             holdToMake = new File(folder);
             holdToMake.mkdirs();
+        }
+
+
+        for (String link: iconsDownloadLinks)
+        {
+            try ( FileInputStream fis = new FileInputStream(new File(ICONS_FOLDER + getFileNameFromLink(link))) ) {}
+            catch (IOException e) { downloader(link, ICONS_FOLDER, getFileNameFromLink(link)); }
         }
     }
 
@@ -371,7 +377,9 @@ public class DataBase
         {
             out.write(in.readAllBytes());
         }
-        catch (IOException e) {}
+        catch (IOException | NullPointerException e) {}
+
+        connection.disconnect();
     }
 
 
