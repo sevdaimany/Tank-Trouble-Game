@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.10
+ * @version 0.7.11
  */
 public class DataBase
 {
@@ -90,6 +90,18 @@ public class DataBase
                                                             TANK_IMAGES, GROUND_IMAGES,
                                                             WALL_IMAGES, AMMO_IMAGES,
                                                             AWARD_IMAGES));
+
+
+    private static final ArrayList<String> iconsDownloadLinks = new ArrayList<>(
+                                                                   Arrays.asList(
+                                                                       infoIconLink, backgroundIconLink,
+                                                                       settingIconLink, registerIconLink,
+                                                                       leaderboardsIconLink, goBackIconLink,
+                                                                       onePlayerIconLink, twoPlayersIconLink,
+                                                                       threePlayersIconLink, serverModeIconLink,
+                                                                       logoImageLink, mouseImageLink, qButtonImageLink,
+                                                                       wsadKeysImageLink, updownKeysImageLink, mButtonImageLink
+                                                                   ));
     // for create random numbers
     private static final Random rand = new Random();
 
