@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.11
+ * @version 0.7.12
  */
 public class DataBase
 {
@@ -372,5 +372,15 @@ public class DataBase
             out.write(in.readAllBytes());
         }
         catch (IOException e) {}
+    }
+
+
+    // this method returns the file name from given link
+    private static String getFileNameFromLink(String link)
+    {
+        String[] hold = link.split("/");
+        link = hold[hold.length-1];
+
+        return link;
     }
 }
