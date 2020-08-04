@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.7
+ * @version 0.7.8
  */
 public class DataBase
 {
@@ -47,6 +47,25 @@ public class DataBase
     private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayersMode.png";
     private static final String SERVER_MODE_ICON = ICONS_FOLDER + "serverMode.png";
     private static final String GO_BACK_ICON = ICONS_FOLDER + "goBack.png";
+
+
+    
+
+    // * download links *
+
+    private static final String GITHUB_SERVER = "https://raw.githubusercontent.com/sevdaimany/Tank-Trouble-Game/master/";
+    
+    private static final String infoIconLink = GITHUB_SERVER + INFO_ICON;
+    private static final String backgroundIconLink = GITHUB_SERVER + BACKGROUND_ICON;
+    private static final String settingIconLink = GITHUB_SERVER + SETTING_ICON;
+    private static final String registerIconLink = GITHUB_SERVER + REGISTER_ICON;
+    private static final String leaderboardsIconLink = GITHUB_SERVER + LEADERBOARDS_ICON;
+    private static final String onePlayerIconLink = GITHUB_SERVER + ONE_PLAYER_ICON;
+    private static final String twoPlayersIconLink = GITHUB_SERVER + TWO_PLAYERS_ICON;
+    private static final String threePlayersIconLink = GITHUB_SERVER + THREE_PLAYERS_ICON;
+    private static final String serverModeIconLink = GITHUB_SERVER + SERVER_MODE_ICON;
+    private static final String goBackIconLink = GITHUB_SERVER + GO_BACK_ICON;
+
 
 
     // hold all folders path
