@@ -1,5 +1,11 @@
 import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.*;
+
+import javax.net.ssl.HttpsURLConnection;
 
 
 
@@ -8,7 +14,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.3
+ * @version 0.7.3
  */
 public class DataBase
 {
@@ -79,7 +85,7 @@ public class DataBase
 
 
             try{ holdToCheck = (Player) ois.readObject(); }
-            catch (ClassNotFoundException e) {holdToCheck = null; }
+            catch (ClassNotFoundException e) { holdToCheck = null; }
             finally { ois.close(); }
 
             if (holdToCheck.getUsername().equals(usernameToCheck))
@@ -243,5 +249,35 @@ public class DataBase
     private static String getPlayerPath(String username)
     {
         return PLAYERS_FOLDER + username + PLAYER_FILE_FORMAT;
+    }
+
+
+    // this method downloads file from given link and save it to given file address
+    private static void downloader(String downloadLink, String saveLocation, String fileName)
+    {
+        URL url;
+        try { url = new URL(downloadLink); }
+        catch (MalformedURLException e) {}
+
+        HttpURLConnection connection;
+        try{ connection = (HttpURLConnection) url.openConnection(); }
+        catch (IOException e) {}
+
+        try{ connection.setRequestMethod("GET"); }
+        catch (ProtocolException | SecurityException e) { return; }
+
+        try { connection.connect(); }
+        catch (IOException e) {}
+
+        InputStream in;
+        try { in = connection.getInputStream(); }
+        catch (IOException e) {}
+
+
+        try ( FileOutputStream out = new FileOutputStream(new File(saveLocation, fileName)) )
+        {
+            out.write(in.readAllBytes());
+        }
+        catch (IOException e) {}
     }
 }
