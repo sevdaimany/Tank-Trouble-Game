@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.8
+ * @version 0.7.9
  */
 public class DataBase
 {
@@ -47,6 +47,12 @@ public class DataBase
     private static final String THREE_PLAYERS_ICON = ICONS_FOLDER + "threePlayersMode.png";
     private static final String SERVER_MODE_ICON = ICONS_FOLDER + "serverMode.png";
     private static final String GO_BACK_ICON = ICONS_FOLDER + "goBack.png";
+    private static final String LOGO_IMAGE = ICONS_FOLDER + "logo.png";
+    private static final String MOUSE_IMAGE = ICONS_FOLDER + "mouse.png";
+    private static final String WSAD_KEYS_IMAGE = ICONS_FOLDER + "wasd.png";
+    private static final String UpDown_KEYS_IMAGE = ICONS_FOLDER + "updown.png";
+    private static final String Q_BUTTON_IMAGE = ICONS_FOLDER + "q.png";
+    private static final String M_BUTTON_IMAGE = ICONS_FOLDER + "m.png";
 
 
     
@@ -255,6 +261,30 @@ public class DataBase
      * @return path of the back button icon image
      */
     public static String getGoBackIcon() { return GO_BACK_ICON; }
+    /**
+     * @return path of the logo image 
+     */
+    public static String getLogoImage() { return LOGO_IMAGE; }
+    /**
+     * @return path of the mouse image 
+     */
+    public static String getMouseImage() { return MOUSE_IMAGE; }
+    /**
+     * @return path of the wsad keys image 
+     */
+    public static String getWsadKeysImage() { return WSAD_KEYS_IMAGE; }
+    /**
+     * @return path of the up & down keys image 
+     */
+    public static String getUpdownKeysImage() { return UpDown_KEYS_IMAGE; }
+    /**
+     * @return path of the q button image 
+     */    
+    public static String getQButtonImage() { return Q_BUTTON_IMAGE; }
+    /**
+     * @return path of the m button image
+     */
+    public static String getMButtonImage() { return M_BUTTON_IMAGE; }
 
 
 
