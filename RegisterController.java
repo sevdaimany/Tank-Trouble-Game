@@ -56,7 +56,6 @@ public class RegisterController
 
             try 
             {
-                DataBase dataBase = new DataBase();
                 String name = registerView.getFirstname().getText();
                 String lastname = registerView.getLastname().getText();
                 String username = registerView.getUsername().getText();
@@ -65,10 +64,10 @@ public class RegisterController
 
                 if (name != null && lastname != null && username != null && password != null
                         && repeatPassword != null) {
-                    if (!dataBase.isRegistered(username)) {
+                    if (!DataBase.isRegistered(username)) {
                         if (password.equals(repeatPassword)) {
                             Player player = new Player(name, lastname, username, password);
-                            dataBase.savePlayer(player);
+                            DataBase.savePlayer(player);
                             MenuController menuController = new MenuController();
                             stage.setScene(new Scene(menuController.getMenuview()));
                             stage.setTitle("Tank Trouble");
