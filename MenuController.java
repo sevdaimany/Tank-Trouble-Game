@@ -50,6 +50,8 @@ public class MenuController
 
         settingBTNActon();
         registerBTNAction();
+        onePlayerAction();
+
 
 
     }
@@ -100,5 +102,18 @@ public class MenuController
             stage.setScene(new Scene(registerController.getRegisterView()));
             stage.setTitle("Register");
         });
-    }    
+    }  
+    
+    
+    /**
+     * this method add 1player button's actionlistener
+     */
+    public void onePlayerAction(){
+        LoginGameController loginGameController = new LoginGameController();
+        menuview.getButton1().setOnAction(event -> {
+            stage.setScene(new Scene(loginGameController.getLoginView()));
+            stage.setTitle("login");
+        });
+    }
+
 }
