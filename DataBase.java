@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.9.0
+ * @version 0.9.1
  */
 public class DataBase
 {
@@ -36,7 +36,10 @@ public class DataBase
 
 
     // available tank colors
-    private static final String[] tanksColors = {"black", "blue", "green", "sand"};
+    private static final String[] tanksColors = {"white", "black", "blue", 
+                                                 "green", "sand", "orange", 
+                                                 "red", "yellow", "pink", 
+                                                 "purple", "gray"};
 
 
     // path of the icons
