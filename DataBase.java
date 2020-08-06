@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.5
+ * @version 0.9.0
  */
 public class DataBase
 {
@@ -135,6 +135,7 @@ public class DataBase
 
 
         downloadIcons();
+        downloadTanks();
     }
 
 
@@ -401,6 +402,17 @@ public class DataBase
             if (!isFileAvailable(ICONS_FOLDER + getFileNameFromLink(link)))
                 downloader(link, ICONS_FOLDER, getFileNameFromLink(link));
         }
+    }
+
+
+    // this method download tanks files
+    private static void  downloadTanks()
+    {
+        for (String color: tanksColors)
+            for (int i = 1; i <= 4; i++)
+                if (!isFileAvailable(TANK_IMAGES + color + "Tank_kind" + i + ".png"))
+                   downloader(tanksGithubLink, TANK_IMAGES, color + "Tank_kind" + i + ".png");
+
     }
 
 
