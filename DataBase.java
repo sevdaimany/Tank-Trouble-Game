@@ -5,7 +5,6 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.util.*;
 
-import javax.net.ssl.HttpsURLConnection;
 
 
 
@@ -14,7 +13,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.1
+ * @version 0.8.2
  */
 public class DataBase
 {
@@ -34,6 +33,11 @@ public class DataBase
     private static final String WALL_IMAGES = PHOTOS_FOLDER + "WALLS/";
     private static final String AMMO_IMAGES = PHOTOS_FOLDER + "AMMOS/";
     private static final String AWARD_IMAGES = PHOTOS_FOLDER + "AWARDS/";
+
+
+    // available tank colors
+    private static final String[] tanksColors = {"black", "blue", "green", "sand"};
+
 
     // path of the icons
     private static final String ICONS_FOLDER = MAIN_FOLDER + "ICONS/";
