@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.2
+ * @version 0.8.3
  */
 public class DataBase
 {
@@ -82,7 +82,7 @@ public class DataBase
     private static final String qButtonImageLink = GITHUB_SERVER + Q_BUTTON_IMAGE;
     private static final String mButtonImageLink = GITHUB_SERVER + M_BUTTON_IMAGE;
 
-
+    private static final String tanksGithubLink = GITHUB_SERVER + TANK_IMAGES;
 
 
 
