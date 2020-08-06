@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.3
+ * @version 0.8.5
  */
 public class DataBase
 {
@@ -398,8 +398,15 @@ public class DataBase
     {
         for (String link: iconsDownloadLinks)
         {
-            try ( FileInputStream fis = new FileInputStream(new File(ICONS_FOLDER + getFileNameFromLink(link))) ) {}
-            catch (IOException e) { downloader(link, ICONS_FOLDER, getFileNameFromLink(link)); }
+            if (!isFileAvailable(ICONS_FOLDER + getFileNameFromLink(link)))
+                downloader(link, ICONS_FOLDER, getFileNameFromLink(link));
         }
+    }
+
+
+    // this method checks that the given file is available or not
+    private static boolean isFileAvailable(String path)
+    {
+        return (new File(path)).isFile();
     }
 }
