@@ -14,7 +14,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.0
+ * @version 0.8.1
  */
 public class DataBase
 {
@@ -130,11 +130,7 @@ public class DataBase
         }
 
 
-        for (String link: iconsDownloadLinks)
-        {
-            try ( FileInputStream fis = new FileInputStream(new File(ICONS_FOLDER + getFileNameFromLink(link))) ) {}
-            catch (IOException e) { downloader(link, ICONS_FOLDER, getFileNameFromLink(link)); }
-        }
+        downloadIcons();
     }
 
 
@@ -390,5 +386,16 @@ public class DataBase
         link = hold[hold.length-1];
 
         return link;
+    }
+
+
+    // this method downloads icon files
+    private static void downloadIcons()
+    {
+        for (String link: iconsDownloadLinks)
+        {
+            try ( FileInputStream fis = new FileInputStream(new File(ICONS_FOLDER + getFileNameFromLink(link))) ) {}
+            catch (IOException e) { downloader(link, ICONS_FOLDER, getFileNameFromLink(link)); }
+        }
     }
 }
