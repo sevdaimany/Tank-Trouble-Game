@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.9.2
+ * @version 0.10.0
  */
 public class DataBase
 {
@@ -141,6 +141,7 @@ public class DataBase
 
         downloadIcons();
         downloadTanks();
+        downloadWalls();
     }
 
 
@@ -421,9 +422,15 @@ public class DataBase
     }
 
 
+    // this method download walls files
     private static void downloadWalls()
     {
+        if (!isFileAvailable(WALL_IMAGES + "metalWall.png"))
+            downloader(wallsGithubLink, WALL_IMAGES + "metalWall.png", "metalWall.png");
 
+
+        if (!isFileAvailable(WALL_IMAGES + "woodWall.png"))
+            downloader(wallsGithubLink, WALL_IMAGES + "woodWall.png", "woodWall.png");
     }
 
 
