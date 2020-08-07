@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.9.1
+ * @version 0.9.2
  */
 public class DataBase
 {
@@ -86,6 +86,8 @@ public class DataBase
     private static final String mButtonImageLink = GITHUB_SERVER + M_BUTTON_IMAGE;
 
     private static final String tanksGithubLink = GITHUB_SERVER + TANK_IMAGES;
+
+    private static final String wallsGithubLink = GITHUB_SERVER + WALL_IMAGES;
 
 
 
@@ -409,12 +411,18 @@ public class DataBase
 
 
     // this method download tanks files
-    private static void  downloadTanks()
+    private static void downloadTanks()
     {
         for (String color: tanksColors)
             for (int i = 1; i <= 4; i++)
                 if (!isFileAvailable(TANK_IMAGES + color + "Tank_kind" + i + ".png"))
                    downloader(tanksGithubLink, TANK_IMAGES, color + "Tank_kind" + i + ".png");
+
+    }
+
+
+    private static void downloadWalls()
+    {
 
     }
 
