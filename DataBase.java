@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.10.0
+ * @version 0.10.5
  */
 public class DataBase
 {
@@ -384,7 +384,7 @@ public class DataBase
         {
             out.write(in.readAllBytes());
         }
-        catch (IOException | NullPointerException e) {}
+        catch (IOException | NullPointerException e) {System.out.println(e.getLocalizedMessage());}
 
         connection.disconnect();
     }
@@ -426,17 +426,24 @@ public class DataBase
     private static void downloadWalls()
     {
         if (!isFileAvailable(WALL_IMAGES + "metalWall.png"))
-            downloader(wallsGithubLink, WALL_IMAGES + "metalWall.png", "metalWall.png");
+            downloader(wallsGithubLink + "metalWall.png", WALL_IMAGES, "metalWall.png");
 
 
         if (!isFileAvailable(WALL_IMAGES + "woodWall.png"))
-            downloader(wallsGithubLink, WALL_IMAGES + "woodWall.png", "woodWall.png");
+            downloader(wallsGithubLink + "woodWall.png", WALL_IMAGES, "woodWall.png");
     }
 
 
     // this method checks that the given file is available or not
     private static boolean isFileAvailable(String path)
     {
-        return (new File(path)).isFile();
+        try ( FileInputStream fis = new FileInputStream(new File(path)) ) 
+        {
+            return true;
+        }
+        catch (IOException e)
+        {
+            return false;
+        }
     }
 }
