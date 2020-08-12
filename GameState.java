@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.0
+ * @version 0.1.2
  */
 public class GameState 
 {
@@ -51,5 +51,6 @@ public class GameState
     public static void addPlayer(Player player)
     {
         players.add(player);
+        tanks.add(player.getPlayerTank());
     }
 }
