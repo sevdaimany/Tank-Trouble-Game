@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.2
+ * @version 0.1.3
  */
 public class GameState 
 {
@@ -22,6 +22,9 @@ public class GameState
 
     // fired ammos from tanks
     private static ArrayList<Ammo> firedAmmos;
+
+    // walls of the map
+    private static ArrayList<Wall> walls;
 
 
 
