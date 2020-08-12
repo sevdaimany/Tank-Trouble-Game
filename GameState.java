@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.0
+ * @version 0.1.0
  */
 public class GameState 
 {
@@ -40,5 +40,16 @@ public class GameState
         players = new ArrayList<>();
         tanks = new ArrayList<>();
         firedAmmos = new ArrayList<>();
+    }
+
+
+    /**
+     * This method add a new player to game
+     * 
+     * @param player : new player to add
+     */
+    public static void addPlayer(Player player)
+    {
+        players.add(player);
     }
 }
