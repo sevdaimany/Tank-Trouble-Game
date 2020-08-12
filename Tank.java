@@ -1,4 +1,10 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.Serializable;
+
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 
 
 
@@ -32,6 +38,16 @@ public class Tank implements Serializable
 
     // radius of tank body
     private float tankRadius;
+
+    //tank's width
+    private static final float WIDTH = 42;
+
+    //tank's height
+    private static final float HEIGHT = 46;
+
+    // tank's rectangle
+    private Rectangle rectangle;
+
 
 
 
@@ -181,4 +197,24 @@ public class Tank implements Serializable
     {
         return Math.abs(Math.sqrt((x1-x2)*(x1-x2) - (y1-y2)*(y1-y2)));
     }
+
+
+    //this method draw a tank in game's playground
+    public void draw()
+    {
+        FileInputStream input = null;
+        try { input = new FileInputStream(".//icons//" + "tank_blue.png"); }
+        catch (FileNotFoundException e) { e.printStackTrace(); }
+        Image image = new Image(input);
+         rectangle = new Rectangle(x,y,WIDTH,HEIGHT);
+        rectangle.setFill(new ImagePattern(image));
+        rectangle.setRotate(teta);
+        Main.getRootPlayGround().getChildren().add(rectangle);
+    }
+
+    //this method remove tank in game's playground
+    public void remove(){
+        Main.getRootPlayGround().getChildren().remove(rectangle);
+    }
+
 }
