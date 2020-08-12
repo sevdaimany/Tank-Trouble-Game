@@ -28,20 +28,20 @@ public class TileGrid
      */
     public TileGrid(int[][] newMap) 
     {
-        map = new Tile[24][12];
+        map = new Tile[newMap[0].length][newMap.length];
 
         for (int i = 0; i < map.length; i++) 
         {
             for (int j = 0; j < map[i].length; j++) 
             {
                 if (newMap[j][i] == 0)
-                    map[i][j] = new Tile(i * 64, j * 67, 64, 67, "tileSand1.png");
+                    map[i][j] = new Tile(i * 64, j * 64, 64, 64, "tileSand1.png");
 
                 else if (newMap[j][i] == 2) 
-                    map[i][j] = new Tile(i * 64, j * 67, 64, 67, "wall2.png");
+                    map[i][j] = new Tile(i * 64, j * 64, 64, 64, "wall2.png");
 
                 else if (newMap[j][i] == 1) 
-                    map[i][j] = new Tile(i * 64, j * 67, 64, 67, "wall1.png");
+                    map[i][j] = new Tile(i * 64, j * 64, 64, 64, "wall1.png");
             }
         }
     }
