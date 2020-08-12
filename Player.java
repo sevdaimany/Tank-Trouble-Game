@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.0
+ * @version 0.3.0
  */
 public class Player extends Identity implements Serializable
 {
@@ -108,10 +108,16 @@ public class Player extends Identity implements Serializable
     }
 
 
+
+
     // * getter methods *
 
     /**
      * @return tank of the player
      */
     public Tank getPlayerTank() { return playerTank; }
+    /**
+     * @return controller of the player
+     */
+    public PlayingController getPlayerController() { return playerController; }
 }
