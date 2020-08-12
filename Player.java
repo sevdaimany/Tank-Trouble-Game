@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.6
+ * @version 0.2.0
  */
 public class Player extends Identity implements Serializable
 {
@@ -106,4 +106,12 @@ public class Player extends Identity implements Serializable
                                             moveAheadKey, moveBackwardsKey, 
                                             turnRightKey, turnLeftKey);
     }
+
+
+    // * getter methods *
+
+    /**
+     * @return tank of the player
+     */
+    public Tank getPlayerTank() { return playerTank; }
 }
