@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.11.8
+ * @version 0.12.0
  */
 public class DataBase
 {
@@ -281,19 +281,19 @@ public class DataBase
      * 
      * @param health : health of tanks to set
      */
-    public static void setTanksHealth(int health) { SETTINGS.tanksHealth = health; }
+    public static void setTanksHealth(int health) { SETTINGS.tanksHealth = health; saveSettings(); }
     /**
      * This method sets the health of woody walls
      * 
      * @param health : health of woody walls to set
      */
-    public static void setWoodyWallsHealth(int health) { SETTINGS.woodWallsHealth = health; }
+    public static void setWoodyWallsHealth(int health) { SETTINGS.woodWallsHealth = health; saveSettings(); }
     /**
      * This method sets the damage of ammos
      * 
      * @param damage : damage of ammos to set
      */
-    public static void setAmmosDamage(int damage) { SETTINGS.ammoDamage = damage; }
+    public static void setAmmosDamage(int damage) { SETTINGS.ammoDamage = damage; saveSettings(); }
     /**
      * @return return settings of the game
      */
