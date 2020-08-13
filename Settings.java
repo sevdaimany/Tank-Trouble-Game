@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.0
+ * @version 0.1.1
  */
 public final class Settings implements Serializable
 {
@@ -18,6 +18,9 @@ public final class Settings implements Serializable
 
     // woody walls health
     int woodWallsHealth;
+
+    // damage of the ammos
+    int ammoDamage;
 
 
     private static final long serialVersionUID = 3076892867441666860L;
