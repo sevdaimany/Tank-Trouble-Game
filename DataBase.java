@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.10.5
+ * @version 0.11.0
  */
 public class DataBase
 {
@@ -324,7 +324,7 @@ public class DataBase
 
 
 
-    // * ground files getters *
+    // * ground files getter *
 
     /**
      * Get path of ground image files
@@ -343,6 +343,28 @@ public class DataBase
 
 
         return PHOTOS_FOLDER + GROUND_IMAGES + which + "Ground" + (rand.nextInt()%2 + 1) + ".png";
+    }
+
+
+
+    // * walls getter *
+
+    /**
+     * This method return the path of the wall image file
+     * 
+     * @param kind : 'wood' or 'metal'
+     * @return {@code null} if your given kind is invalid
+     */
+    public static String getWallImageFilePath(String kind)
+    {
+        if (kind.equalsIgnoreCase("wood"))
+            return WALL_IMAGES + "woodWall.png";
+
+        else if (kind.equalsIgnoreCase("metal"))
+            return WALL_IMAGES + "metalWall.png";
+
+        else 
+            return null;
     }
 
 
