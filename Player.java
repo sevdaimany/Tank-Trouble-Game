@@ -102,9 +102,9 @@ public class Player extends Identity implements Serializable
         if (playerTank == null)
             throw new NullPointerException("player's tank not created");
 
-        playerController = new PlayingController(playerTank, 
-                                            moveAheadKey, moveBackwardsKey, 
-                                            turnRightKey, turnLeftKey);
+        // playerController = new PlayingController(playerTank, 
+        //                                     moveAheadKey, moveBackwardsKey, 
+        //                                     turnRightKey, turnLeftKey);
     }
 
 
