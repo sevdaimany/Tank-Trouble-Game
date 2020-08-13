@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.11.5
+ * @version 0.11.6
  */
 public class DataBase
 {
@@ -276,6 +276,12 @@ public class DataBase
     // * settings actions *
 
 
+    /**
+     * This method sets the health of tanks
+     * 
+     * @param health : health of tanks to set
+     */
+    public static void setTanksHealth(int health) { SETTINGS.tanksHealth = health; }
     /**
      * @return return settings of the game
      */
