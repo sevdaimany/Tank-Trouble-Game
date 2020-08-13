@@ -72,8 +72,8 @@ public class PlayingController implements Serializable
 
         isMoveAheadPressed = isMoveBackwardsPressed = isTurnRightPressed = isTurnLeftPressed = false;
 
-        moveSpeed = 10;
-        rotationSpeed = 10;
+        moveSpeed = 5;
+        rotationSpeed = 5;
     }
     
 
@@ -163,8 +163,8 @@ public class PlayingController implements Serializable
     {
         float teta = this.tank.getTeta();
 
-        int x_delta = (int) Math.round(moveSpeed * (Math.cos(Math.toRadians(teta))));
-        int y_delta = -1 * (int) Math.round(moveSpeed * (Math.sin(Math.toRadians(teta))));
+        int x_delta = -1 * (int) Math.round(moveSpeed * (Math.cos(Math.toRadians(90 -teta))));
+        int y_delta =  (int) Math.round(moveSpeed * (Math.sin(Math.toRadians(90 -teta))));
 
 
         if (ahead)
