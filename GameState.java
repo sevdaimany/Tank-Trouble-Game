@@ -51,7 +51,11 @@ public class GameState
         tanks = new ArrayList<>();
         firedAmmos = new ArrayList<>();
         playingControllers = new ArrayList<>();
-        keyhandler();
+        Tank tank = new Tank("tank_blue.png");
+        PlayingController playingController = new PlayingController(tank, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.UP, KeyCode.DOWN);
+        tanks.add(tank);
+        playingControllers.add(playingController);
+        keyholder();
     }
 
 
@@ -80,26 +84,24 @@ public class GameState
     /**
      * The keyboard handler.
      */
-    public static void keyhandler() 
+    public static void keyholder() 
     {
-        Main.getRootPlayGround().setOnKeyPressed(new EventHandler<KeyEvent>() 
-        {
+        Main.getStage().getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
-            public void handle(KeyEvent event) 
-            {
-                for (PlayingController controller : playingControllers) 
-                    controller.keyPressEvent(event.getCode().getCode());
+            public void handle(KeyEvent event) {
+                System.out.println("keypress");
+                for (PlayingController controller : playingControllers) {
+                    controller.keyPressEvent(event.getCode());
+                }
             }
         });
 
-
-        Main.getRootPlayGround().setOnKeyReleased(new EventHandler<KeyEvent>() 
-        {
+        Main.getStage().getScene().setOnKeyReleased(new EventHandler<KeyEvent>() {
             @Override
-            public void handle(KeyEvent event) 
-            {
-                for (PlayingController controller : playingControllers)
-                    controller.keyPressEvent(event.getCode().getCode());
+            public void handle(KeyEvent event) {
+                for (PlayingController controller : playingControllers) {
+                    controller.keyReleasedEvent(event.getCode());
+                }
             }
         });
     }
