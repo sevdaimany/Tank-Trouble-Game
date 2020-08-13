@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.11.6
+ * @version 0.11.7
  */
 public class DataBase
 {
@@ -282,6 +282,12 @@ public class DataBase
      * @param health : health of tanks to set
      */
     public static void setTanksHealth(int health) { SETTINGS.tanksHealth = health; }
+    /**
+     * This method sets the health of woody walls
+     * 
+     * @param health : health of woody walls to set
+     */
+    public static void setWoodyWallsHealth(int health) { SETTINGS.woodWallsHealth = health; }
     /**
      * @return return settings of the game
      */
