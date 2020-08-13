@@ -34,4 +34,18 @@ public class GamePlayGround {
 
     }
 
+
+    
+    public void render(){
+        doRendering();
+    }
+
+
+    private void doRendering(){
+        for (Tank tank:GameState.getTanks()){
+            tank.draw();
+        }
+    }
+
+
 }
