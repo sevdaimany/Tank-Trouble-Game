@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.11.4
+ * @version 0.11.5
  */
 public class DataBase
 {
@@ -269,6 +269,19 @@ public class DataBase
         Player player = getPlayer(username);
         return player.isPasswordCorrect(password);
     }
+
+
+
+
+    // * settings actions *
+
+
+    /**
+     * @return return settings of the game
+     */
+    public static Settings getSettings() { return SETTINGS; }
+
+
 
 
 
