@@ -1,5 +1,4 @@
 import javafx.geometry.Rectangle2D;
-import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 
@@ -41,4 +40,10 @@ public class GameView extends BorderPane {
         
         this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
     }
+
+
+    public GamePlayGround getGamePlayGround() {
+        return gamePlayGround;
+    }
+
 }
