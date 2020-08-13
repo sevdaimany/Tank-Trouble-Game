@@ -517,4 +517,19 @@ public class DataBase
             return false;
         }
     }
+
+
+    // save settings of the game
+    private static void saveSettings()
+    {
+        try
+        {
+            ObjectOutputStream out = new ObjectOutputStream(
+                                     new FileOutputStream(
+                                     new File(SETTINGS_FILE)));
+
+            out.writeObject(SETTINGS);
+        }
+        catch (IOException e) {}
+    }
 }
