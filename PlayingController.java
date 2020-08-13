@@ -1,6 +1,8 @@
 import java.awt.event.KeyEvent;
 import java.io.Serializable;
 
+import javafx.scene.input.KeyCode;
+
 
 
 
@@ -21,7 +23,7 @@ public class PlayingController implements Serializable
     private Tank tank;
 
     // control keys code
-    private int moveAheadKey, moveBackwardsKey, turnRightKey, turnLeftKey;
+    private KeyCode moveAheadKey, moveBackwardsKey, turnRightKey, turnLeftKey;
 
     // this booleans save the keys status
     private boolean isMoveAheadPressed, isMoveBackwardsPressed, isTurnRightPressed, isTurnLeftPressed;
@@ -58,7 +60,7 @@ public class PlayingController implements Serializable
      * 
      * @see {@link KeyEvent} for keys code (example: KeyEvent.VK_W == code of the 'w' key)
      */
-    public PlayingController(Tank playerTank, int moveAheadKey, int moveBackwardsKey, int turnRightKey, int turnLeftKey) 
+    public PlayingController(Tank playerTank, KeyCode moveAheadKey, KeyCode moveBackwardsKey, KeyCode turnRightKey, KeyCode turnLeftKey) 
     {
         this.tank = playerTank;
 
@@ -91,7 +93,7 @@ public class PlayingController implements Serializable
      * 
      * @param keyCode : code of the key that pressed
      */
-    public void keyPressEvent(int keyCode)
+    public void keyPressEvent(KeyCode keyCode)
     {
         if (keyCode == moveAheadKey)
             isMoveAheadPressed = true;
@@ -113,7 +115,7 @@ public class PlayingController implements Serializable
      * 
      * @param keyCode : code of the key that released
      */
-    public void keyReleasedEvent(int keyCode)
+    public void keyReleasedEvent(KeyCode keyCode)
     {
         if (keyCode == moveAheadKey)
             isMoveAheadPressed = false;
