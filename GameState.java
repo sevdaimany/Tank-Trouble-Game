@@ -106,4 +106,21 @@ public class GameState
         });
     }
 
+
+    public static ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public static ArrayList<Tank> getTanks() {
+        return tanks;
+    }
+
+    public static ArrayList<Ammo> getFiredAmmos() {
+        return firedAmmos;
+    }
+
+    public static ArrayList<PlayingController> getPlayingControllers() {
+        return playingControllers;
+    }
+
 }
