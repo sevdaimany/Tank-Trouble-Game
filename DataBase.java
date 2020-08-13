@@ -13,14 +13,14 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.11.2
+ * @version 0.11.4
  */
 public class DataBase
 {
             /*  Fields  */
 
     // settings of the game
-    private static final Settings SETTINGS;
+    private static Settings SETTINGS;
 
     // path of the main folder of files
     private static final String MAIN_FOLDER = "./.TANK_TROUBLE_DATA_BASE/";
@@ -144,6 +144,17 @@ public class DataBase
             holdToMake = new File(folder);
             holdToMake.mkdirs();
         }
+
+
+        try 
+        { 
+            ObjectInputStream in = new ObjectInputStream(
+                                      new FileInputStream(
+                                      new File(SETTINGS_FILE)));
+
+            SETTINGS = (Settings) in.readObject();
+        }
+        catch (IOException | ClassNotFoundException e) { SETTINGS = new Settings(); }
 
 
         downloadIcons();
