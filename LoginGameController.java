@@ -60,10 +60,10 @@ public class LoginGameController
         GameView gameView = new GameView();
 
         tankControllerChooser.getButton().setOnAction(event -> {
-            GameLoop game = new GameLoop();
-            game.init(gameView);
             Scene scene = new Scene(gameView);
             stage.setScene(scene);
+            GameLoop game = new GameLoop();
+            game.init(gameView);
             stage.setTitle("Tank Trouble");
         });
     }
