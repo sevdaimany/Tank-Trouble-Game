@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.11.1
+ * @version 0.11.2
  */
 public class DataBase
 {
@@ -36,6 +36,10 @@ public class DataBase
     private static final String WALL_IMAGES = PHOTOS_FOLDER + "WALLS/";
     private static final String AMMO_IMAGES = PHOTOS_FOLDER + "AMMOS/";
     private static final String AWARD_IMAGES = PHOTOS_FOLDER + "AWARDS/";
+
+
+    // path of the settings file
+    private static final String SETTINGS_FILE = MAIN_FOLDER + "settings.set";
 
 
     // available tank colors
