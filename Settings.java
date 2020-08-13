@@ -1,14 +1,15 @@
-
+import java.io.Serializable;
 
 
 
 /**
  * This class holds game settings fields
  * 
+ * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.0
+ * @version 0.1.0
  */
-public final class Settings 
+public final class Settings implements Serializable
 {
             /*  Fields  */
 
@@ -17,4 +18,7 @@ public final class Settings
 
     // woody walls health
     int woodWallsHealth;
+
+
+    private static final long serialVersionUID = 3076892867441666860L;
 }
