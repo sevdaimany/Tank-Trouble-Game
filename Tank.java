@@ -3,8 +3,10 @@ import java.io.FileNotFoundException;
 import java.io.Serializable;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
+
 
 
 
@@ -45,9 +47,8 @@ public class Tank implements Serializable
     //tank's height
     private static final float HEIGHT = 46;
 
-    // tank's rectangle
-    private Rectangle rectangle;
-
+    // tank's imageView
+    private ImageView imageView;
 
 
 
@@ -71,7 +72,12 @@ public class Tank implements Serializable
     public Tank(String imageFilePath)
     {
         this.imagePath = imageFilePath;
-
+        FileInputStream input = null;
+        try { input = new FileInputStream(".//icons//" + "tank_blue.png"); }
+        catch (FileNotFoundException e) { e.printStackTrace(); }
+        Image image = new Image(input);
+        imageView = new ImageView(image);
+        Main.getRootPlayGround().getChildren().add(imageView);
         health = 100;
         ammo = null;
     }
@@ -202,19 +208,11 @@ public class Tank implements Serializable
     //this method draw a tank in game's playground
     public void draw()
     {
-        FileInputStream input = null;
-        try { input = new FileInputStream(".//icons//" + "tank_blue.png"); }
-        catch (FileNotFoundException e) { e.printStackTrace(); }
-        Image image = new Image(input);
-         rectangle = new Rectangle(x,y,WIDTH,HEIGHT);
-        rectangle.setFill(new ImagePattern(image));
-        rectangle.setRotate(teta);
-        Main.getRootPlayGround().getChildren().add(rectangle);
+        imageView.setRotate(teta);
+        imageView.relocate(x,y);
+
     }
 
-    //this method remove tank in game's playground
-    public void remove(){
-        Main.getRootPlayGround().getChildren().remove(rectangle);
-    }
+    
 
 }
