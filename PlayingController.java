@@ -183,13 +183,13 @@ public class PlayingController implements Serializable
     // this method turns tank to the right
     private void turnRight()
     {
-        this.tank.tetaDelta(-Math.round(rotationSpeed));
+        this.tank.tetaDelta(Math.round(rotationSpeed));
     }
 
 
     // this method turns tank to the left
     private void turnLeft()
     {
-        this.tank.tetaDelta(Math.round(rotationSpeed));
+        this.tank.tetaDelta(-Math.round(rotationSpeed));
     }
 }
