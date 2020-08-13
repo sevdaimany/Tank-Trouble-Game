@@ -35,13 +35,13 @@ public class TileGrid
             for (int j = 0; j < map[i].length; j++) 
             {
                 if (newMap[j][i] == 0)
-                    map[i][j] = new Tile(i * 64, j * 64, 64, 64, "tileSand1.png");
+                    map[i][j] = new Tile(i * 90, j * 90, 90, 90, "tileSand1.png");
 
                 else if (newMap[j][i] == 2) 
-                    map[i][j] = new Tile(i * 64, j * 64, 64, 64, "wall2.png");
+                    map[i][j] = new Tile(i * 90, j *90, 90, 90, "wall2.png");
 
                 else if (newMap[j][i] == 1) 
-                    map[i][j] = new Tile(i * 64, j * 64, 64, 64, "wall1.png");
+                    map[i][j] = new Tile(i * 90, j * 90, 90, 90, "wall1.png");
             }
         }
     }
@@ -67,7 +67,7 @@ public class TileGrid
      */
     public void setTile(int xcoord, int  ycoord,String textureName)
     {
-        map[xcoord][ycoord] = new Tile(xcoord*64,ycoord*67,64,67,textureName);
+        map[xcoord][ycoord] = new Tile(xcoord*90,ycoord*90,90,90,textureName);
         map[xcoord][ycoord].draw();
 
     }
