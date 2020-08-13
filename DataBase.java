@@ -13,11 +13,14 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.11.0
+ * @version 0.11.1
  */
 public class DataBase
 {
             /*  Fields  */
+
+    // settings of the game
+    private static final Settings SETTINGS;
 
     // path of the main folder of files
     private static final String MAIN_FOLDER = "./.TANK_TROUBLE_DATA_BASE/";
