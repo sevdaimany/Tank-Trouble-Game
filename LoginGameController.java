@@ -35,6 +35,8 @@ public class LoginGameController
         loginView = new LoginView();
         tankControllerChooser = loginView.new TankControllerChooser();
         loginAction();
+        startGameAction();
+
     }
 
     /*  Methods  */
@@ -54,7 +56,17 @@ public class LoginGameController
 
 
 
+    public void startGameAction(){
+        GameView gameView = new GameView();
 
+        tankControllerChooser.getButton().setOnAction(event -> {
+            GameLoop game = new GameLoop();
+            game.init(gameView);
+            Scene scene = new Scene(gameView);
+            stage.setScene(scene);
+            stage.setTitle("Tank Trouble");
+        });
+    }
 
 
 
