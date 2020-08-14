@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.12.0
+ * @version 0.12.1
  */
 public class DataBase
 {
@@ -36,6 +36,7 @@ public class DataBase
     private static final String WALL_IMAGES = PHOTOS_FOLDER + "WALLS/";
     private static final String AMMO_IMAGES = PHOTOS_FOLDER + "AMMOS/";
     private static final String AWARD_IMAGES = PHOTOS_FOLDER + "AWARDS/";
+    private static final String EXPLOSION_IMAGES = PHOTOS_FOLDER + "EXPLOSION/";
 
 
     // path of the settings file
