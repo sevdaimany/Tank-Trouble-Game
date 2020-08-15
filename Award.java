@@ -42,7 +42,7 @@ public abstract class Award
      * @param y : y of the reward
      * @param lifeTime : visibility time of this reward
      */
-    public Reward(String imageFilePath, float x, float y, float lifeTime)
+    public Award(String imageFilePath, float x, float y, float lifeTime)
     {
         imagePath = imageFilePath;
 
