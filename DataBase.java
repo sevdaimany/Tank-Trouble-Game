@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.13.3
+ * @version 0.13.4
  */
 public class DataBase
 {
@@ -98,6 +98,8 @@ public class DataBase
     private static final String wallsGithubLink = GITHUB_SERVER + WALL_IMAGES;
 
     private static final String explosionsGithubLink = GITHUB_SERVER + EXPLOSION_IMAGES;
+
+    private static final String awardsGithubLink = GITHUB_SERVER + AWARD_IMAGES;
 
 
 
