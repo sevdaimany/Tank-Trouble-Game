@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.14.2
+ * @version 0.14.3
  */
 public class DataBase
 {
@@ -123,8 +123,13 @@ public class DataBase
                                                                        logoImageLink, mouseImageLink, qButtonImageLink,
                                                                        wsadKeysImageLink, updownKeysImageLink, mButtonImageLink
                                                                    ));
+
+
     // for create random numbers
     private static final Random rand = new Random();
+
+    // format of image files
+    private static final String png = ".png";
 
 
 
