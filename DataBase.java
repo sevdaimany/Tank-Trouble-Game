@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.14.5
+ * @version 0.15.0
  */
 public class DataBase
 {
@@ -576,6 +576,20 @@ public class DataBase
         for (int i = 0; i < 18; i++)
             if (!isFileAvailable(AWARD_IMAGES + "award" + i + png))
                 downloader(awardsGithubLink + "award" + i + png, AWARD_IMAGES, "award" + i + png);
+    }
+
+
+    // this method download ground files
+    private static void downloadGrounds()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            if (!isFileAvailable(GROUND_IMAGES + "grassGround" + (i+1) + png))
+                downloader(groundsGithubLink + "grassGround" + (i+1) + png, GROUND_IMAGES, "grassGround" + (i+1) + png);
+
+            if (!isFileAvailable(GROUND_IMAGES + "sandGround" + (i+1) + png))
+                downloader(groundsGithubLink + "sandGround" + (i+1) + png, GROUND_IMAGES, "sandGround" + (i+1) + png);
+        }
     }
 
 
