@@ -4,10 +4,11 @@
 
 /**
  * This class represent a health reward in game 
+ * This award increase health of the tank
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.2
+ * @version 0.0.3
  */
 public class HealthAward extends Award
 {
