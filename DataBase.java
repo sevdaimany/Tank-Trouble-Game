@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.12.2
+ * @version 0.13.0
  */
 public class DataBase
 {
@@ -505,6 +505,20 @@ public class DataBase
 
         if (!isFileAvailable(WALL_IMAGES + "woodWall.png"))
             downloader(wallsGithubLink + "woodWall.png", WALL_IMAGES, "woodWall.png");
+    }
+
+
+    // this method download explosions files
+    private static void downloadExplosions()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            if (!isFileAvailable(EXPLOSION_IMAGES + "fire" + i + ".png"))
+                downloader(explosionsGithubLink + "fire" + i + ".png", EXPLOSION_IMAGES, "fire" + i + ".png");
+
+            if (!isFileAvailable(EXPLOSION_IMAGES + "smoke" + i + ".png"))
+                downloader(explosionsGithubLink + "smoke" + i + ".png", EXPLOSION_IMAGES, "smoke" + i + ".png");
+        }
     }
 
 
