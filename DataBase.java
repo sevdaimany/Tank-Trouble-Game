@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.14.3
+ * @version 0.14.4
  */
 public class DataBase
 {
@@ -110,7 +110,7 @@ public class DataBase
                                                             ICONS_FOLDER, PLAYERS_FOLDER,
                                                             TANK_IMAGES, GROUND_IMAGES,
                                                             WALL_IMAGES, AMMO_IMAGES,
-                                                            AWARD_IMAGES));
+                                                            AWARD_IMAGES, EXPLOSION_IMAGES));
 
 
     private static final ArrayList<String> iconsDownloadLinks = new ArrayList<>(
