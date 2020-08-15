@@ -12,7 +12,7 @@
  * @author Mohammad Mahdi Malmasi
  * @version 0.1.6
  */
-public abstract class Reward 
+public abstract class Award 
 {
             /*  Fields  */
 
