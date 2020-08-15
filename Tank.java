@@ -17,7 +17,7 @@ import javafx.scene.shape.Rectangle;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.5.5
+ * @version 0.6.0
  */
 public class Tank implements Serializable
 {
@@ -169,7 +169,19 @@ public class Tank implements Serializable
     public void tetaDelta(int teta_delta)
     {
         this.teta += teta_delta;
-    }    
+    } 
+    
+    
+    /**
+     * This method set the health of the tank 
+     * 
+     * @param health_delta : amount of the health that this tank taken
+     */
+    public void healthDelta(int health_delta)
+    {
+        this.health += health_delta;
+        this.health = Math.min(this.health, DataBase.getSettings().tanksHealth);
+    }
     
     
     /**
@@ -212,7 +224,4 @@ public class Tank implements Serializable
         imageView.relocate(x,y);
 
     }
-
-    
-
 }
