@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.13.1
+ * @version 0.13.3
  */
 public class DataBase
 {
@@ -421,6 +421,30 @@ public class DataBase
     }
 
 
+
+    // * explosions getter *
+
+    /**
+     * This method returns a {@code String[]} of fire explosion images
+     * 
+     * 
+     * @param which : "smoke" or "fire"
+     * @return an empty array if your given String is not either "smoke" or "fire"
+     */
+    public static String[] getFireExplosion(String which)
+    {
+        which = which.toLowerCase();
+        if (!(which.equals("smoke") || which.equals("fire")))
+            return new String[0];
+
+
+        String[] output = new String[5];
+
+        for (int i = 0; i < 5; i++)
+            output[i] = EXPLOSION_IMAGES + which + i + ".png";
+
+        return output;
+    }
 
 
 
