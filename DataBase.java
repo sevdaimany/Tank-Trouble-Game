@@ -403,7 +403,7 @@ public class DataBase
             return null;
 
 
-        return PHOTOS_FOLDER + GROUND_IMAGES + which + "Ground" + (rand.nextInt()%2 + 1) + ".png";
+        return PHOTOS_FOLDER + GROUND_IMAGES + which + "Ground" + (rand.nextInt()%2 + 1) + png;
     }
 
 
@@ -449,7 +449,7 @@ public class DataBase
         String[] output = new String[5];
 
         for (int i = 0; i < 5; i++)
-            output[i] = EXPLOSION_IMAGES + which + i + ".png";
+            output[i] = EXPLOSION_IMAGES + which + i + png;
 
         return output;
     }
@@ -464,7 +464,7 @@ public class DataBase
     public static String getAward()
     {
         int num = rand.nextInt(18);
-        return AWARD_IMAGES + "award" + num + ".png";
+        return AWARD_IMAGES + "award" + num + png;
     }
 
 
@@ -536,8 +536,8 @@ public class DataBase
     {
         for (String color: tanksColors)
             for (int i = 1; i <= 4; i++)
-                if (!isFileAvailable(TANK_IMAGES + color + "Tank_kind" + i + ".png"))
-                   downloader(tanksGithubLink, TANK_IMAGES, color + "Tank_kind" + i + ".png");
+                if (!isFileAvailable(TANK_IMAGES + color + "Tank_kind" + i + png))
+                   downloader(tanksGithubLink, TANK_IMAGES, color + "Tank_kind" + i + png);
 
     }
 
@@ -559,11 +559,11 @@ public class DataBase
     {
         for (int i = 0; i < 5; i++)
         {
-            if (!isFileAvailable(EXPLOSION_IMAGES + "fire" + i + ".png"))
-                downloader(explosionsGithubLink + "fire" + i + ".png", EXPLOSION_IMAGES, "fire" + i + ".png");
+            if (!isFileAvailable(EXPLOSION_IMAGES + "fire" + i + png))
+                downloader(explosionsGithubLink + "fire" + i + png, EXPLOSION_IMAGES, "fire" + i + png);
 
-            if (!isFileAvailable(EXPLOSION_IMAGES + "smoke" + i + ".png"))
-                downloader(explosionsGithubLink + "smoke" + i + ".png", EXPLOSION_IMAGES, "smoke" + i + ".png");
+            if (!isFileAvailable(EXPLOSION_IMAGES + "smoke" + i + png))
+                downloader(explosionsGithubLink + "smoke" + i + png, EXPLOSION_IMAGES, "smoke" + i + png);
         }
     }
 
@@ -572,8 +572,8 @@ public class DataBase
     private static void downloadAwards()
     {
         for (int i = 0; i < 18; i++)
-            if (!isFileAvailable(AWARD_IMAGES + "award" + i + ".png"))
-                downloader(awardsGithubLink + "award" + i + ".png", AWARD_IMAGES, "award" + i + ".png");
+            if (!isFileAvailable(AWARD_IMAGES + "award" + i + png))
+                downloader(awardsGithubLink + "award" + i + png, AWARD_IMAGES, "award" + i + png);
     }
 
 
