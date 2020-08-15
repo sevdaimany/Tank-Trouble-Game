@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.14.1
+ * @version 0.14.2
  */
 public class DataBase
 {
@@ -447,6 +447,19 @@ public class DataBase
             output[i] = EXPLOSION_IMAGES + which + i + ".png";
 
         return output;
+    }
+
+
+
+    // * awards getter *
+
+    /**
+     * @return a award image file randomly
+     */
+    public static String getAward()
+    {
+        int num = rand.nextInt(18);
+        return AWARD_IMAGES + "award" + num + ".png";
     }
 
 
