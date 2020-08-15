@@ -17,7 +17,7 @@ import javafx.scene.shape.Rectangle;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.0
+ * @version 0.7.0
  */
 public class Tank implements Serializable
 {
@@ -107,6 +107,10 @@ public class Tank implements Serializable
      * @param teta : new teta of this tank to set
      */
     public void setTeta(float teta) { this.teta = teta; }
+    /**
+     * @param ammo : new ammo to set
+     */
+    public void setAmmo(Ammo ammo) { this.ammo = ammo; }
 
 
     // * getter methods *
