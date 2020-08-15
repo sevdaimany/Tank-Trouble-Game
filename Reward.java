@@ -10,7 +10,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.5
+ * @version 0.1.6
  */
 public abstract class Reward 
 {
@@ -20,7 +20,7 @@ public abstract class Reward
     private String imagePath;
 
     // reward cordite
-    private int x, y;
+    private float x, y;
 
     // time of visibility of this reward in map
     private float lifeTime;
@@ -42,7 +42,7 @@ public abstract class Reward
      * @param y : y of the reward
      * @param lifeTime : visibility time of this reward
      */
-    public Reward(String imageFilePath, int x, int y, float lifeTime)
+    public Reward(String imageFilePath, float x, float y, float lifeTime)
     {
         imagePath = imageFilePath;
 
