@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.13.4
+ * @version 0.14.0
  */
 public class DataBase
 {
@@ -546,6 +546,15 @@ public class DataBase
             if (!isFileAvailable(EXPLOSION_IMAGES + "smoke" + i + ".png"))
                 downloader(explosionsGithubLink + "smoke" + i + ".png", EXPLOSION_IMAGES, "smoke" + i + ".png");
         }
+    }
+
+
+    // this method download awards file
+    private static void downloadAwards()
+    {
+        for (int i = 0; i < 18; i++)
+            if (!isFileAvailable(AWARD_IMAGES + "award" + i + ".png"))
+                downloader(awardsGithubLink + "award" + i + ".png", AWARD_IMAGES, "award" + i + ".png");
     }
 
 
