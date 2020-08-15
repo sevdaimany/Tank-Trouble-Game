@@ -7,7 +7,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.1
+ * @version 0.0.2
  */
 public class HealthAward extends Award
 {
@@ -39,6 +39,12 @@ public class HealthAward extends Award
         this.health = health;
     }
 
+
+
+
+
+
+            /*  Methods  */
 
     public void applyRewardToTank(Tank tankToApply) 
     {
