@@ -1,7 +1,7 @@
-import java.awt.event.KeyEvent;
 import java.io.Serializable;
 
 import javafx.scene.input.KeyCode;
+import javafx.scene.shape.Rectangle;
 
 
 
@@ -34,6 +34,8 @@ public class PlayingController implements Serializable
     // rotation speed of the tank (degree/second)
     private float rotationSpeed;
 
+    //tank's hidden rectangle
+    private Rectangle hiddenTank;
 
     
     private static final long serialVersionUID = 585728211822624899L;
@@ -58,7 +60,6 @@ public class PlayingController implements Serializable
      * @param turnRightKey : code of the key that turns tank to the right
      * @param turnLeftKey : code of the key that turns tank to the left
      * 
-     * @see {@link KeyEvent} for keys code (example: KeyEvent.VK_W == code of the 'w' key)
      */
     public PlayingController(Tank playerTank, KeyCode moveAheadKey, KeyCode moveBackwardsKey, KeyCode turnRightKey, KeyCode turnLeftKey) 
     {
@@ -72,7 +73,7 @@ public class PlayingController implements Serializable
 
         isMoveAheadPressed = isMoveBackwardsPressed = isTurnRightPressed = isTurnLeftPressed = false;
 
-        moveSpeed = 5;
+        moveSpeed = 2;
         rotationSpeed = 5;
     }
     
@@ -161,22 +162,45 @@ public class PlayingController implements Serializable
     // param ahead : set this true to go ahead. if you set it false, tanks will go backwards
     private void moveTank(boolean ahead)
     {
+
+        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),42,46);
+        hiddenTank.setRotate(tank.getTeta());
+
+
         float teta = this.tank.getTeta();
 
         int x_delta = -1 * (int) Math.round(moveSpeed * (Math.cos(Math.toRadians(90 -teta))));
         int y_delta =  (int) Math.round(moveSpeed * (Math.sin(Math.toRadians(90 -teta))));
 
 
+
         if (ahead)
         {
-            this.tank.xDelta(x_delta);
-            this.tank.yDelta(y_delta);
+            hiddenTank.setX(hiddenTank.getX() + x_delta);
+            hiddenTank.setY(hiddenTank.getY() + y_delta);
         }
         else
         {
-            this.tank.xDelta(-1 * x_delta);
-            this.tank.yDelta(-1 * y_delta);
+            hiddenTank.setX(hiddenTank.getX() - x_delta);
+            hiddenTank.setY(hiddenTank.getY() - y_delta);
+
         }
+
+        if(!GameState.intersect(hiddenTank)){
+            if (ahead)
+            {
+                this.tank.xDelta(x_delta);
+                this.tank.yDelta(y_delta);
+         }
+            else
+            {
+                this.tank.xDelta(-1 * x_delta);
+                this.tank.yDelta(-1 * y_delta);
+                
+            }
+
+        }
+        
     }
 
 
