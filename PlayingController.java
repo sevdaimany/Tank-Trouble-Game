@@ -207,6 +207,9 @@ public class PlayingController implements Serializable
     // this method turns tank to the right
     private void turnRight()
     {
+        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),42,46);
+        hiddenTank.setRotate(tank.getTeta());
+
         this.tank.tetaDelta(Math.round(rotationSpeed));
     }
 
@@ -214,6 +217,9 @@ public class PlayingController implements Serializable
     // this method turns tank to the left
     private void turnLeft()
     {
+        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),42,46);
+        hiddenTank.setRotate(tank.getTeta());
+
         this.tank.tetaDelta(-Math.round(rotationSpeed));
     }
 }
