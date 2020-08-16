@@ -37,11 +37,16 @@ public class TileGrid
                 if (newMap[j][i] == 0)
                     map[i][j] = new Tile(i * 90, j * 90, 90, 90, "tileSand1.png");
 
-                else if (newMap[j][i] == 2) 
-                    map[i][j] = new Tile(i * 90, j *90, 90, 90, "wall2.png");
+                else if (newMap[j][i] == 2){  
+                    map[i][j] = new Wall(i * 90, j *90, 90, 90, "wall2.png");
+                    GameState.getWalls().add((Wall) map[i][j]);
+                }
 
-                else if (newMap[j][i] == 1) 
-                    map[i][j] = new Tile(i * 90, j * 90, 90, 90, "wall1.png");
+                else if (newMap[j][i] == 1){ 
+                    map[i][j] = new Wall(i * 90, j * 90, 90, 90, "wall1.png");
+                    GameState.getWalls().add((Wall) map[i][j]);
+
+                }
             }
         }
     }
