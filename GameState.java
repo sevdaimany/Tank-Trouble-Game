@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.shape.Rectangle;
 
 
 
@@ -127,6 +128,21 @@ public class GameState
     public static ArrayList<Wall> getWalls() {
         return walls;
     }
+
+
+    public static Boolean intersect(Rectangle tankRectangle) {
+        
+        for (Wall wall : GameState.getWalls()) {
+            if (tankRectangle.getBoundsInParent().intersects(wall.getRectangle().getBoundsInParent())) {
+                System.out.println("intersect");
+                return true;
+            }
+
+        }
+
+    return false;
+}
+
 
 
 }
