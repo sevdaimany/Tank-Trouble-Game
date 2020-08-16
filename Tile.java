@@ -28,7 +28,8 @@ public class Tile
     // tile's texture file's name
     private String textureName;
 
-
+    //tile's rectangle
+    private   Rectangle rectangle;
 
 
 
@@ -66,9 +67,8 @@ public class Tile
     public void draw()
     {
 
-        Rectangle rectangle = new Rectangle(x,y,width,height);
+        rectangle = new Rectangle(x,y,width,height);
         rectangle.setFill(new ImagePattern(image));
-
         Main.getRootPlayGround().getChildren().add(rectangle);
     }
 
@@ -101,6 +101,13 @@ public class Tile
      * @return tile's height
      */
     public float getHeight() { return height; }
+    /**
+     * @return tile's rectangle
+     */
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
+
 
 
 
