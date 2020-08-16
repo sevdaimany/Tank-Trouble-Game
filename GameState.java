@@ -30,7 +30,7 @@ public class GameState
     private static ArrayList<Ammo> firedAmmos;
 
     // walls of the map
-    private static ArrayList<Wall> walls;
+    private static ArrayList<Wall> walls = new ArrayList<>();
 
     // playing controllers
     private static ArrayList<PlayingController> playingControllers;
