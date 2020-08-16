@@ -52,7 +52,7 @@ public class GameState
         tanks = new ArrayList<>();
         firedAmmos = new ArrayList<>();
         playingControllers = new ArrayList<>();
-        Tank tank = new Tank("tank_blue.png");
+        Tank tank = new Tank(0,0,"tank_blue.png");
         PlayingController playingController = new PlayingController(tank, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.UP, KeyCode.DOWN);
         tanks.add(tank);
         playingControllers.add(playingController);
@@ -123,5 +123,10 @@ public class GameState
     public static ArrayList<PlayingController> getPlayingControllers() {
         return playingControllers;
     }
+
+    public static ArrayList<Wall> getWalls() {
+        return walls;
+    }
+
 
 }
