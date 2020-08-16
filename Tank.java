@@ -1,11 +1,6 @@
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.Serializable;
 
-import javafx.scene.image.Image;
+import java.io.Serializable;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Rectangle;
 
 
 
@@ -19,12 +14,9 @@ import javafx.scene.shape.Rectangle;
  * @author Mohammad Mahdi Malmasi
  * @version 0.7.0
  */
-public class Tank implements Serializable
+public class Tank  extends Tile implements Serializable
 {
             /*  Fields  */
-
-    // the image of tank that shown in GUI
-    private String imagePath;
 
     // health of the tank - an int in range:  0 <= x <= 100
     private int health;
@@ -32,9 +24,7 @@ public class Tank implements Serializable
     // ammo kind of the tank
     private Ammo ammo;
 
-    // tank cordite
-    private int x, y;
-
+   
     // tank angel 
     private float teta;
 
@@ -69,14 +59,10 @@ public class Tank implements Serializable
      * 
      * @param ImageFilePath : address of the image file
      */
-    public Tank(String imageFilePath)
+    public Tank(float x ,float y ,String imageFilePath)
     {
-        this.imagePath = imageFilePath;
-        FileInputStream input = null;
-        try { input = new FileInputStream(".//icons//" + "tank_blue.png"); }
-        catch (FileNotFoundException e) { e.printStackTrace(); }
-        Image image = new Image(input);
-        imageView = new ImageView(image);
+        super(x, y ,WIDTH ,HEIGHT , imageFilePath);
+        imageView = new ImageView(super.getImage());
         Main.getRootPlayGround().getChildren().add(imageView);
         health = 100;
         ammo = null;
@@ -96,14 +82,6 @@ public class Tank implements Serializable
     // * setter methods *
 
     /**
-     * @param x : new x of this tank to set
-     */
-    public void setX(int x) { this.x = x; }
-    /**
-     * @param y : new y of this tank to set
-     */
-    public void setY(int y) { this.y = y; }
-    /**
      * @param teta : new teta of this tank to set
      */
     public void setTeta(float teta) { this.teta = teta; }
@@ -116,21 +94,17 @@ public class Tank implements Serializable
     // * getter methods *
     
     /**
-     * @return path of the image file of Tank 
-     */
-    public String getImage() { return imagePath; }
-    /**
-     * @return x of Tank
-     */
-    public int getX() { return x; }
-    /**
-     * @return y of Tank
-     */
-    public int getY() { return y; }
-    /**
      * @return degree of Tank
      */
     public float getTeta() { return teta; }
+
+
+    /**
+     * @return tank's imageview
+     */
+    public ImageView getImageView() {
+        return imageView;
+    }
 
 
     /**
@@ -148,9 +122,9 @@ public class Tank implements Serializable
      * 
      * @param x_delta : amount of changes of x
      */
-    public void xDelta(int x_delta)
+    public void xDelta(float x_delta)
     {
-        this.x += x_delta;
+        super.setX(super.getX() + x_delta);
     }
 
 
@@ -159,9 +133,9 @@ public class Tank implements Serializable
      * 
      * @param y_delta : amount of changes of y
      */
-    public void yDelta(int y_delta)
+    public void yDelta(float y_delta)
     {
-        this.y += y_delta;
+        super.setY(super.getY() + y_delta);
     }
 
 
@@ -198,7 +172,7 @@ public class Tank implements Serializable
      */
     public boolean isHit(Ammo ammo)
     {
-        double d = distance(this.x, this.y, ammo.getX(), ammo.getY());
+        double d = distance(super.getX(), super.getY(), ammo.getX(), ammo.getY());
 
         boolean hit = (d <= this.tankRadius + ammo.getAmmoRadius() + 2.5);
 
@@ -215,7 +189,7 @@ public class Tank implements Serializable
 
 
     // this method return the distance between two object in game ground
-    private double distance(int x1, int y1, int x2, int y2)
+    private double distance(float x1, float y1,float x2,float y2)
     {
         return Math.abs(Math.sqrt((x1-x2)*(x1-x2) - (y1-y2)*(y1-y2)));
     }
@@ -225,7 +199,9 @@ public class Tank implements Serializable
     public void draw()
     {
         imageView.setRotate(teta);
-        imageView.relocate(x,y);
+        imageView.relocate(super.getX(),super.getY());
 
     }
+
+    
 }
