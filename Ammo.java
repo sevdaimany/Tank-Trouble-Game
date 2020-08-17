@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.2
+ * @version 0.1.3
  */
 public class Ammo extends Tile
 {
@@ -67,18 +67,6 @@ public class Ammo extends Tile
 
     // * getter methods *
 
-    /**
-     * @return path of the image file of Ammo 
-     */
-    public String getImage() { return imagePath; }
-    /**
-     * @return x of Ammo
-     */
-    public int getX() { return x; }
-    /**
-     * @return y of Ammo
-     */
-    public int getY() { return y; }
     /**
      * @return degree of Ammo
      */
