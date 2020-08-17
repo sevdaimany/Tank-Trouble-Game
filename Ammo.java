@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.0
+ * @version 0.3.0
  */
 public class Ammo extends Tile
 {
@@ -84,6 +84,19 @@ public class Ammo extends Tile
      */
     public int getDamage() { return damage; }
 
+
+
+    /**
+     * This method moves the ammo on the map 
+     */
+    public void move()
+    {
+        float x_delta = -1 * (float) Math.round(moveSpeed * (Math.cos(Math.toRadians(90 - teta))));
+        float y_delta =  (float) Math.round(moveSpeed * (Math.sin(Math.toRadians(90 - teta))));
+
+        setX(getX() + x_delta);
+        setY(getY() + y_delta);
+    }
 
 
     /**
