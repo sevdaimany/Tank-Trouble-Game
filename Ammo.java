@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.3
+ * @version 0.1.4
  */
 public class Ammo extends Tile
 {
@@ -23,6 +23,9 @@ public class Ammo extends Tile
 
     // radius of Ammo
     private float ammoRadius;
+
+    // move speed of ammo
+    private float ammoMoveSpeed;
 
 
 
@@ -51,6 +54,7 @@ public class Ammo extends Tile
 
         this.teta = teta;
         this.ammoRadius = ammoRadius;
+        this.ammoMoveSpeed = 10;
 
         this.damage = 50;
     }
