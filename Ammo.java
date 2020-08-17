@@ -9,9 +9,9 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.5
+ * @version 0.1.0
  */
-public class Ammo 
+public class Ammo extends Tile
 {
             /*  Fields  */
 
