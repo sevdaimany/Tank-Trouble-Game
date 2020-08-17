@@ -14,7 +14,7 @@ import javafx.scene.image.ImageView;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.7.1
+ * @version 0.7.2
  */
 public class Tank  extends Tile implements Serializable
 {
@@ -24,7 +24,7 @@ public class Tank  extends Tile implements Serializable
     private int health;
 
     // ammo kind of the tank
-    private Ammo ammo;
+    private transient Ammo ammo;
 
    
     // tank angel 
