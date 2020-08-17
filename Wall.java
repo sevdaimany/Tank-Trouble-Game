@@ -7,13 +7,13 @@
 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.0.5
+ * @author Sevda Imany
+ * 
+ * @version 0.0.6
  */
 public class Wall extends Tile
 {
-    
-
-    /* Constructor */
+         /* Constructor */
 
     /**
      * Create a new wall with given details
@@ -27,7 +27,4 @@ public class Wall extends Tile
     {
         super(x,y,width,height,imagePath);
     }
-
-
-
 }
