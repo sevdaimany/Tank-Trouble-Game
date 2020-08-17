@@ -13,7 +13,9 @@ import javafx.scene.shape.Rectangle;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.6
+ * @author Sevda Imany
+ * 
+ * @version 0.6.7
  */
 public class PlayingController implements Serializable
 {
@@ -169,8 +171,8 @@ public class PlayingController implements Serializable
 
         float teta = this.tank.getTeta();
 
-        int x_delta = -1 * (int) Math.round(moveSpeed * (Math.cos(Math.toRadians(90 -teta))));
-        int y_delta =  (int) Math.round(moveSpeed * (Math.sin(Math.toRadians(90 -teta))));
+        float x_delta = -1 * (float) Math.round(moveSpeed * (Math.cos(Math.toRadians(90 - teta))));
+        float y_delta =  (float) Math.round(moveSpeed * (Math.sin(Math.toRadians(90 - teta))));
 
 
 
