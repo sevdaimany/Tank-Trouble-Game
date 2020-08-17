@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.4
+ * @version 0.2.0
  */
 public class Ammo extends Tile
 {
@@ -83,4 +83,27 @@ public class Ammo extends Tile
      * @return damage of Ammo
      */
     public int getDamage() { return damage; }
+
+
+
+    /**
+     * This method changes the route of the ammo
+     * 
+     * 
+     * @param wall : which wall this ammo hit
+     */
+    public void hit(Wall wall)
+    {
+        if (Math.abs(this.getX() - wall.getX()) == Math.abs(this.getY() - wall.getY()))
+        {
+            this.teta += 180;
+            return;
+        }
+
+
+        char status = (Math.abs(this.getX() - wall.getX()) > Math.abs(this.getY() - wall.getY())) ? 'v': 'h';
+
+        if (status == 'v')
+            ammoMoveSpeed *= -1;
+    }
 }
