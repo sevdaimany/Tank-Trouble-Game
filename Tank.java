@@ -12,7 +12,9 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.0
+ * @author Sevda Imany
+ * 
+ * @version 0.7.1
  */
 public class Tank  extends Tile implements Serializable
 {
@@ -144,7 +146,7 @@ public class Tank  extends Tile implements Serializable
      * 
      * @param teta_delta : amount of changes of teta(in degree)
      */
-    public void tetaDelta(int teta_delta)
+    public void tetaDelta(float teta_delta)
     {
         this.teta += teta_delta;
     } 
@@ -195,13 +197,10 @@ public class Tank  extends Tile implements Serializable
     }
 
 
-    //this method draw a tank in game's playground
+    // this method draw a tank in game's playground
     public void draw()
     {
         imageView.setRotate(teta);
         imageView.relocate(super.getX(),super.getY());
-
     }
-
-    
 }
