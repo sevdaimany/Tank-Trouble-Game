@@ -9,20 +9,14 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.0
+ * @version 0.1.2
  */
 public class Ammo extends Tile
 {
             /*  Fields  */
 
-    // the image of Ammo that shown in GUI
-    private String imagePath;
-
     // damage of this Ammo
     private int damage;
-
-    // Ammo cordite
-    private int x, y;
 
     // Ammo angel - for movement direction 
     private float teta;
@@ -50,12 +44,11 @@ public class Ammo extends Tile
      * @param teta : Ammo throwing angle
      * @param ammoRadius : radius of Ammo
      */
-    public Ammo(String imagePath, int x, int y, float teta, float ammoRadius)
+    public Ammo(String imagePath, float x, float y, float teta, float ammoRadius)
     {
-        this.imagePath = imagePath;
+        super(x, y, 10, 10, imagePath);
 
-        this.x = x;
-        this.y = y;
+
         this.teta = teta;
         this.ammoRadius = ammoRadius;
 
