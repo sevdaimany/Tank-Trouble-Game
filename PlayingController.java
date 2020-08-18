@@ -15,7 +15,7 @@ import javafx.scene.shape.Rectangle;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.7.2
+ * @version 0.7.3
  */
 public class PlayingController
 {
@@ -113,6 +113,9 @@ public class PlayingController
 
         if (keyCode == turnLeftKey)
             isTurnLeftPressed = true;
+
+        if (keyCode == fireKey)
+            isFirePressed = true;
     }
 
 
