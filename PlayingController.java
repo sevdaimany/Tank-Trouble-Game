@@ -15,7 +15,7 @@ import javafx.scene.shape.Rectangle;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.6.7
+ * @version 0.7.1
  */
 public class PlayingController
 {
@@ -25,10 +25,11 @@ public class PlayingController
     private Tank tank;
 
     // control keys code
-    private KeyCode moveAheadKey, moveBackwardsKey, turnRightKey, turnLeftKey;
+    private KeyCode moveAheadKey, moveBackwardsKey, turnRightKey, turnLeftKey, fireKey;
 
     // this booleans save the keys status
-    private boolean isMoveAheadPressed, isMoveBackwardsPressed, isTurnRightPressed, isTurnLeftPressed;
+    private boolean isMoveAheadPressed, isMoveBackwardsPressed, 
+            isTurnRightPressed, isTurnLeftPressed, isFirePressed;
 
     // move speed of the tank (pixel/second)
     private float moveSpeed;
