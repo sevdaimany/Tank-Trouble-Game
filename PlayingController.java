@@ -15,7 +15,7 @@ import javafx.scene.shape.Rectangle;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.7.1
+ * @version 0.7.2
  */
 public class PlayingController
 {
@@ -61,7 +61,12 @@ public class PlayingController
      * @param turnLeftKey : code of the key that turns tank to the left
      * 
      */
-    public PlayingController(Tank playerTank, KeyCode moveAheadKey, KeyCode moveBackwardsKey, KeyCode turnRightKey, KeyCode turnLeftKey) 
+    public PlayingController(Tank playerTank, 
+                             KeyCode moveAheadKey, 
+                             KeyCode moveBackwardsKey, 
+                             KeyCode turnRightKey, 
+                             KeyCode turnLeftKey
+                             KeyCode fireKey) 
     {
         this.tank = playerTank;
 
@@ -69,9 +74,10 @@ public class PlayingController
         this.moveBackwardsKey = moveBackwardsKey;
         this.turnRightKey = turnRightKey;
         this.turnLeftKey = turnLeftKey;
+        this.fireKey =- fireKey;
 
 
-        isMoveAheadPressed = isMoveBackwardsPressed = isTurnRightPressed = isTurnLeftPressed = false;
+        isMoveAheadPressed = isMoveBackwardsPressed = isTurnRightPressed = isTurnLeftPressed = isFirePressed = false;
 
         moveSpeed = 2;
         rotationSpeed = 5;
