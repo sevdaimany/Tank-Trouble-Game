@@ -17,7 +17,7 @@ import javafx.scene.shape.Rectangle;
  * 
  * @version 0.6.7
  */
-public class PlayingController implements Serializable
+public class PlayingController
 {
             /*  Fields  */
 
@@ -38,9 +38,6 @@ public class PlayingController implements Serializable
 
     //tank's hidden rectangle
     private Rectangle hiddenTank;
-
-    
-    private static final long serialVersionUID = 585728211822624899L;
 
 
 
