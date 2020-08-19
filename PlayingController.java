@@ -15,7 +15,7 @@ import javafx.scene.shape.Rectangle;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.8.0
+ * @version 0.8.1
  */
 public class PlayingController
 {
@@ -147,6 +147,9 @@ public class PlayingController
      */
     public void updateTankState()
     {
+        if (isFirePressed)
+            fire();
+
         if (isMoveAheadPressed)
             moveTank(true);
 
