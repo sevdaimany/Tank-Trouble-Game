@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.4.1
+ * @version 0.5.0
  */
 public class Ammo extends Tile
 {
@@ -111,5 +111,17 @@ public class Ammo extends Tile
 
         if (status == 'v')
             ammoMoveSpeed *= -1;
+    }
+
+
+    
+
+    // this method claculate the x of the ammo
+    private float calculateX(float tankX, float tankTeta)
+    {
+        float x_delta = -1 * (float) Math.round(ammoMoveSpeed * (Math.cos(Math.toRadians(90 - tankTeta))));
+        x_delta += 47 * Math.signum(-1 * (float) Math.round(ammoMoveSpeed * (Math.cos(Math.toRadians(90 - tankTeta)))));
+        
+        return tankX + x_delta;
     }
 }
