@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.0
+ * @version 0.6.2
  */
 public class Ammo extends Tile
 {
@@ -48,7 +48,8 @@ public class Ammo extends Tile
     public Ammo(String imagePath, float tankX, float tankY, float tankTeta, int height, int width)
     {
         super(tankX, tankY, width, height, imagePath);
-
+        super.setX(calculateX(tankX, tankTeta));
+        super.setY(calculateY(tankY, tankTeta));
 
         this.teta = teta;
         this.ammoMoveSpeed = 10;
