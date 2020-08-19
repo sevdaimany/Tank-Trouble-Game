@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.15.1
+ * @version 0.15.2
  */
 public class DataBase
 {
@@ -48,6 +48,11 @@ public class DataBase
                                                  "green", "sand", "orange", 
                                                  "red", "yellow", "pink", 
                                                  "purple", "gray"};
+
+
+    // available ammo colors
+    private static final String[] ammosColors = {"Red", "Black", "Green", "Blue"};
+
 
 
     // path of the icons
