@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.4.0
+ * @version 0.4.1
  */
 public class Ammo extends Tile
 {
@@ -51,8 +51,6 @@ public class Ammo extends Tile
 
 
         this.teta = teta;
-        this.height = height;
-        this.width = width;
         this.ammoMoveSpeed = 10;
 
         this.damage = 50;
