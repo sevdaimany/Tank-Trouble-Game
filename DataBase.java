@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.16.0
+ * @version 0.16.1
  */
 public class DataBase
 {
@@ -182,6 +182,7 @@ public class DataBase
         downloadExplosions();
         downloadAwards();
         downloadGrounds();
+        downloadAmmos();
     }
 
 
