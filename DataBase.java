@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.16.1
+ * @version 0.17.0
  */
 public class DataBase
 {
@@ -478,6 +478,45 @@ public class DataBase
         return AWARD_IMAGES + "award" + num + png;
     }
 
+
+
+    // * ammos getter *
+
+    /**
+     * This method return the image of ammo by given color and kind
+     * 
+     * 
+     * @param color : one color from [Red, Black, Green, Blue]
+     * @param kind : normal('n'), heavy('h') or special('s')
+     * 
+     * @return null if your given color or kind is invalid
+     */
+    public static String getAmmo(String color, char kind)
+    {
+        boolean check = false;
+        for (String holdColorToCheck: ammosColors)
+            if (holdColorToCheck.equals(color))
+                check = true;
+        if (!check)
+            return null;
+
+        
+        switch (kind)
+        {
+            case 'n':
+                return AMMO_IMAGES + color + "Ammo" + png;
+
+            case 'h':
+                return AMMO_IMAGES + "heavy" + color + "Ammo" + png;
+
+            case 's':
+                return AMMO_IMAGES + "special" + color + "Ammo" + png;  
+
+
+            default: 
+                return null;
+        }
+    }
 
 
 
