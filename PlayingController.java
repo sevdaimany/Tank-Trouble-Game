@@ -65,7 +65,7 @@ public class PlayingController
                              KeyCode moveAheadKey, 
                              KeyCode moveBackwardsKey, 
                              KeyCode turnRightKey, 
-                             KeyCode turnLeftKey
+                             KeyCode turnLeftKey,
                              KeyCode fireKey) 
     {
         this.tank = playerTank;
@@ -74,7 +74,7 @@ public class PlayingController
         this.moveBackwardsKey = moveBackwardsKey;
         this.turnRightKey = turnRightKey;
         this.turnLeftKey = turnLeftKey;
-        this.fireKey =- fireKey;
+        this.fireKey = fireKey;
 
 
         isMoveAheadPressed = isMoveBackwardsPressed = isTurnRightPressed = isTurnLeftPressed = isFirePressed = false;
@@ -195,7 +195,7 @@ public class PlayingController
 
         }
 
-        if(!GameState.intersect(hiddenTank)){
+        if(!GameState.intersect(hiddenTank) && checkOutOfBound() ){
             if (ahead)
             {
                 this.tank.xDelta(x_delta);
@@ -211,6 +211,14 @@ public class PlayingController
         }
         
     }
+
+    
+    public boolean checkOutOfBound(){
+        if(hiddenTank.getX() >= 0 && hiddenTank.getX()<= GameState.getWidthPLayGround() && hiddenTank.getY() >= 0 && hiddenTank.getY() <= GameState.getHeightPLayGround())
+            return true;
+        return false;
+    }
+
 
 
     // this method turns tank to the right
