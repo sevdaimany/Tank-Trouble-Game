@@ -157,18 +157,24 @@ public class GameState
 
 
 
-    public static Boolean intersect(Rectangle tankRectangle) {
-        
+    public static Boolean intersect(Rectangle tile , Rectangle tile2) {
+        if (tile.getBoundsInParent().intersects(tile2.getBoundsInParent()))
+            return true;
+        return false;
+    }
+
+
+    public static boolean tank_Wall_intersect(Rectangle tankRectangle){
+
         for (Wall wall : GameState.getWalls()) {
-            if (tankRectangle.getBoundsInParent().intersects(wall.getRectangle().getBoundsInParent())) {
-                System.out.println("intersect");
+            if (intersect(tankRectangle , wall.getRectangle())) {
                 return true;
             }
 
         }
 
-    return false;
-}
+        return false;
+    }
 
 
 
