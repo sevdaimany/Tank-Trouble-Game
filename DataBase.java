@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.15.3
+ * @version 0.16.0
  */
 public class DataBase
 {
@@ -481,6 +481,9 @@ public class DataBase
 
 
 
+
+
+
     // return the path of the file of the player with given username
     private static String getPlayerPath(String username)
     {
@@ -597,6 +600,28 @@ public class DataBase
 
             if (!isFileAvailable(GROUND_IMAGES + "sandGround" + (i+1) + png))
                 downloader(groundsGithubLink + "sandGround" + (i+1) + png, GROUND_IMAGES, "sandGround" + (i+1) + png);
+        }
+    }
+
+
+    // this method download ammos file 
+    private static void downloadAmmos()
+    {
+        for (String color: ammosColors)
+        {
+            if (!isFileAvailable(AMMO_IMAGES + color + "Ammo" + png))
+                downloader(groundsGithubLink + color + "Ammo" + png, AMMO_IMAGES, color + "Ammo" + png);
+
+            if (!isFileAvailable(AMMO_IMAGES + "heavy" + color + "Ammo" + png))
+                downloader(groundsGithubLink + "heavy" + color + "Ammo" + png, AMMO_IMAGES, "heavy" + color + "Ammo" + png);
+
+
+            if (color.equals("Black"))
+                continue;
+
+
+            if (!isFileAvailable(AMMO_IMAGES + "special" + color + "Ammo" + png))
+                downloader(groundsGithubLink + "special" + color + "Ammo" + png, AMMO_IMAGES, "special" + color + "Ammo" + png);
         }
     }
 
