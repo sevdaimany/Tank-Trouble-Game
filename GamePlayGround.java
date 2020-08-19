@@ -30,8 +30,8 @@ public class GamePlayGround {
     public GamePlayGround(){
         TileGrid tileGrid =new TileGrid(newMap);
         tileGrid.draw();
-
-
+        GameState.setHeightPLayGround((newMap.length- 0.5) * 90);
+        GameState.setWidthPLayGround((newMap[0].length- 0.5) *90);
     }
 
 

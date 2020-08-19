@@ -35,6 +35,14 @@ public class GameState
     // playing controllers
     private static ArrayList<PlayingController> playingControllers;
 
+    //width of game's playground    
+    private static double widthPLayGround;
+
+    //height of game's playground
+    private static double heightPLayGround;
+
+
+
 
 
 
@@ -128,6 +136,25 @@ public class GameState
     public static ArrayList<Wall> getWalls() {
         return walls;
     }
+
+    public static double getWidthPLayGround() {
+        return widthPLayGround;
+    }
+
+   
+    public static double getHeightPLayGround() {
+        return heightPLayGround;
+    }
+
+    public static void setHeightPLayGround(double heightPLayGround) {
+        GameState.heightPLayGround = heightPLayGround;
+    }
+
+
+    public static void setWidthPLayGround(double widthPLayGround) {
+        GameState.widthPLayGround = widthPLayGround;
+    }
+
 
 
     public static Boolean intersect(Rectangle tankRectangle) {
