@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.2
+ * @version 0.3.3
  */
 public class Ammo extends Tile
 {
@@ -93,8 +93,8 @@ public class Ammo extends Tile
      */
     public void move()
     {
-        float x_delta = -1 * (float) Math.round(moveSpeed * (Math.cos(Math.toRadians(90 - teta))));
-        float y_delta =  (float) Math.round(moveSpeed * (Math.sin(Math.toRadians(90 - teta))));
+        float x_delta = -1 * (float) Math.round(ammoMoveSpeed * (Math.cos(Math.toRadians(90 - teta))));
+        float y_delta =  (float) Math.round(ammoMoveSpeed * (Math.sin(Math.toRadians(90 - teta))));
 
         setX(getX() + x_delta);
         setY(getY() + y_delta);
