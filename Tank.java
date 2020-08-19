@@ -14,7 +14,7 @@ import javafx.scene.image.ImageView;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.7.2
+ * @version 0.7.3
  */
 public class Tank  extends Tile implements Serializable
 {
@@ -99,23 +99,18 @@ public class Tank  extends Tile implements Serializable
      * @return degree of Tank
      */
     public float getTeta() { return teta; }
-
-
     /**
      * @return tank's imageview
      */
-    public ImageView getImageView() {
-        return imageView;
-    }
-
-
+    public ImageView getImageView() { return imageView; }
     /**
      * @return {@code true} if tank.health > 0
      */
-    public boolean isAlive() 
-    {
-        return  (this.health > 0);
-    }
+    public boolean isAlive() { return  (this.health > 0); }
+    /**
+     * @return the ammo kind of this tank
+     */
+    public Ammo getAmmo() { return ammo; }
 
 
 
