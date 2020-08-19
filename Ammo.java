@@ -9,7 +9,7 @@
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.0
+ * @version 0.3.2
  */
 public class Ammo extends Tile
 {
@@ -21,8 +21,8 @@ public class Ammo extends Tile
     // Ammo angel - for movement direction 
     private float teta;
 
-    // radius of Ammo
-    private float ammoRadius;
+    // demission of ammo
+    private int height, width;
 
     // move speed of ammo
     private float ammoMoveSpeed;
@@ -45,15 +45,17 @@ public class Ammo extends Tile
      * @param x : x of the Ammo when Tank fire it 
      * @param y : y of the Ammo when Tank fire it  
      * @param teta : Ammo throwing angle
-     * @param ammoRadius : radius of Ammo
+     * @param height : height of the ammo image
+     * @param width : width of the ammo image
      */
-    public Ammo(String imagePath, float x, float y, float teta, float ammoRadius)
+    public Ammo(String imagePath, float x, float y, float teta, int height, int width)
     {
         super(x, y, 10, 10, imagePath);
 
 
         this.teta = teta;
-        this.ammoRadius = ammoRadius;
+        this.height = height;
+        this.width = width;
         this.ammoMoveSpeed = 10;
 
         this.damage = 50;
