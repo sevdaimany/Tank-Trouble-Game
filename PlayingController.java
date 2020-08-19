@@ -15,7 +15,7 @@ import javafx.scene.shape.Rectangle;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.7.3
+ * @version 0.8.0
  */
 public class PlayingController
 {
@@ -171,7 +171,6 @@ public class PlayingController
     // param ahead : set this true to go ahead. if you set it false, tanks will go backwards
     private void moveTank(boolean ahead)
     {
-
         hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),39,44);
         hiddenTank.setRotate(tank.getTeta());
 
@@ -238,5 +237,18 @@ public class PlayingController
         hiddenTank.setRotate(tank.getTeta());
 
         this.tank.tetaDelta(-Math.round(rotationSpeed));
+    }
+
+
+    // this method fire ammo
+    private void fire()
+    {
+        Ammo ammo = this.tank.getAmmo();
+        if (ammo == null)
+            ammo = new NormalAmmo("Red", this.tank.getX(), this.tank.getY(), this.tank.getTeta());
+
+
+        GameState.addFiredAmmo(ammo);
+        isFirePressed = false;
     }
 }
