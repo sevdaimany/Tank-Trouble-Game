@@ -3,6 +3,7 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
+import sun.tools.tree.ThisExpression;
 
 
 
@@ -14,7 +15,7 @@ import javafx.scene.shape.Rectangle;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.3.0
+ * @version 0.4.0
  */
 public class GameState 
 {
@@ -78,6 +79,17 @@ public class GameState
     {
         players.add(player);
         tanks.add(player.getPlayerTank());
+    }
+
+
+    /**
+     * This method add the given ammo to the fired ammo list
+     * 
+     * @param ammo : ammo to add
+     */
+    public static void addFiredAmmo(Ammo ammo)
+    {
+        firedAmmos.add(ammo);
     }
 
 
@@ -175,7 +187,4 @@ public class GameState
 
         return false;
     }
-
-
-
 }
