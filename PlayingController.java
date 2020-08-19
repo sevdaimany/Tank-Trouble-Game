@@ -172,7 +172,7 @@ public class PlayingController
     private void moveTank(boolean ahead)
     {
 
-        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),42,46);
+        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),39,44);
         hiddenTank.setRotate(tank.getTeta());
 
 
@@ -195,7 +195,7 @@ public class PlayingController
 
         }
 
-        if(!GameState.intersect(hiddenTank) && checkOutOfBound() ){
+        if(!GameState.tank_Wall_intersect(hiddenTank) && checkOutOfBound() ){
             if (ahead)
             {
                 this.tank.xDelta(x_delta);
