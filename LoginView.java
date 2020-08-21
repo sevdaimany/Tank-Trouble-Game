@@ -97,7 +97,7 @@ public class LoginView extends BorderPane
         FileInputStream input = null;
         try 
         {
-            input = new FileInputStream(".//icons//pic.jpg");
+            input = new FileInputStream(DataBase.getBackgroundIconPath());
         }catch (Exception e){}
 
         Image image = new Image(input);
@@ -168,7 +168,7 @@ public class LoginView extends BorderPane
 
             FileInputStream input = null;
             try {
-                input = new FileInputStream(".//icons//q.png");
+                input = new FileInputStream(DataBase.getQButtonImage());
             }catch(IOException e){}
             Image imageQ = new Image(input);
             ImageView imageViewQ = new ImageView(imageQ);
@@ -176,7 +176,7 @@ public class LoginView extends BorderPane
 
             FileInputStream input1 = null;
             try {
-                input1 = new FileInputStream(".//icons//wasd.png");
+                input1 = new FileInputStream(DataBase.getWsadKeysImage());
             }catch(IOException e){}
             Image imageWASD = new Image(input1);
             ImageView imageViewWASD = new ImageView(imageWASD);
@@ -188,7 +188,7 @@ public class LoginView extends BorderPane
 
             FileInputStream input2 = null;
             try {
-                input2 = new FileInputStream(".//icons//m.png");
+                input2 = new FileInputStream(DataBase.getMButtonImage());
             }catch(IOException e){}
             Image imageM = new Image(input2);
             ImageView imageViewM = new ImageView(imageM);
@@ -197,7 +197,7 @@ public class LoginView extends BorderPane
 
             FileInputStream input3 = null;
             try {
-                input3 = new FileInputStream(".//icons//updown.png");
+                input3 = new FileInputStream(DataBase.getUpdownKeysImage());
             }catch(IOException e){}
             Image imageUPDOWN = new Image(input3);
             ImageView imageViewUPDOWN = new ImageView(imageUPDOWN);
@@ -207,7 +207,7 @@ public class LoginView extends BorderPane
 
             FileInputStream input4 = null;
             try {
-                input4 = new FileInputStream(".//icons//mouse.png");
+                input4 = new FileInputStream(DataBase.getMouseImage());
             }catch(IOException e){}
             Image imageMOUSE = new Image(input4);
             ImageView imageViewMOUSE = new ImageView(imageMOUSE);
@@ -261,7 +261,7 @@ public class LoginView extends BorderPane
             FileInputStream input5 = null;
             try
             {
-                input5 = new FileInputStream(".//icons//pic.jpg");
+                input5 = new FileInputStream(DataBase.getBackgroundIconPath());
             }catch (Exception e){}
 
             Image image = new Image(input5);

@@ -125,7 +125,7 @@ public class RegisterView extends BorderPane
         //set menu button
         FileInputStream input1 = null;
 
-        try { input1 = new FileInputStream(".//icons//go_back.png"); }
+        try { input1 = new FileInputStream(DataBase.getGoBackIcon()); }
         catch (IOException e){}
 
         Image icon1 = new Image(input1);
@@ -137,7 +137,7 @@ public class RegisterView extends BorderPane
         // background picture
         FileInputStream input = null;
 
-        try { input = new FileInputStream(".//icons//pic.jpg"); } 
+        try { input = new FileInputStream(DataBase.getBackgroundIconPath()); } 
         catch (Exception e) {}
 
         Image image = new Image(input);

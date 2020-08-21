@@ -61,7 +61,7 @@ public class GameState
         tanks = new ArrayList<>();
         firedAmmos = new ArrayList<>();
         playingControllers = new ArrayList<>();
-        Tank tank = new Tank(0,0,"tank_blue.png");
+        Tank tank = new Tank(0,0,"./.TANK_TROUBLE_DATA_BASE/PHOTOS/TANKS/blackTank_kind1.png");
         PlayingController playingController = new PlayingController(tank, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.UP, KeyCode.DOWN,KeyCode.M);
         tanks.add(tank);
         playingControllers.add(playingController);

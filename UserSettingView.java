@@ -132,7 +132,7 @@ public class UserSettingView extends BorderPane
         //background pic
        FileInputStream input = null;
 
-       try { input = new FileInputStream(".//icons//pic.jpg"); }
+       try { input = new FileInputStream(DataBase.getBackgroundIconPath()); }
        catch (Exception e){}
 
        Image image = new Image(input);

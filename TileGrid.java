@@ -35,15 +35,15 @@ public class TileGrid
             for (int j = 0; j < map[i].length; j++) 
             {
                 if (newMap[j][i] == 0)
-                    map[i][j] = new Tile(i * 90, j * 90, 90, 90, "tileSand1.png");
+                    map[i][j] = new Tile(i * 90, j * 90, 90, 90, DataBase.getGroundImageFilePath("sand"));
 
                 else if (newMap[j][i] == 2){  
-                    map[i][j] = new Wall(i * 90, j *90, 90, 90, "wall2.png");
+                    map[i][j] = new Wall(i * 90, j *90, 90, 90,  DataBase.getWallImageFilePath("wood"));
                     GameState.getWalls().add((Wall) map[i][j]);
                 }
 
                 else if (newMap[j][i] == 1){ 
-                    map[i][j] = new Wall(i * 90, j * 90, 90, 90, "wall1.png");
+                    map[i][j] = new Wall(i * 90, j * 90, 90, 90, DataBase.getWallImageFilePath("metal"));
                     GameState.getWalls().add((Wall) map[i][j]);
 
                 }

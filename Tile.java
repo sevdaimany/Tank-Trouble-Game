@@ -51,7 +51,7 @@ public class Tile
 
         FileInputStream input = null;
 
-        try { input = new FileInputStream(".//icons//" + textureName); } 
+        try { input = new FileInputStream(textureName); } 
         catch (FileNotFoundException e) { e.printStackTrace(); }
 
 

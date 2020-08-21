@@ -1,5 +1,4 @@
-import javafx.animation.FadeTransition;
-import javafx.animation.Transition;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -7,12 +6,6 @@ import javafx.scene.effect.BlendMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.util.Duration;
 import java.io.FileInputStream;
 import javafx.stage.Screen;
 import javafx.geometry.Rectangle2D;
@@ -80,35 +73,35 @@ public class MenuView extends BorderPane
      */      
     public MenuView() throws  Exception
     {
-        FileInputStream input1 = new FileInputStream(".//icons//tank_blue.png");
+        FileInputStream input1 = new FileInputStream(DataBase.getOnePlayerIconPath());
         Image icon1 = new Image(input1);
         ImageView imageView1 = new ImageView(icon1);
         button1 = new Button("   1 PLAYER   ", imageView1);
 
 
         // create 2 players button
-        FileInputStream input2 = new FileInputStream(".//icons//tank_green.png");
+        FileInputStream input2 = new FileInputStream(DataBase.getTwoPLAyersIconPath());
         Image icon2 = new Image(input2);
         ImageView imageView2 = new ImageView(icon2);
         button2 = new Button("   2 PLAYERS  ", imageView2);
 
 
         // create 3 players button
-        FileInputStream input3 = new FileInputStream(".//icons//tank_sand.png");
+        FileInputStream input3 = new FileInputStream(DataBase.getThreePlayersIconPath());
         Image icon3 = new Image(input3);
         ImageView imageView3 = new ImageView(icon3);
         button3 = new Button("   3 PLAYERS  ", imageView3);
 
 
         // create server button
-        FileInputStream input4 = new FileInputStream(".//icons//tank_red.png");
+        FileInputStream input4 = new FileInputStream(DataBase.getServerModeIconPath());
         Image icon4 = new Image(input4);
         ImageView imageView4 = new ImageView(icon4);
         button4 = new Button("    SERVER    ", imageView4);
 
 
         // create leaboard button
-        FileInputStream input5 = new FileInputStream(".//icons//star.png");
+        FileInputStream input5 = new FileInputStream(DataBase.getLeaderboardsIconPath());
         Image icon5 = new Image(input5);
         ImageView imageView5 = new ImageView(icon5);
         button5 = new Button("   LEABOARDS  ", imageView5);
@@ -138,7 +131,7 @@ public class MenuView extends BorderPane
         // textTransition.play();
 
 
-        FileInputStream inputLogo = new FileInputStream(".//icons//logo.png");
+        FileInputStream inputLogo = new FileInputStream(DataBase.getLogoImage());
         Image imageLogo = new Image(inputLogo);
         ImageView imageViewLogo = new ImageView(imageLogo);
         imageViewLogo.setBlendMode(BlendMode.DARKEN);
@@ -150,7 +143,7 @@ public class MenuView extends BorderPane
 
 
         //creating register button
-        FileInputStream inputRegister = new FileInputStream(".//icons//shotOrange.png");
+        FileInputStream inputRegister = new FileInputStream(DataBase.getRegisterIconPath());
         Image iconRegister = new Image(inputRegister);
         ImageView imageViewRegister = new ImageView(iconRegister);
         registerBTN = new Button("   REGISTER   ", imageViewRegister);
@@ -162,14 +155,14 @@ public class MenuView extends BorderPane
 
 
         //creating info button
-        FileInputStream inputInfo = new FileInputStream(".//icons//info.png");
+        FileInputStream inputInfo = new FileInputStream(DataBase.getInfoIconPath());
         Image iconInfo = new Image(inputInfo);
         ImageView imageViewInfo = new ImageView(iconInfo);
         infoBTN = new Button("     INFO     ", imageViewInfo);
 
 
         //creating setting button
-        FileInputStream inputSetting = new FileInputStream(".//icons//setting.png");
+        FileInputStream inputSetting = new FileInputStream(DataBase.getSettingIconPath());
         Image iconSetting = new Image(inputSetting);
         ImageView imageViewSetting = new ImageView(iconSetting);
         settingBTN = new Button("  SETTING  ", imageViewSetting);
@@ -182,7 +175,7 @@ public class MenuView extends BorderPane
 
 
         //background picture
-        FileInputStream input = new FileInputStream(".//icons//pic.jpg");
+        FileInputStream input = new FileInputStream(DataBase.getBackgroundIconPath());
         Image image = new Image(input);
         BackgroundImage backgroundimage = new BackgroundImage(image,
                 BackgroundRepeat.NO_REPEAT,
