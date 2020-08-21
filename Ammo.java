@@ -1,7 +1,4 @@
-
-
-
-
+import javafx.scene.image.ImageView;
 
 /**
  * This class represent an Ammo for Tank in game
@@ -23,6 +20,9 @@ public class Ammo extends Tile
 
     // move speed of ammo
     private float ammoMoveSpeed;
+
+    //ammo's imageview
+    private ImageView imageView;
 
 
 
@@ -51,7 +51,11 @@ public class Ammo extends Tile
         super.setX(calculateX(tankX, tankTeta));
         super.setY(calculateY(tankY, tankTeta));
 
-        this.teta = teta;
+        imageView = new ImageView(super.getImage());
+        Main.getRootPlayGround().getChildren().add(imageView);
+
+
+        this.teta = tankTeta;
         this.ammoMoveSpeed = 10;
 
         this.damage = 50;
@@ -136,5 +140,12 @@ public class Ammo extends Tile
         y_delta += 47 * Math.signum((float) Math.round(ammoMoveSpeed * (Math.sin(Math.toRadians(90 - teta)))));
         
         return tankY + y_delta;
+    }
+
+    //this method draw an ammo in game playground
+    public void draw()
+    {
+        imageView.setRotate(teta + 180);
+        imageView.relocate(super.getX(),super.getY());
     }
 }
