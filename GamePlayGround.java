@@ -42,6 +42,10 @@ public class GamePlayGround {
         for (Tank tank:GameState.getTanks()){
             tank.draw();
         }
+
+        for (Ammo ammo: GameState.getFiredAmmos()){
+            ammo.draw();
+        }
     }
 
 
