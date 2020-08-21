@@ -1,7 +1,8 @@
 
 import javafx.animation.AnimationTimer;
 
-public class GameLoop {
+public class GameLoop 
+{
 
     private GameView gameView;
 
@@ -19,7 +20,7 @@ public class GameLoop {
         final AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long timestamp) {
-                GameState.updateTankState();
+                GameState.updateStates();
                 gameView.getGamePlayGround().render();
             }
         };
