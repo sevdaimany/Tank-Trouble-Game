@@ -414,7 +414,7 @@ public class DataBase
             return null;
 
 
-        return PHOTOS_FOLDER + GROUND_IMAGES + which + "Ground" + (rand.nextInt()%2 + 1) + png;
+        return GROUND_IMAGES + which + "Ground" + (rand.nextInt(50)%2 + 1) + png;
     }
 
 
