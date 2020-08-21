@@ -246,10 +246,8 @@ public class PlayingController
     // this method fire ammo
     private void fire()
     {
-        Ammo ammo = this.tank.getAmmo();
-        if (ammo == null)
-            ammo = new NormalAmmo("Red", this.tank.getX(), this.tank.getY(), this.tank.getTeta());
-
+        Ammo ammo = new NormalAmmo("Red", this.tank.getX(), this.tank.getY(), this.tank.getTeta());
+        this.tank.setAmmo(ammo);
 
         GameState.addFiredAmmo(ammo);
         isFirePressed = false;
