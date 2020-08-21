@@ -15,7 +15,7 @@ import sun.tools.tree.ThisExpression;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.5.0
+ * @version 0.6.0
  */
 public class GameState 
 {
@@ -67,6 +67,16 @@ public class GameState
         tanks.add(tank);
         playingControllers.add(playingController);
         keyholder();
+    }
+
+
+    /**
+     * This method updates the state of the game
+     */
+    public static void updateStates()
+    {
+        updateTankState();
+        updateFiredAmmosState();
     }
 
 
