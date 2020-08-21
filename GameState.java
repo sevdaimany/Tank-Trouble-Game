@@ -15,7 +15,7 @@ import sun.tools.tree.ThisExpression;
  * @author Mohammad Mahdi Malmasi
  * @author Sevda Imany
  * 
- * @version 0.4.1
+ * @version 0.5.0
  */
 public class GameState 
 {
@@ -100,7 +100,14 @@ public class GameState
     {
         for (PlayingController controller : playingControllers)
             controller.updateTankState();
+    }
 
+
+    /**
+     * This method updates fired ammos state
+     */
+    public static void updateFiredAmmosState()
+    {
         for (Ammo ammo: firedAmmos)
             ammo.move();
     }
