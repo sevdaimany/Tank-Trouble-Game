@@ -167,29 +167,29 @@ public class Tank  extends Tile implements Serializable
      * @param ammo : ammo to check
      * @return {@code true} if the given ammo has hit the tank 
      */
-    public boolean isHit(Ammo ammo)
-    {
-        double d = distance(super.getX(), super.getY(), ammo.getX(), ammo.getY());
+    // public boolean isHit(Ammo ammo)
+    // {
+    //     double d = distance(super.getX(), super.getY(), ammo.getX(), ammo.getY());
 
-        boolean hit = (d <= this.tankRadius + ammo.getAmmoRadius() + 2.5);
-
-
-        if (hit)
-            this.health -= ammo.getDamage();
+    //     boolean hit = (d <= this.tankRadius + ammo.getAmmoRadius() + 2.5);
 
 
-        return hit;
-    }
+    //     if (hit)
+    //         this.health -= ammo.getDamage();
+
+
+    //     return hit;
+    // }
 
 
 
 
 
     // this method return the distance between two object in game ground
-    private double distance(float x1, float y1,float x2,float y2)
-    {
-        return Math.abs(Math.sqrt((x1-x2)*(x1-x2) - (y1-y2)*(y1-y2)));
-    }
+    // private double distance(float x1, float y1,float x2,float y2)
+    // {
+    //     return Math.abs(Math.sqrt((x1-x2)*(x1-x2) - (y1-y2)*(y1-y2)));
+    // }
 
 
     // this method draw a tank in game's playground

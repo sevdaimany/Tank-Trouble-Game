@@ -79,7 +79,7 @@ public class Player extends Identity implements Serializable
      */
     public void createPlayerTank(String imageFilePath)
     {
-        playerTank = new Tank(imageFilePath);
+        // playerTank = new Tank(imageFilePath);
     }
 
 

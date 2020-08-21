@@ -3,7 +3,6 @@ import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
-import sun.tools.tree.ThisExpression;
 
 
 
@@ -63,7 +62,7 @@ public class GameState
         firedAmmos = new ArrayList<>();
         playingControllers = new ArrayList<>();
         Tank tank = new Tank(0,0,"tank_blue.png");
-        PlayingController playingController = new PlayingController(tank, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.UP, KeyCode.DOWN);
+        PlayingController playingController = new PlayingController(tank, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.UP, KeyCode.DOWN,KeyCode.M);
         tanks.add(tank);
         playingControllers.add(playingController);
         keyholder();
@@ -131,7 +130,6 @@ public class GameState
         Main.getStage().getScene().setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                System.out.println("keypress");
                 for (PlayingController controller : playingControllers) {
                     controller.keyPressEvent(event.getCode());
                 }

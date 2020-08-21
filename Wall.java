@@ -1,3 +1,4 @@
+import javafx.scene.image.ImageView;
 
 /**
  * <br>This class represent a wall in game.</br>
@@ -15,6 +16,9 @@ public class Wall extends Tile
 {
          /* Constructor */
 
+         private ImageView imageView;
+
+
     /**
      * Create a new wall with given details
      * 
@@ -26,5 +30,12 @@ public class Wall extends Tile
     public Wall(float x, float y, float width, float height,String imagePath)
     {
         super(x,y,width,height,imagePath);
+        imageView = new ImageView(super.getImage());
+
     }
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
 }
