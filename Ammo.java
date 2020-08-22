@@ -129,7 +129,9 @@ public class Ammo extends Tile
         float x_delta = -1 * (float) Math.round(32 * (Math.cos(Math.toRadians(90 - tankTeta))));
         x_delta += 47 * Math.signum(-1 * (float) Math.round(32 * (Math.cos(Math.toRadians(90 - tankTeta)))));
         
-        return tankX + x_delta;
+        float x_delta2 =  ((float)((Math.cos(Math.toRadians(90 - teta)))) /(float) Math.abs((Math.cos(Math.toRadians(90 - teta)))))  * 21  ;
+
+        return tankX + x_delta2 + x_delta;
     }
 
 
@@ -138,8 +140,11 @@ public class Ammo extends Tile
     {
         float y_delta = (float) Math.round(32 * (Math.sin(Math.toRadians(90 - teta))));
         y_delta += 47 * Math.signum((float) Math.round(32 * (Math.sin(Math.toRadians(90 - teta)))));
+
+        float y_delta2 =  ((float)((Math.sin(Math.toRadians(90 - teta)))) / (float) Math.abs((Math.sin(Math.toRadians(90 - teta))))) * 21  ;
+
         
-        return tankY + y_delta;
+        return tankY +  y_delta2 +y_delta;
     }
 
     //this method draw an ammo in game playground
