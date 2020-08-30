@@ -39,27 +39,25 @@ public class Ammo extends Tile
      * 
      * 
      * @param imagePath : address of the image file
-     * @param tankX : x of the Ammo when Tank fire it 
-     * @param tankY : y of the Ammo when Tank fire it  
-     * @param tankTeta : Ammo throwing angle
      * @param height : height of the ammo image
      * @param width : width of the ammo image
      */
-    public Ammo(String imagePath, float tankX, float tankY, float tankTeta, int height, int width)
+    public Ammo(String imagePath, int height, int width , Tank tank)
     {
-        super(tankX, tankY, width, height, imagePath);
-        super.setX(calculateX(tankX, tankTeta));
-        super.setY(calculateY(tankY, tankTeta));
+        super(tank.getX(), tank.getY(), width, height, imagePath);
+        this.teta = tank.getTeta();
+        super.setX(calculateX(tank.getX(), teta));
+        super.setY(calculateY(tank.getY(), teta));
 
         imageView = new ImageView(super.getImage());
         Main.getRootPlayGround().getChildren().add(imageView);
 
 
-        this.teta = tankTeta;
-        this.ammoMoveSpeed = 10;
+        this.ammoMoveSpeed = 1;
 
         this.damage = 50;
     }
+
 
 
 
@@ -126,26 +124,76 @@ public class Ammo extends Tile
     // this method calculate the x of the ammo
     private float calculateX(float tankX, float tankTeta)
     {
-        float x_delta = -1 * (float) Math.round(32 * (Math.cos(Math.toRadians(90 - tankTeta))));
-        x_delta += 47 * Math.signum(-1 * (float) Math.round(32 * (Math.cos(Math.toRadians(90 - tankTeta)))));
+ 
+        float teta = (tankTeta % 360 + 360) % 360;
         
-        float x_delta2 =  ((float)((Math.cos(Math.toRadians(90 - teta)))) /(float) Math.abs((Math.cos(Math.toRadians(90 - teta)))))  * 21  ;
+        float x_delta2 = 0;
+        float x_delta = 0;
 
-        return tankX + x_delta2 + x_delta;
+        if(teta >= 270 && teta < 360) {
+             x_delta2 = -1 * (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
+             x_delta = -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 23;
+        }
+        else if ( teta >= 0 && teta < 90 ){
+            x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
+            x_delta =  -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 25;
+        }
+        else if ( teta >= 90 && teta <= 180 ){
+            x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
+            x_delta =   -1 *(float) Math.cos(Math.toRadians(90 - tankTeta)) * 27;
+        }
+        else if ( teta > 180 && teta < 270 ){
+            x_delta2 = -1 *  (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
+            x_delta  =-1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 27;
+        }
+
+
+        return tankX + x_delta2  + x_delta ;
     }
+
+
 
 
     // this method calculate the y of the ammo
     private float calculateY(float tankY, float tankTeta)
     {
-        float y_delta = (float) Math.round(32 * (Math.sin(Math.toRadians(90 - teta))));
-        y_delta += 47 * Math.signum((float) Math.round(32 * (Math.sin(Math.toRadians(90 - teta)))));
 
-        float y_delta2 =  ((float)((Math.sin(Math.toRadians(90 - teta)))) / (float) Math.abs((Math.sin(Math.toRadians(90 - teta))))) * 21  ;
+        float teta = (tankTeta % 360 + 360) % 360;
 
-        
-        return tankY +  y_delta2 +y_delta;
+
+        float y_delta2 = 0;
+        float y_delta = 0;
+
+        if(teta > 270 && teta < 360) {
+             y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
+             y_delta = (float) Math.sin(Math.toRadians(90 - tankTeta)) * 23;
+        }
+
+        else if ( teta >= 0 && teta < 90 ) {
+            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
+            y_delta = (float) Math.sin(Math.toRadians(90 - tankTeta)) * 25;
+        }
+
+        else if ( teta > 90 && teta < 180 ) {
+            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
+            y_delta =  (float) Math.cos(Math.toRadians(90 - tankTeta)) * 18;
+        }
+
+        else if ( teta >= 180 && teta < 270 ) {
+            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
+            y_delta =  -1 *(float) Math.cos(Math.toRadians(90 - tankTeta)) * 18;
+        }
+
+
+        if( teta == 90  || teta == 270){
+            y_delta += 16;
+        }
+
+
+
+        return tankY +  y_delta2  +y_delta;
     }
+
 
     //this method draw an ammo in game playground
     public void draw()
