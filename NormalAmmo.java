@@ -24,8 +24,8 @@ public class NormalAmmo extends Ammo
 
          /* Constructor */
 
-    public NormalAmmo(String color, float tankX, float tankY, float tankTeta)
-    {
-        super(DataBase.getAmmo(color, 'n'), tankX, tankY, tankTeta, 8, 18);
-    }
+         public NormalAmmo(String color, Tank tank)
+         {
+             super(DataBase.getAmmo(color, 'n'), 8, 18 , tank);
+         }
 }

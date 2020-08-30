@@ -147,20 +147,24 @@ public class PlayingController
      */
     public void updateTankState()
     {
+        
+        if (isMoveAheadPressed)
+        moveTank(true);
+        
+        if (isMoveBackwardsPressed)
+        moveTank(false);
+        
+        if (isTurnRightPressed)
+        turnRight();
+        
+        if (isTurnLeftPressed)
+        turnLeft();
+        
+        
         if (isFirePressed)
             fire();
 
-        if (isMoveAheadPressed)
-            moveTank(true);
-
-        if (isMoveBackwardsPressed)
-            moveTank(false);
-
-        if (isTurnRightPressed)
-            turnRight();
-
-        if (isTurnLeftPressed)
-            turnLeft();
+        
     }
 
     
@@ -246,7 +250,8 @@ public class PlayingController
     // this method fire ammo
     private void fire()
     {
-        Ammo ammo = new NormalAmmo("Red", this.tank.getX(), this.tank.getY(), this.tank.getTeta());
+        Ammo ammo = new NormalAmmo("Red" , this.tank);
+
         this.tank.setAmmo(ammo);
 
         GameState.addFiredAmmo(ammo);

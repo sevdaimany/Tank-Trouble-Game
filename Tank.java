@@ -68,6 +68,7 @@ public class Tank  extends Tile implements Serializable
         Main.getRootPlayGround().getChildren().add(imageView);
         health = 100;
         ammo = null;
+        teta = 0;
     }
 
 
