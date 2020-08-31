@@ -81,6 +81,12 @@ public class Ammo extends Tile
     public int getDamage() { return damage; }
 
 
+     /**
+     * @return ammo's imageView
+     */
+    public ImageView getImageView() {
+        return imageView;
+    }
 
     /**
      * This method moves the ammo on the map 
