@@ -1,3 +1,9 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+
 /**
  * This class represent a tile grid in game
  * 
@@ -72,9 +78,15 @@ public class TileGrid
      */
     public static void setTile(int xcoord, int  ycoord)
     {
-        map[xcoord][ycoord] = new Tile(xcoord*90,ycoord*90,90,90,DataBase.getGroundImageFilePath("sand"));
-        map[xcoord][ycoord].draw();
+        FileInputStream input = null;
 
+        try { input = new FileInputStream(DataBase.getGroundImageFilePath("sand")); }
+        catch (FileNotFoundException e) { e.printStackTrace(); }
+
+
+        Image image = new Image(input);
+
+        map[xcoord][ycoord].setFill(new ImagePattern(image));
     }
 
 
