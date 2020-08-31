@@ -122,7 +122,7 @@ public class Ammo extends Tile
     
 
     // this method calculate the x of the ammo
-    private float calculateX(float tankX, float tankTeta)
+    private double calculateX(double tankX, float tankTeta)
     {
  
         float teta = (tankTeta % 360 + 360) % 360;
@@ -152,7 +152,7 @@ public class Ammo extends Tile
         if( teta == 180 || teta == 0)
             x_delta += 18;
 
-            
+
         return tankX + x_delta2  + x_delta ;
     }
 
@@ -160,7 +160,7 @@ public class Ammo extends Tile
 
 
     // this method calculate the y of the ammo
-    private float calculateY(float tankY, float tankTeta)
+    private double calculateY(double tankY, float tankTeta)
     {
 
         float teta = (tankTeta % 360 + 360) % 360;
