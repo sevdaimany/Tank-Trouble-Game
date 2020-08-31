@@ -11,7 +11,7 @@ public class TileGrid
             /*  Fields  */
 
     //2d array for holding playGround's tile's
-    private Tile[][] map;
+    private static Tile[][] map;
 
 
 
@@ -70,7 +70,7 @@ public class TileGrid
      * @param ycoord
      * @param textureName
      */
-    public void setTile(int xcoord, int  ycoord,String textureName)
+    public static void setTile(int xcoord, int  ycoord,String textureName)
     {
         map[xcoord][ycoord] = new Tile(xcoord*90,ycoord*90,90,90,textureName);
         map[xcoord][ycoord].draw();
