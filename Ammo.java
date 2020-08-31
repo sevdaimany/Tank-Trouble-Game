@@ -109,17 +109,10 @@ public class Ammo extends Tile
      */
     public void hit(Wall wall)
     {
-        if (Math.abs(this.getX() - wall.getX()) == Math.abs(this.getY() - wall.getY()))
-        {
-            this.teta += 180;
-            return;
-        }
+    
+        this.teta += 270 ;
+        ammoMoveSpeed *= -1;
 
-
-        char status = (Math.abs(this.getX() - wall.getX()) > Math.abs(this.getY() - wall.getY())) ? 'v': 'h';
-
-        if (status == 'v')
-            ammoMoveSpeed *= -1;
     }
 
 
