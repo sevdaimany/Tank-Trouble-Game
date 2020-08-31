@@ -78,6 +78,8 @@ public class TileGrid
      */
     public static void setTile(int xcoord, int  ycoord)
     {
+        GameState.explosion(xcoord * 90 , ycoord * 90);
+
         FileInputStream input = null;
 
         try { input = new FileInputStream(DataBase.getGroundImageFilePath("sand")); }

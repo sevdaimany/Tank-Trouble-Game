@@ -1,10 +1,18 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.PauseTransition;
+import javafx.animation.SequentialTransition;
 import javafx.event.EventHandler;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 
 
 
@@ -42,6 +50,10 @@ public class GameState
 
     //height of game's playground
     private static double heightPLayGround;
+
+    //explosion imageView's array
+   private static ImageView[] slides;
+
 
 
 
@@ -232,4 +244,80 @@ public class GameState
         return false;
 
     }
+
+
+    public static void simpleSlideShow(double x, double y) {
+        slides = new ImageView[10];
+        String[] smoke = DataBase.getFireExplosion("smoke");
+        String[] fire = DataBase.getFireExplosion("fire");
+
+        int j =0 ;
+        for(int i = 0 ; i < 5 ; i++){
+            FileInputStream input = null;
+
+            try { input = new FileInputStream(smoke[i]); }
+            catch (FileNotFoundException e) { e.printStackTrace(); }
+
+
+            Image image = new Image(input , 90,90,false,false);
+
+
+            FileInputStream input2= null;
+
+            try { input2 = new FileInputStream(fire[i]); }
+            catch (FileNotFoundException e) { e.printStackTrace(); }
+
+
+            Image image2 = new Image(input2 , 90,90,false,false);
+
+            slides[j] = new ImageView(image2);
+            slides[j].relocate(x,y);
+
+            j++;
+
+            slides[j] = new ImageView(image);
+            slides[j].relocate(x,y);
+
+            j++;
+
+        }
+    }
+
+
+    public static FadeTransition getFadeTransition(ImageView imageView, double fromValue, double toValue, int durationInMilliseconds) {
+
+        FadeTransition ft = new FadeTransition(Duration.millis(durationInMilliseconds), imageView);
+        ft.setFromValue(fromValue);
+        ft.setToValue(toValue);
+
+        return ft;
+
+    }
+
+    public static void explosion(double x ,double y) {
+
+        simpleSlideShow(x, y);
+
+        SequentialTransition slideshow = new SequentialTransition();
+
+        for (ImageView slide : slides) {
+
+            SequentialTransition sequentialTransition = new SequentialTransition();
+
+            FadeTransition fadeIn = getFadeTransition(slide, 0.0, 1.0, 10);
+            PauseTransition stayOn = new PauseTransition(Duration.millis(50));
+            FadeTransition fadeOut = getFadeTransition(slide, 1.0, 0.0, 10);
+
+            sequentialTransition.getChildren().addAll(fadeIn, stayOn, fadeOut);
+            slide.setOpacity(0);
+            Main.getRootPlayGround().getChildren().add(slide);
+            slideshow.getChildren().add(sequentialTransition);
+
+        }
+        slideshow.play();
+    }
+
+
+
+
 }
