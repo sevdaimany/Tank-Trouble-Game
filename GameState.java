@@ -197,12 +197,31 @@ public class GameState
     public static boolean tank_Wall_intersect(Rectangle tankRectangle){
 
         for (Wall wall : GameState.getWalls()) {
-            if (intersect(tankRectangle , wall.getRectangle())) {
+            if (intersect(tankRectangle , wall)) {
                 return true;
             }
 
         }
 
         return false;
+    }
+
+    public static boolean ammo_WoodWall_intersect(Rectangle ammoRectangle){
+
+        for (Wall wall : GameState.getWalls()) {
+            if (wall instanceof WoodWall) {
+                WoodWall woodWall = (WoodWall) wall;
+                if (intersect(ammoRectangle, woodWall)) {
+                        TileGrid.setTile(woodWall.getxCoordinate() , woodWall.getyCoordinate());
+                        walls.remove(woodWall);
+                        return true;
+
+                }
+
+            }
+
+        }
+        return false;
+
     }
 }
