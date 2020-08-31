@@ -36,7 +36,7 @@ public class DataBase
     private static final String WALL_IMAGES = PHOTOS_FOLDER + "WALLS/";
     private static final String AMMO_IMAGES = PHOTOS_FOLDER + "AMMOS/";
     private static final String AWARD_IMAGES = PHOTOS_FOLDER + "AWARDS/";
-    private static final String EXPLOSION_IMAGES = PHOTOS_FOLDER + "EXPLOSION/";
+    private static final String EXPLOSION_IMAGES = PHOTOS_FOLDER + "EXPLOSIONS/";
 
 
     // path of the settings file
