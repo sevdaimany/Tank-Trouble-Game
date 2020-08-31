@@ -38,8 +38,8 @@ public class TileGrid
                     map[i][j] = new Tile(i * 90, j * 90, 90, 90, DataBase.getGroundImageFilePath("sand"));
 
                 else if (newMap[j][i] == 2){  
-                    map[i][j] = new Wall(i * 90, j *90, 90, 90,  DataBase.getWallImageFilePath("wood"));
-                    GameState.getWalls().add((Wall) map[i][j]);
+                    map[i][j] = new WoodWall(i * 90, j *90, 90, 90, DataBase.getWallImageFilePath("wood"));
+                    GameState.getWalls().add((WoodWall) map[i][j]);
                 }
 
                 else if (newMap[j][i] == 1){ 
