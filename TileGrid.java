@@ -70,9 +70,9 @@ public class TileGrid
      * @param ycoord
      * @param textureName
      */
-    public static void setTile(int xcoord, int  ycoord,String textureName)
+    public static void setTile(int xcoord, int  ycoord)
     {
-        map[xcoord][ycoord] = new Tile(xcoord*90,ycoord*90,90,90,textureName);
+        map[xcoord][ycoord] = new Tile(xcoord*90,ycoord*90,90,90,DataBase.getGroundImageFilePath("sand"));
         map[xcoord][ycoord].draw();
 
     }
