@@ -117,8 +117,14 @@ public class GameState
      */
     public static void updateFiredAmmosState()
     {
-        for (Ammo ammo: firedAmmos)
+        for (Ammo ammo: firedAmmos){ 
             ammo.move();
+            if(ammo_WoodWall_intersect(ammo)) {
+                firedAmmos.remove(ammo);
+                Main.getRootPlayGround().getChildren().remove(ammo.getImageView());
+
+            }
+        }
     }
 
 
