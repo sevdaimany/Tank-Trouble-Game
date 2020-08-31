@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
+
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -27,7 +29,7 @@ public class GameState
     private static ArrayList<Tank> tanks;
 
     // fired ammos from tanks
-    private static ArrayList<Ammo> firedAmmos;
+    private static LinkedList<Ammo> firedAmmos;
 
     // walls of the map
     private static ArrayList<Wall> walls = new ArrayList<>();
@@ -59,7 +61,7 @@ public class GameState
     {
         players = new ArrayList<>();
         tanks = new ArrayList<>();
-        firedAmmos = new ArrayList<>();
+        firedAmmos = new LinkedList<>();
         playingControllers = new ArrayList<>();
         Tank tank = new Tank(0,0,"./.TANK_TROUBLE_DATA_BASE/PHOTOS/TANKS/blackTank_kind1.png");
         PlayingController playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT,KeyCode.M);
@@ -161,7 +163,7 @@ public class GameState
         return tanks;
     }
 
-    public static ArrayList<Ammo> getFiredAmmos() {
+    public static LinkedList<Ammo> getFiredAmmos() {
         return firedAmmos;
     }
 
