@@ -16,7 +16,12 @@ public class Wall extends Tile
 {
          /* Constructor */
 
+         // wall's imageView
          private ImageView imageView;
+
+         //wall's x and y coordinates
+         private int xCoordinate , yCoordinate;
+
 
 
     /**
@@ -30,10 +35,32 @@ public class Wall extends Tile
     public Wall(float x, float y, float width, float height,String imagePath)
     {
         super(x,y,width,height,imagePath);
+
+        xCoordinate = (int)x/90;
+        yCoordinate = (int)y/90;
+
         imageView = new ImageView(super.getImage());
 
     }
 
+    
+    /** 
+     * @return wall's x coordinate
+     */
+    public int getxCoordinate() {
+        return xCoordinate;
+    }
+
+    /**
+     * @return wall's y coordinate
+     */
+    public int getyCoordinate() {
+        return yCoordinate;
+    }
+
+    /**
+     * @return wall's imageView
+     */
     public ImageView getImageView() {
         return imageView;
     }
