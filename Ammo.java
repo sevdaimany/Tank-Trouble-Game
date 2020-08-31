@@ -134,11 +134,11 @@ public class Ammo extends Tile
              x_delta2 = -1 * (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
              x_delta = -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 23;
         }
-        else if ( teta >= 0 && teta < 90 ){
+        else if ( teta > 0 && teta < 90 ){
             x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
             x_delta =  -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 25;
         }
-        else if ( teta >= 90 && teta <= 180 ){
+        else if ( teta >= 90 && teta < 180 ){
             x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
             x_delta =   -1 *(float) Math.cos(Math.toRadians(90 - tankTeta)) * 27;
         }
@@ -148,6 +148,11 @@ public class Ammo extends Tile
         }
 
 
+        
+        if( teta == 180 || teta == 0)
+            x_delta += 18;
+
+            
         return tankX + x_delta2  + x_delta ;
     }
 
