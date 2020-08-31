@@ -15,12 +15,10 @@ import java.io.FileNotFoundException;
  * @author Sevda Imany
  * @version 0.0.5
  */
-public class Tile 
+public class Tile extends Rectangle
 {
             /*  Fields  */
 
-    // tile's coordinate and size
-    private  float x, y, width,height;
 
     // tile's texture image
     private Image image;
@@ -28,10 +26,7 @@ public class Tile
     // tile's texture file's name
     private String textureName;
 
-    //tile's rectangle
-    private   Rectangle rectangle;
-
-
+   
 
 
 
@@ -41,21 +36,20 @@ public class Tile
     /**
      * Create new tile with give coordinate , size and texture image's filename
      */
-    public Tile(float x, float y, float width, float height,String textureName) 
+    public Tile(double x, double y, double width, double height,String textureName)
     {
-        this.setX(x);
-        this.setY(y);
-        this.setWidth(width);
-        this.setHeight(height);
+        super(x,y,width,height);
+
         this.textureName = textureName;
 
         FileInputStream input = null;
 
-        try { input = new FileInputStream(textureName); } 
+        try { input = new FileInputStream(textureName); }
         catch (FileNotFoundException e) { e.printStackTrace(); }
 
 
         image = new Image(input);
+
     }
 
             /*  Methods  */
@@ -67,9 +61,8 @@ public class Tile
     public void draw()
     {
 
-        rectangle = new Rectangle(x,y,width,height);
-        rectangle.setFill(new ImagePattern(image));
-        Main.getRootPlayGround().getChildren().add(rectangle);
+        super.setFill(new ImagePattern(image));
+        Main.getRootPlayGround().getChildren().add(this);
     }
 
 
@@ -85,28 +78,7 @@ public class Tile
      * @return texture's image
      */
     public Image getImage() { return image; }  
-    /**
-     * @return x of tile
-     */
-    public float getX() { return x; }
-    /**
-     * @return y of tile
-     */
-    public float getY() { return y; }
-    /**
-     * @return tile's width
-     */
-    public float getWidth() { return width; }
-    /**
-     * @return tile's height
-     */
-    public float getHeight() { return height; }
-    /**
-     * @return tile's rectangle
-     */
-    public Rectangle getRectangle() {
-        return rectangle;
-    }
+   
 
 
 
@@ -123,20 +95,5 @@ public class Tile
      * @param image
      */
     public void setImage(Image image) { this.image = image; }
-    /**
-     * @param x
-     */
-    public void setX(float x) { this.x = x; }
-    /**
-     * @param y
-     */
-    public void setY(float y) { this.y = y; }
-    /**
-     * @param width
-     */
-    public void setWidth(float width) { this.width = width; }
-    /**
-     * @param height
-     */
-    public void setHeight(float height) { this.height = height; }
+    
 }
