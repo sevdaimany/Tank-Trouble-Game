@@ -138,6 +138,11 @@ public class GameState
                 Main.getRootPlayGround().getChildren().remove(ammo.getImageView());
 
             }
+
+            Wall hitedWall = ammo_Wall_intersect(ammo);
+            if (hitedWall != null){
+                ammo.hit(hitedWall);
+            }
         }
     }
 
@@ -243,6 +248,21 @@ public class GameState
         }
         return false;
 
+    }
+
+
+    public static Wall ammo_Wall_intersect(Rectangle ammoRectangle){
+
+        for (Wall wall : GameState.getWalls()) {
+            if(!(wall instanceof WoodWall)){
+                if (intersect(ammoRectangle , wall)) {
+                    return wall;
+                }
+
+            }
+        }
+
+        return null;
     }
 
 
