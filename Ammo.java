@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.6
+ * @version 0.7.0
  */
 public class Ammo extends Tile
 {
@@ -84,14 +84,21 @@ public class Ammo extends Tile
      * @return damage of Ammo
      */
     public int getDamage() { return damage; }
-
-
-     /**
+    /**
      * @return ammo's imageView
      */
-    public ImageView getImageView() {
-        return imageView;
-    }
+    public ImageView getImageView() { return imageView; }
+    /**
+     * @return the life time of the ammo
+     */
+    public float getLifeTime() { return lifeTime; }
+
+
+
+
+
+
+
 
     /**
      * This method moves the ammo on the map 
@@ -117,7 +124,6 @@ public class Ammo extends Tile
     
         this.teta += 270 ;
         ammoMoveSpeed *= -1;
-
     }
 
 
