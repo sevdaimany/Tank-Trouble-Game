@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.4
+ * @version 0.7.5
  */
 public class Ammo extends Tile
 {
@@ -64,6 +64,8 @@ public class Ammo extends Tile
         this.damage = DataBase.getSettings().ammoDamage;
 
         this.lifeTime = DataBase.getSettings().ammosLifeTime;
+
+        createTime = System.currentTimeMillis();
     }
 
 
