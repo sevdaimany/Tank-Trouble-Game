@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.5
+ * @version 0.8.0
  */
 public class Ammo extends Tile
 {
@@ -218,6 +218,9 @@ public class Ammo extends Tile
     //this method draw an ammo in game playground
     public void draw()
     {
+        if (!isAlive())
+            return;
+
         imageView.setRotate(teta + 180);
         imageView.relocate(super.getX(),super.getY());
     }
