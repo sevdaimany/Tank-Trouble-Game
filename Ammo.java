@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.4
+ * @version 0.6.5
  */
 public class Ammo extends Tile
 {
