@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.0
+ * @version 0.8.2
  */
 public class Ammo extends Tile
 {
@@ -126,9 +126,10 @@ public class Ammo extends Tile
      */
     public void hit(Wall wall)
     {
-    
-        this.teta += 270 ;
-        ammoMoveSpeed *= -1;
+        if (this.teta < 0)
+            teta = (teta % 360) + 360;
+
+        if ()
     }
 
 
@@ -232,5 +233,12 @@ public class Ammo extends Tile
         long currentTime = System.currentTimeMillis();
 
         return (float)((currentTime - createTime)/1000.0) <= lifeTime;
+    }
+
+
+    // this method returns true if this ammo teta is in the given range
+    private boolean isTetaInRange(int start, int end)
+    {
+        return (teta >= start && teta < end);
     }
 }
