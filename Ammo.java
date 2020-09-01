@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.1
+ * @version 0.7.4
  */
 public class Ammo extends Tile
 {
@@ -218,5 +218,14 @@ public class Ammo extends Tile
     {
         imageView.setRotate(teta + 180);
         imageView.relocate(super.getX(),super.getY());
+    }
+
+
+    // this method return true if ammos life time not ended
+    private boolean isAlive()
+    {
+        long currentTime = System.currentTimeMillis();
+
+        return (float)((currentTime - createTime)/1000.0) <= lifeTime;
     }
 }
