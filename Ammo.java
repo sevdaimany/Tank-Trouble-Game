@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.6.5
+ * @version 0.6.6
  */
 public class Ammo extends Tile
 {
@@ -58,7 +58,9 @@ public class Ammo extends Tile
 
         this.ammoMoveSpeed = 1;
 
-        this.damage = 50;
+        this.damage = DataBase.getSettings().ammoDamage;
+
+        this.lifeTime = DataBase.getSettings().ammosLifeTime;
     }
 
 
