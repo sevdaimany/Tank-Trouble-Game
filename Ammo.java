@@ -21,8 +21,11 @@ public class Ammo extends Tile
     // move speed of ammo
     private float ammoMoveSpeed;
 
-    //ammo's imageview
+    // ammo's image view
     private ImageView imageView;
+
+    // ammo life time
+    private float lifeTime;
 
 
 
