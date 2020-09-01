@@ -6,7 +6,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.7.0
+ * @version 0.7.1
  */
 public class Ammo extends Tile
 {
@@ -26,6 +26,9 @@ public class Ammo extends Tile
 
     // ammo life time
     private float lifeTime;
+
+    // hold the creation time
+    private long createTime;
 
 
 
