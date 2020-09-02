@@ -173,6 +173,38 @@ public class Ammo extends Tile
                 }
             }
         }
+
+        if (isTetaInRange(90, 180))
+        {
+            if (ammoMoveSpeed < 0)
+            {
+                switch (howHited(wall))
+                {
+                    case 'v':
+                        teta = 180 - teta;
+                    break;
+
+                    case 'h':
+                        teta = 180 + (180 - teta);
+                    break;
+                }
+            }
+            else
+            {
+                switch (howHited(wall))
+                {
+                    case 'v':
+                        teta = 360 - teta;
+                        ammoMoveSpeed *= -1;
+                    break;
+
+                    case 'h':
+                        teta = 180 - teta;
+                        ammoMoveSpeed *= -1;
+                    break;
+                }
+            }
+        }
     }
 
 
