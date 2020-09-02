@@ -126,10 +126,19 @@ public class Ammo extends Tile
      */
     public void hit(Wall wall)
     {
+        // set teta
         if (this.teta < 0)
             teta = (teta % 360) + 360;
 
-        if ()
+        
+        if (teta%90 == 0)
+        {
+            ammoMoveSpeed *= -1;
+            return;
+        }
+
+        
+        
     }
 
 
