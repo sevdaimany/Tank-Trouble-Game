@@ -392,8 +392,8 @@ public class Ammo extends Tile
     // this method return the case of hit
     private char howHited(Wall wall)
     {
-        int xDelta = Math.abs(getx() - wall.getxCoordinate());
-        int yDelta = Math.abs(gety() - wall.getyCoordinate());
+        int xDelta = (int)Math.abs(getX() - wall.getxCoordinate());
+        int yDelta = (int)Math.abs(getY() - wall.getyCoordinate());
 
 
         if (yDelta < xDelta)
