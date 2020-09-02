@@ -172,6 +172,9 @@ public class Ammo extends Tile
                     break;
                 }
             }
+
+
+            return;
         }
 
         if (isTetaInRange(90, 180))
@@ -204,6 +207,46 @@ public class Ammo extends Tile
                     break;
                 }
             }
+
+
+            return;
+        }
+
+        if (isTetaInRange(180, 270))
+        {
+            if (ammoMoveSpeed < 0)
+            {
+                switch (howHited(wall))
+                {
+                    case 'v':
+                        teta = 90 + (90 - (teta % 90));
+                        ammoMoveSpeed *= -1;
+                    break;
+
+                    case 'h':
+                        teta = 90 + (90 - (teta % 90));
+                        
+                    break;
+                }
+            }
+            else
+            {
+                switch (howHited(wall))
+                {
+                    case 'v':
+                        teta = 180 + (180 - teta);
+                        ammoMoveSpeed *= -1;
+                    break;
+
+                    case 'h':
+                        teta = 180 - teta;
+                        ammoMoveSpeed *= -1;
+                    break;
+                }
+            }
+
+
+            return;
         }
     }
 
