@@ -8,7 +8,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.5
+ * @version 0.9.0
  */
 public class Ammo extends Tile
 {
@@ -267,18 +267,16 @@ public class Ammo extends Tile
                 switch (howHited(wall))
                 {
                     case 'v':
-                        teta = 180 - (teta - 180);
+                        teta = 360 - teta;
                         ammoMoveSpeed *= -1;
                     break;
 
                     case 'h':
-                        teta = 180 - (teta - 180);
+                        teta = 180 + (360 - teta);
+                        ammoMoveSpeed *= -1;
                     break;
                 }
             }
-
-
-            return;
         }
     }
 
