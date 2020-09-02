@@ -365,8 +365,11 @@ public class Ammo extends Tile
     //this method draw an ammo in game playground
     public void draw()
     {
-        if (!isAlive())
+        if (!isAlive()) {
+            GameState.getFiredAmmos().remove(this);
+            Main.getRootPlayGround().getChildren().remove(imageView);
             return;
+        }
 
         imageView.setRotate(teta + 180);
         imageView.relocate(super.getX(),super.getY());
