@@ -131,6 +131,8 @@ public class Ammo extends Tile
         // set teta
         if (this.teta < 0)
             teta = (teta % 360) + 360;
+        else
+            teta = teta % 360;
 
         
         if (teta%90 == 0)
@@ -142,7 +144,19 @@ public class Ammo extends Tile
         
         if (isTetaInRange(0, 90))
         {
+            if (ammoMoveSpeed < 0)
+            {
+                switch (howHited(wall))
+                {
+                    case 'v':
+                        teta = 360 - teta;
+                    break;
 
+                    case 'h':
+                        teta = 180 - teta;
+                    break;
+                }
+            }
         }
     }
 
