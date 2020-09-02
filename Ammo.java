@@ -149,11 +149,26 @@ public class Ammo extends Tile
                 switch (howHited(wall))
                 {
                     case 'v':
+                        teta = 180 - teta;
+                    break;
+
+                    case 'h':
                         teta = 360 - teta;
+                    break;
+                }
+            }
+            else
+            {
+                switch (howHited(wall))
+                {
+                    case 'v':
+                        teta = 360 - teta;
+                        ammoMoveSpeed *= -1;
                     break;
 
                     case 'h':
                         teta = 180 - teta;
+                        ammoMoveSpeed *= -1;
                     break;
                 }
             }
