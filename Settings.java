@@ -23,7 +23,7 @@ public final class Settings implements Serializable
     int ammoDamage;
 
     // life time of the ammos
-    float ammosLifeTime;
+    float ammosLifeTime = 4;
 
 
     private static final long serialVersionUID = 3076892867441666860L;
