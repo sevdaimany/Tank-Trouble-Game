@@ -1,3 +1,5 @@
+import java.security.Principal;
+
 import javafx.scene.image.ImageView;
 
 /**
@@ -6,7 +8,7 @@ import javafx.scene.image.ImageView;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.8.2
+ * @version 0.8.5
  */
 public class Ammo extends Tile
 {
@@ -138,7 +140,10 @@ public class Ammo extends Tile
         }
 
         
-        
+        if (isTetaInRange(0, 90))
+        {
+
+        }
     }
 
 
@@ -180,8 +185,6 @@ public class Ammo extends Tile
 
         return tankX + x_delta2  + x_delta ;
     }
-
-
 
 
     // this method calculate the y of the ammo
@@ -249,5 +252,19 @@ public class Ammo extends Tile
     private boolean isTetaInRange(int start, int end)
     {
         return (teta >= start && teta < end);
+    }
+
+
+    // this method return the case of hit
+    private char howHited(Wall wall)
+    {
+        int xDelta = Math.abs(getx() - wall.getxCoordinate());
+        int yDelta = Math.abs(gety() - wall.getyCoordinate());
+
+
+        if (yDelta < xDelta)
+            return 'v';
+
+        return 'h';
     }
 }
