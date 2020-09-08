@@ -70,6 +70,8 @@ public class GameView extends BorderPane {
         for (Player player : GameState.getPlayers()){
             PlayerInfoView playerInfoView = new PlayerInfoView(player);
             hBoxInfo.getChildren().add(playerInfoView);
+            GameState.getTankProgressBar().put(player.getPlayerTank(),playerInfoView.getPbHealth());
+
         }
 
         hBoxInfo.setAlignment(Pos.CENTER);
