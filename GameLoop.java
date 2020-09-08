@@ -26,6 +26,28 @@ public class GameLoop
         };
         timer.start();
     }
+
+
+    /**
+     * this method check which player won the game
+     * @return winnerPlayer
+     */
+    private Player winner(){
+        int winnerPoint = -1;
+        for(Tank tank : GameState.getTanks()){
+            if(tank.getHealth() > winnerPoint){
+                winnerPoint = tank.getHealth();
+            }
+
+        }
+        for(Player player : GameState.getPlayers()){
+            if(player.getPlayerTank().getHealth() == winnerPoint){
+                return  player;
+            }
+        }
+        return  null;
+    }
+
 }
 
 
