@@ -1,13 +1,25 @@
 
+import java.io.FileInputStream;
+
 import javafx.animation.AnimationTimer;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Screen;
 
 /**
  * This class represent the main game loop
@@ -38,6 +50,28 @@ public class GameLoop
             public void handle(long timestamp) {
                 GameState.updateStates();
                 gameView.getGamePlayGround().render();
+                if (GameState.gameOver()) {
+                    BorderPane borderPane = new BorderPane();
+                    borderPane.setCenter(scores());
+                    FileInputStream input = null;
+                    try {
+                        input = new FileInputStream(".TANK_TROUBLE_DATA_BASE/ICONS/background2.jpg");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    Image image = new Image(input);
+                    BackgroundImage backgroundimage = new BackgroundImage(image,
+                            BackgroundRepeat.NO_REPEAT,
+                            BackgroundRepeat.NO_REPEAT,
+                            BackgroundPosition.DEFAULT,
+                            BackgroundSize.DEFAULT);
+                    borderPane.setBackground(new Background(backgroundimage));
+                    Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+                    borderPane.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+                    Scene scene = new Scene(borderPane);
+                    Main.getStage().setScene(scene);
+
+                }
             }
         };
         timer.start();
