@@ -1,5 +1,7 @@
+import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Screen;
 
 
@@ -18,6 +20,10 @@ public class GameView extends BorderPane {
 
     //game's playground object
     private GamePlayGround gamePlayGround;
+
+    //player's information hbox
+    private  HBox hBoxInfo;
+
 
 
 
@@ -42,8 +48,39 @@ public class GameView extends BorderPane {
     }
 
 
+
+             /*  Methods  */
+
+
+    /**
+     * this method add player's information hbox at the bottom of gameView
+     */
+    public void addPlayersInfo(){
+
+        hBoxInfo = new HBox();
+
+        for (Player player : GameState.getPlayers()){
+            PlayerInfoView playerInfoView = new PlayerInfoView(player);
+            hBoxInfo.getChildren().add(playerInfoView);
+        }
+
+        hBoxInfo.setAlignment(Pos.CENTER);
+        hBoxInfo.setSpacing(60);
+        this.setBottom(hBoxInfo);
+
+
+    }
+
+        // * getter methods *
+
+
+    /**
+     * @return game's Playground
+     */    
     public GamePlayGround getGamePlayGround() {
         return gamePlayGround;
     }
 
+
+    
 }
