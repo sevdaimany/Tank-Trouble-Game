@@ -120,4 +120,14 @@ public class Player extends Identity implements Serializable
      * @return controller of the player
      */
     public PlayingController getPlayerController() { return playerController; }
+
+
+    // * setter methods *
+
+    /**
+     * @param playerTank : player's tank
+     */
+    public void setPlayerTank(Tank playerTank) {
+        this.playerTank = playerTank;
+    }
 }
