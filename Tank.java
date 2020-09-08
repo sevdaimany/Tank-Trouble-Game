@@ -113,6 +113,11 @@ public class Tank  extends Tile implements Serializable
      */
     public Ammo getAmmo() { return ammo; }
 
+    /**
+     * @return tank's health
+     */
+    public int getHealth() {   return health;  }
+
 
 
     /**
