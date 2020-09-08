@@ -224,7 +224,7 @@ public class GameState
     public static HashMap<Tank, ProgressBar> getTankProgressBar() {
         return tankProgressBar;
     }
-    
+
     public static void setHeightPLayGround(double heightPLayGround) {
         GameState.heightPLayGround = heightPLayGround;
     }
@@ -288,6 +288,25 @@ public class GameState
 
         return null;
     }
+
+
+    /**
+     * this method check if the given ammo hit a tank or not
+     * @param ammoRectangle
+     * @return hitedTank if ammo hit any , otherwise return null
+     */
+    public static Tank ammo_Tank_intersect(Rectangle ammoRectangle){
+
+        for (Tank tank : GameState.getTanks()) {
+                if (intersect(ammoRectangle , tank)) {
+                    return tank;
+                }
+            }
+
+
+        return null;
+    }
+
 
 
     public static void simpleSlideShow(double x, double y) {
