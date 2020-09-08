@@ -1,12 +1,14 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.event.EventHandler;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -53,6 +55,10 @@ public class GameState
 
     //explosion imageView's array
    private static ImageView[] slides;
+
+   //tank and progressbar hashmap
+   private static HashMap<Tank, ProgressBar> tankProgressBar = new HashMap<>();
+
 
 
 
@@ -214,6 +220,11 @@ public class GameState
         return heightPLayGround;
     }
 
+
+    public static HashMap<Tank, ProgressBar> getTankProgressBar() {
+        return tankProgressBar;
+    }
+    
     public static void setHeightPLayGround(double heightPLayGround) {
         GameState.heightPLayGround = heightPLayGround;
     }
