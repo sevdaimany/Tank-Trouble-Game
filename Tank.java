@@ -164,38 +164,14 @@ public class Tank  extends Tile implements Serializable
         this.health = Math.min(this.health, DataBase.getSettings().tanksHealth);
     }
     
-    
+   
     /**
-     * This method checks that the given ammo has hit the tank or not
-     * If the given ammo has hit the tank the health of will be reduced
-     * 
-     * 
-     * @param ammo : ammo to check
-     * @return {@code true} if the given ammo has hit the tank 
+     * This method reduce tank's health with given damage value
+     * @param ammo_damage
      */
-    // public boolean isHit(Ammo ammo)
-    // {
-    //     double d = distance(super.getX(), super.getY(), ammo.getX(), ammo.getY());
-
-    //     boolean hit = (d <= this.tankRadius + ammo.getAmmoRadius() + 2.5);
-
-
-    //     if (hit)
-    //         this.health -= ammo.getDamage();
-
-
-    //     return hit;
-    // }
-
-
-
-
-
-    // this method return the distance between two object in game ground
-    // private double distance(float x1, float y1,float x2,float y2)
-    // {
-    //     return Math.abs(Math.sqrt((x1-x2)*(x1-x2) - (y1-y2)*(y1-y2)));
-    // }
+    public void reduceHealth(int ammo_damage){
+        this.health -= ammo_damage;
+    }
 
 
     // this method draw a tank in game's playground
