@@ -32,6 +32,8 @@ public class Ammo extends Tile
     // hold the creation time
     private long createTime;
 
+    //ammo's tank
+    private  Tank tank;
 
 
 
@@ -56,6 +58,8 @@ public class Ammo extends Tile
         this.teta = tank.getTeta();
         super.setX(calculateX(tank.getX(), teta));
         super.setY(calculateY(tank.getY(), teta));
+        this.tank = tank;
+
 
         imageView = new ImageView(super.getImage());
         Main.getRootPlayGround().getChildren().add(imageView);
@@ -99,6 +103,11 @@ public class Ammo extends Tile
      * @return the life time of the ammo
      */
     public float getLifeTime() { return lifeTime; }
+
+    /**
+     * @return ammo's tank
+     */
+    public Tank getTank() {   return tank;  }
 
 
 
