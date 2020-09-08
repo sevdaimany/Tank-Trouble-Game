@@ -59,6 +59,7 @@ public class DataBase
     private static final String ICONS_FOLDER = MAIN_FOLDER + "ICONS/";
     private static final String INFO_ICON = ICONS_FOLDER + "info.png";
     private static final String BACKGROUND_ICON = ICONS_FOLDER + "background.jpg";
+    private static final String DARKBACKGROUND_ICON = ICONS_FOLDER + "darkBackground.jpg";
     private static final String SETTING_ICON = ICONS_FOLDER + "setting.png";
     private static final String REGISTER_ICON = ICONS_FOLDER + "register.png";
     private static final String LEADERBOARDS_ICON = ICONS_FOLDER + "leaderboards.png";
@@ -337,6 +338,10 @@ public class DataBase
      * @return path of the background icon image
      */
     public static String getBackgroundIconPath() { return BACKGROUND_ICON; }
+     /**
+     * @return path of the dark background icon image
+     */
+    public  static String getDarkbackgroundIcon() { return  DARKBACKGROUND_ICON; }
     /**
      * @return path of the setting icon image
      */

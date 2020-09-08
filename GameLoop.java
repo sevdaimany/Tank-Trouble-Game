@@ -55,7 +55,7 @@ public class GameLoop
                     borderPane.setCenter(scores());
                     FileInputStream input = null;
                     try {
-                        input = new FileInputStream(".TANK_TROUBLE_DATA_BASE/ICONS/background2.jpg");
+                        input = new FileInputStream(DataBase.getDarkbackgroundIcon());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
