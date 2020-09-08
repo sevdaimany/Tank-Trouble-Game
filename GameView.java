@@ -1,7 +1,12 @@
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 
 
@@ -45,6 +50,9 @@ public class GameView extends BorderPane {
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         
         this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
+        this.setBackground(new Background(new BackgroundFill(Color.BLACK , CornerRadii.EMPTY, Insets.EMPTY)));
+
+    
     }
 
 
