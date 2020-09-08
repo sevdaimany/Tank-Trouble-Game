@@ -391,6 +391,17 @@ public class GameState
     }
 
 
-
+    /**
+     * this method check if game is over or not
+     * @return {@code true} if game ends otherwise return {@code false}  
+     */
+    public static boolean gameOver(){
+        for (Tank tank : tanks){
+            if(!tank.isAlive()){
+                return true;
+            }
+        }
+        return  false;
+    }
 
 }
