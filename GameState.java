@@ -162,6 +162,16 @@ public class GameState
             if (hitedWall != null){
                 ammo.hit(hitedWall);
             }
+
+            Tank hitedTank = ammo_Tank_intersect(ammo);
+            if(hitedTank != null &&  hitedTank != ammo.getTank()){
+                firedAmmos.remove(ammo);
+                Main.getRootPlayGround().getChildren().remove(ammo.getImageView());
+                hitedTank.reduceHealth(ammo.getDamage());
+                tankProgressBar.get(hitedTank).setProgress((double) hitedTank.getHealth()/100);
+
+            }
+
         }
     }
 
