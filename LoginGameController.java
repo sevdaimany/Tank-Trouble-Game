@@ -65,6 +65,8 @@ public class LoginGameController
             GameLoop game = new GameLoop();
             game.init(gameView);
             stage.setTitle("Tank Trouble");
+            gameView.addPlayersInfo();
+
         });
     }
 
