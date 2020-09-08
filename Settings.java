@@ -20,7 +20,7 @@ public final class Settings implements Serializable
     int woodWallsHealth;
 
     // damage of the ammos
-    int ammoDamage;
+    int ammoDamage = 10;
 
     // life time of the ammos
     float ammosLifeTime = 4;
