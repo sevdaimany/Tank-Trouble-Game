@@ -80,6 +80,19 @@ public class GameState
         tanks.add(tank);
         playingControllers.add(playingController);
         keyholder();
+        Player player = new Player("sevda","imany","sevdaiy","1234");
+        player.setPlayerTank(tank);
+        players.add(player);
+
+
+        Tank tank2 = new Tank(230,230,"./.TANK_TROUBLE_DATA_BASE/PHOTOS/TANKS/greenTank_kind2.png");
+        PlayingController playingController2 = new PlayingController(tank2, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A,KeyCode.Q);
+        tanks.add(tank2);
+        playingControllers.add(playingController2);
+        Player player2 = new Player("saina","imany","saina","1234");
+        player2.setPlayerTank(tank2);
+        players.add(player2);
+   
     }
 
 
