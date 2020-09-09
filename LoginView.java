@@ -191,6 +191,10 @@ public class LoginView extends BorderPane
         private Button button;
         //menu button
         private Button menu;
+        // error label
+        private Label errorLable;
+
+
 
 
 
@@ -255,6 +259,13 @@ public class LoginView extends BorderPane
             imageViewMOUSE.setBlendMode(BlendMode.DARKEN);
 
 
+           // create error label
+            errorLable = new Label();
+            errorLable.setTextFill(Color.RED);
+            errorLable.setFont(Font.font(15));
+            errorLable.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
+
+
             //create a choicebox
             choiceBox = new ChoiceBox<String>();
             choiceBox.getItems().addAll("Red","Blue","Green","Sand","Perpel","Pink","Yellow","White");
@@ -288,7 +299,8 @@ public class LoginView extends BorderPane
             gridPane.add(radioButton2,1,1);
             gridPane.add(radioButton3,2,1);
             gridPane.add(hBox,0,3);
-            gridPane.add(button,0,4);
+            gridPane.add(errorLable,0,4);
+            gridPane.add(button,0,5);
             gridPane.setHgap(20);
             gridPane.setVgap(30);
             gridPane.setAlignment(Pos.CENTER);
@@ -374,6 +386,12 @@ public class LoginView extends BorderPane
          * @return menu button
          */
         public Button getMenu() { return menu; }
+
+         /**
+         * @return error Label
+         */
+        public Label getErrorLable() { return errorLable; }
+
 
 
         
