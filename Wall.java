@@ -36,8 +36,8 @@ public class Wall extends Tile
     {
         super(x,y,width,height,imagePath);
 
-        xCoordinate = (int)x/90;
-        yCoordinate = (int)y/90;
+        xCoordinate = (int)x/45;
+        yCoordinate = (int)y/45;
 
         imageView = new ImageView(super.getImage());
 

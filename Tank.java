@@ -34,10 +34,10 @@ public class Tank  extends Tile implements Serializable
     private float tankRadius;
 
     //tank's width
-    private static final float WIDTH = 42;
+    private static final float WIDTH = 20;
 
     //tank's height
-    private static final float HEIGHT = 46;
+    private static final float HEIGHT = 22;
 
     // tank's imageView
     private ImageView imageView;

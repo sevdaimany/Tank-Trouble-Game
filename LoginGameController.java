@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -36,7 +38,7 @@ public class LoginGameController
         tankControllerChooser = loginView.new TankControllerChooser();
         loginAction();
         startGameAction();
-
+        menuAction();
     }
 
     /*  Methods  */
@@ -48,8 +50,23 @@ public class LoginGameController
      */
     public void loginAction(){
         loginView.getLoginBTN().setOnAction(event -> {
-            stage.setScene(new Scene(this.getTankControllerChooser()));
-            stage.setTitle("Choose");
+
+            if(loginView.getUsername().getText().equals("") || loginView.getPassword().getText().equals("")){
+                loginView.getErrorLable().setText("  Please fill out fields.  ");
+                return;
+            }
+            boolean isRegistered = false;
+            try {
+           isRegistered = DataBase.isPasswordCorrect(loginView.getUsername().getText() ,loginView.getPassword().getText());
+            }catch (IOException e){e.printStackTrace();}
+
+            if(isRegistered) {
+                stage.setScene(new Scene(this.getTankControllerChooser()));
+                stage.setTitle("Choose");
+            }
+            else{
+                loginView.getErrorLable().setText("  Please login first.  ");
+            }
         });
 
     }
@@ -68,6 +85,26 @@ public class LoginGameController
             gameView.addPlayersInfo();
 
         });
+    }
+
+     /**
+     * This method set menu button's action listener
+     */
+    public void menuAction()
+    {
+        loginView.getMenu().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
+        });
+
+        tankControllerChooser.getMenu().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
+        });
+
+
     }
 
 

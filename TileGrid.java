@@ -40,16 +40,18 @@ public class TileGrid
         {
             for (int j = 0; j < map[i].length; j++) 
             {
+                int tileSize = 45;
+
                 if (newMap[j][i] == 0)
-                    map[i][j] = new Tile(i * 90, j * 90, 90, 90, DataBase.getGroundImageFilePath("sand"));
+                    map[i][j] = new Tile(i * tileSize, j * tileSize, tileSize, tileSize, DataBase.getGroundImageFilePath("sand"));
 
                 else if (newMap[j][i] == 2){  
-                    map[i][j] = new WoodWall(i * 90, j *90, 90, 90, DataBase.getWallImageFilePath("wood"));
+                    map[i][j] = new WoodWall(i * tileSize, j * tileSize, tileSize, tileSize, DataBase.getWallImageFilePath("wood"));
                     GameState.getWalls().add((WoodWall) map[i][j]);
                 }
 
                 else if (newMap[j][i] == 1){ 
-                    map[i][j] = new Wall(i * 90, j * 90, 90, 90, DataBase.getWallImageFilePath("metal"));
+                    map[i][j] = new Wall(i * tileSize, j * tileSize, tileSize, tileSize, DataBase.getWallImageFilePath("metal"));
                     GameState.getWalls().add((Wall) map[i][j]);
 
                 }
@@ -78,7 +80,7 @@ public class TileGrid
      */
     public static void setTile(int xcoord, int  ycoord)
     {
-        GameState.explosion(xcoord * 90 , ycoord * 90);
+        GameState.explosion(xcoord * 45 , ycoord * 45);
 
         FileInputStream input = null;
 
