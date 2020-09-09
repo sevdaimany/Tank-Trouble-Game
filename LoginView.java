@@ -52,6 +52,10 @@ public class LoginView extends BorderPane
      //menu button
      private Button menu;
 
+     // error label
+    private Label errorLable;
+
+
 
 
 
@@ -90,8 +94,14 @@ public class LoginView extends BorderPane
         loginTXT.setStrokeWidth(2);
 
 
+        // create error button
+        errorLable = new Label();
+        errorLable.setTextFill(Color.RED);
+        errorLable.setFont(Font.font(15));
+        errorLable.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
+
         //set nodes
-        VBox login = new VBox(loginTXT,new Label(" "),username,password,loginBTN);
+        VBox login = new VBox(loginTXT,new Label(" "), errorLable ,username,password,loginBTN);
         login.setAlignment(Pos.CENTER);
         login.setMaxWidth(320);
         login.setSpacing(5);
@@ -160,6 +170,11 @@ public class LoginView extends BorderPane
      * @return menu button
      */
     public Button getMenu() { return menu; }
+      /**
+     * @return error Label
+     */
+    public Label getErrorLable() { return errorLable; }
+
 
 
     /**
