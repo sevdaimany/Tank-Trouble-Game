@@ -1,8 +1,15 @@
+import java.io.FileInputStream;
+
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
@@ -50,8 +57,21 @@ public class GameView extends BorderPane {
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         
         this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
-        this.setBackground(new Background(new BackgroundFill(Color.BLACK , CornerRadii.EMPTY, Insets.EMPTY)));
 
+         //background picture
+         FileInputStream input = null;
+         try {
+              input = new FileInputStream(DataBase.getBackground2Icon());
+         }catch (Exception e){e.printStackTrace();}
+         Image image = new Image(input);
+         BackgroundImage backgroundimage = new BackgroundImage(image,
+                 BackgroundRepeat.NO_REPEAT,
+                 BackgroundRepeat.NO_REPEAT,
+                 BackgroundPosition.DEFAULT,
+                 BackgroundSize.DEFAULT);
+ 
+         this.setBackground(new Background(backgroundimage));
+     
     
     }
 

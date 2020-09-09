@@ -43,7 +43,6 @@ public class PlayerInfoView extends VBox {
         this.setSpacing(5);
         this.setPadding(new Insets(0, 30, 0, 30));
 
-        this.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
     }
 
