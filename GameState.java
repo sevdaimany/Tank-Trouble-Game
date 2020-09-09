@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import javafx.animation.FadeTransition;
@@ -415,6 +416,31 @@ public class GameState
             }
         }
         return  false;
+    }
+
+    /**
+     * @return array that holds tank's first x and y in the game 
+     */
+    public static int[] randomXandY(){
+
+        Random random = new Random();
+        int[] array = new int[2];
+
+        int x = (int)(random.nextInt(99999) % widthPLayGround) ;
+        int y = (int)(random.nextInt(99999) % heightPLayGround);
+        System.out.println("x : " + x + "   y :  " + y) ;
+        while (true) {
+            if (!(TileGrid.getTile((int)Math.floor(x / 45),(int)Math.floor(y / 45)) instanceof Wall)) {
+                array[0] = x;
+                array[1] = y;
+                return array;
+
+            }
+             x = (int)(random.nextInt(99999) % widthPLayGround) ;
+             y = (int)(random.nextInt(99999) % heightPLayGround);
+
+        }
+
     }
 
 }
