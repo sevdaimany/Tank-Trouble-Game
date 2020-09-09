@@ -178,7 +178,7 @@ public class PlayingController
     // param ahead : set this true to go ahead. if you set it false, tanks will go backwards
     private void moveTank(boolean ahead)
     {
-        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),39,44);
+        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),16,18);
         hiddenTank.setRotate(tank.getTeta());
 
 
@@ -230,7 +230,7 @@ public class PlayingController
     // this method turns tank to the right
     private void turnRight()
     {
-        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),42,46);
+        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),18,20);
         hiddenTank.setRotate(tank.getTeta());
 
         this.tank.tetaDelta(Math.round(rotationSpeed));
@@ -240,7 +240,7 @@ public class PlayingController
     // this method turns tank to the left
     private void turnLeft()
     {
-        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),42,46);
+        hiddenTank = new Rectangle(this.tank.getX(), this.tank.getY(),18,20);
         hiddenTank.setRotate(tank.getTeta());
 
         this.tank.tetaDelta(-Math.round(rotationSpeed));

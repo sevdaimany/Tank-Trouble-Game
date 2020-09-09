@@ -5,6 +5,8 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
@@ -26,7 +28,9 @@ public class PlayerInfoView extends VBox {
     
     public PlayerInfoView(Player player) {
 
-        ImageView imageView = new ImageView(player.getPlayerTank().getImage());
+        Rectangle rectangle = new Rectangle(30,33);
+        rectangle.setFill(new ImagePattern(player.getPlayerTank().getImage()));
+       
         pbHealth = new ProgressBar(1);
         Label username = new Label(player.getUsername());
         Label healthLabel = new Label("Health: ");
@@ -37,7 +41,7 @@ public class PlayerInfoView extends VBox {
         HBox healthHB = new HBox(healthLabel, pbHealth);
         healthHB.setSpacing(5);
         healthHB.setAlignment(Pos.CENTER);
-        this.getChildren().addAll(username, imageView, healthHB, new Label("        "));
+        this.getChildren().addAll(username,rectangle, healthHB, new Label("        "));
         this.setAlignment(Pos.CENTER);
         healthLabel.setAlignment(Pos.CENTER_LEFT);
         this.setSpacing(5);

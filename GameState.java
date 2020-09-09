@@ -345,7 +345,8 @@ public class GameState
             catch (FileNotFoundException e) { e.printStackTrace(); }
 
 
-            Image image = new Image(input , 90,90,false,false);
+            int imageSize = 45;
+            Image image = new Image(input , imageSize, imageSize,false,false);
 
 
             FileInputStream input2= null;
@@ -354,7 +355,7 @@ public class GameState
             catch (FileNotFoundException e) { e.printStackTrace(); }
 
 
-            Image image2 = new Image(input2 , 90,90,false,false);
+            Image image2 = new Image(input2 , imageSize, imageSize,false,false);
 
             slides[j] = new ImageView(image2);
             slides[j].relocate(x,y);
@@ -368,7 +369,6 @@ public class GameState
 
         }
     }
-
 
     public static FadeTransition getFadeTransition(ImageView imageView, double fromValue, double toValue, int durationInMilliseconds) {
 
