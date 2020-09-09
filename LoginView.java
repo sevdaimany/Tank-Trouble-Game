@@ -49,6 +49,10 @@ public class LoginView extends BorderPane
     //login button
     private Button loginBTN;
 
+     //menu button
+     private Button menu;
+
+
 
 
 
@@ -92,6 +96,17 @@ public class LoginView extends BorderPane
         login.setMaxWidth(320);
         login.setSpacing(5);
 
+          //set menu button
+          FileInputStream input1 = null;
+
+          try { input1 = new FileInputStream(DataBase.getGoBackIcon()); }
+          catch (IOException e){}
+  
+          Image icon1 = new Image(input1);
+          ImageView imageView1 = new ImageView(icon1);
+          menu = new Button("Menu" , imageView1);
+  
+
 
         //background
         FileInputStream input = null;
@@ -110,6 +125,9 @@ public class LoginView extends BorderPane
 
         //set login vbox in borderpane
         this.setCenter(login);
+        this.setLeft(menu);
+        this.setPadding(new Insets(5, 5, 5, 5));
+
         this.setBackground(new Background(backgroundimage));
         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
         this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);      
@@ -138,6 +156,11 @@ public class LoginView extends BorderPane
      * @return login button
      */
     public Button getLoginBTN() { return loginBTN; }
+     /**
+     * @return menu button
+     */
+    public Button getMenu() { return menu; }
+
 
     /**
      * this inner class represent a tank and controller chooser page in game after player login
@@ -151,6 +174,9 @@ public class LoginView extends BorderPane
         private RadioButton radioButton3;
         //start game button
         private Button button;
+        //menu button
+        private Button menu;
+
 
 
         public TankControllerChooser(){
@@ -225,7 +251,7 @@ public class LoginView extends BorderPane
 
 
             //create top page's text
-             Text chooseTXT = new Text("                  PLEASE CHOOSE");
+             Text chooseTXT = new Text("               PLEASE CHOOSE");
              chooseTXT.setFill(Color.ORANGE);
              chooseTXT.setStroke(Color.BLACK);
              chooseTXT.setStrokeWidth(4);
@@ -254,8 +280,18 @@ public class LoginView extends BorderPane
 
 
 
-            this.setCenter(gridPane);
-            this.setTop(chooseTXT);
+            
+            
+            //set menu button
+            FileInputStream input6 = null;
+
+            try { input6 = new FileInputStream(DataBase.getGoBackIcon()); }
+            catch (IOException e){}
+
+            Image icon1 = new Image(input6);
+            ImageView imageView1 = new ImageView(icon1);
+            menu = new Button("Menu" , imageView1);
+
 
             //background
             FileInputStream input5 = null;
@@ -272,6 +308,13 @@ public class LoginView extends BorderPane
                     BackgroundSize.DEFAULT);
 
             this.setBackground(new Background(backgroundimage));
+
+            HBox hboxTop = new HBox(menu,chooseTXT);
+            this.setCenter(gridPane);
+            this.setTop(hboxTop);
+
+            this.setPadding(new Insets(5, 5, 5, 5));
+
             Rectangle2D screenBounds = Screen.getPrimary().getBounds();
             this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
 
@@ -312,6 +355,12 @@ public class LoginView extends BorderPane
         public Button getButton() {
             return button;
         }
+         /**
+         * @return menu button
+         */
+        public Button getMenu() { return menu; }
+
+
         
  
 
