@@ -62,8 +62,8 @@ public class RegisterController
                 String password = registerView.getPassword().getText();
                 String repeatPassword = registerView.getRepeatPassword().getText();
 
-                if (name != null && lastname != null && username != null && password != null
-                        && repeatPassword != null) {
+                if (!name.equals("") && !lastname.equals("") && !username.equals("") && !password.equals("")
+                && !repeatPassword.equals("")) {
                     if (!DataBase.isRegistered(username)) {
                         if (password.equals(repeatPassword)) {
                             Player player = new Player(name, lastname, username, password);
