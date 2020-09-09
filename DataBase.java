@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.17.0
+ * @version 0.18.0
  */
 public class DataBase
 {
@@ -442,6 +442,41 @@ public class DataBase
 
         else 
             return null;
+    }
+
+
+
+    // * tanks getters *
+
+    /**
+     * This method return the tank image of given color
+     * available colors:
+     * {"white", "black", "blue", 
+        "green", "sand", "orange", 
+        "red", "yellow", "pink", 
+        "purple", "gray"}
+     * 
+     * 
+     * @param color : color of tank that you want
+     * @return null if your color is not available
+     */
+    public static String getTankImage(String color)
+    {
+        color = color.toLowerCase();
+
+        boolean find = false;
+        for (String tankColor: tanksColors)
+            if (tankColor.equals(color))
+            {
+                find = true;
+                break;
+            }
+        if (!find)
+            return null;
+
+        
+        int kind = rand.nextInt(3) + 1;
+        return TANK_IMAGES + color + "Tank_kind" + kind + png;
     }
 
 
