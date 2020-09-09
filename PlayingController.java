@@ -201,7 +201,7 @@ public class PlayingController
 
         }
 
-        if(!GameState.tank_Wall_intersect(hiddenTank) && checkOutOfBound() ){
+        if(!GameState.tank_Wall_OtherTank_intersect(hiddenTank,this.tank) && checkOutOfBound() ){
             if (ahead)
             {
                 this.tank.xDelta(x_delta);

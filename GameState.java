@@ -255,7 +255,7 @@ public class GameState
     }
 
 
-    public static boolean tank_Wall_intersect(Rectangle tankRectangle){
+    public static boolean tank_Wall_OtherTank_intersect(Rectangle tankRectangle,Tank thisTank){
 
         for (Wall wall : GameState.getWalls()) {
             if (intersect(tankRectangle , wall)) {
@@ -264,7 +264,18 @@ public class GameState
 
         }
 
-        return false;
+        for(Tank tank : GameState.getTanks()){
+            if(tank == thisTank)
+                continue;
+            else{
+                if(intersect(tankRectangle , tank)){
+                    return  true;
+                }
+            }
+        }
+
+
+            return false;
     }
 
     public static boolean ammo_WoodWall_intersect(Rectangle ammoRectangle){
