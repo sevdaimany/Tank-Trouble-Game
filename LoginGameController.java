@@ -1,6 +1,7 @@
 import java.io.IOException;
 
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
 
@@ -73,19 +74,70 @@ public class LoginGameController
 
 
 
+    
+     /**
+     * This method set start button's action listener
+     */
     public void startGameAction(){
+
         GameView gameView = new GameView();
 
         tankControllerChooser.getButton().setOnAction(event -> {
+
+            boolean selectRadioButton1 = tankControllerChooser.getRadioButton1().isSelected();
+            boolean selectRadioButton2 = tankControllerChooser.getRadioButton2().isSelected();
+            boolean selectRadioButton3 = tankControllerChooser.getRadioButton3().isSelected();
+            String tankColor = tankControllerChooser.getChoiceBox().getValue();
+
+            if(!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 &&  tankColor == null){
+                tankControllerChooser.getErrorLable().setText("  Please choose first.  ");
+                return;
+            }
+
+
             Scene scene = new Scene(gameView);
             stage.setScene(scene);
             GameLoop game = new GameLoop();
             game.init(gameView);
             stage.setTitle("Tank Trouble");
+
+
+            Player player = null;
+            try {
+                player = DataBase.getPlayer(loginView.getUsername().getText());
+            }catch (IOException e){e.printStackTrace();}
+
+
+            int[] tankXandY = GameState.randomXandY();
+            int x = tankXandY[0];
+            int y = tankXandY[1];
+            Tank tank = new Tank(x,y,DataBase.getTankImage(tankColor));
+            player.setPlayerTank(tank);
+
+
+            PlayingController playingController = null;
+
+            if(selectRadioButton1){
+                playingController = new PlayingController(tank, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A,KeyCode.Q);
+            } else if (selectRadioButton2) {
+                playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT,KeyCode.M);
+
+            }
+
+            GameState.getTanks().add(tank);
+            GameState.getPlayers().add(player);
+            GameState.getPlayingControllers().add(playingController);
+
             gameView.addPlayersInfo();
 
+
+
+
         });
+
     }
+
+
 
      /**
      * This method set menu button's action listener
