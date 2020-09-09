@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -48,8 +50,23 @@ public class LoginGameController
      */
     public void loginAction(){
         loginView.getLoginBTN().setOnAction(event -> {
-            stage.setScene(new Scene(this.getTankControllerChooser()));
-            stage.setTitle("Choose");
+
+            if(loginView.getUsername().getText().equals("") || loginView.getPassword().getText().equals("")){
+                loginView.getErrorLable().setText("  Please fill out fields.  ");
+                return;
+            }
+            boolean isRegistered = false;
+            try {
+           isRegistered = DataBase.isPasswordCorrect(loginView.getUsername().getText() ,loginView.getPassword().getText());
+            }catch (IOException e){e.printStackTrace();}
+
+            if(isRegistered) {
+                stage.setScene(new Scene(this.getTankControllerChooser()));
+                stage.setTitle("Choose");
+            }
+            else{
+                loginView.getErrorLable().setText("  Please login first.  ");
+            }
         });
 
     }
