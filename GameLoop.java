@@ -133,7 +133,14 @@ public class GameLoop
             Label username = new Label(player.getUsername()+" : ");
             username.setFont(Font.font("Verdana", FontWeight.NORMAL, FontPosture.REGULAR, 20));
 
-            Label score = new Label(String.valueOf(player.getPlayerTank().getHealth()));
+            Label score = null;
+            if(player.getPlayerTank().getHealth() < 0){
+                score = new Label("0");
+            }
+            else {
+                 score = new Label(String.valueOf(player.getPlayerTank().getHealth()));
+            }
+            
             score.setFont(Font.font("Verdana", FontWeight.NORMAL, FontPosture.REGULAR, 20));
 
             HBox hBox = new HBox(username , score);
