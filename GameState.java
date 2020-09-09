@@ -428,7 +428,6 @@ public class GameState
 
         int x = (int)(random.nextInt(99999) % widthPLayGround) ;
         int y = (int)(random.nextInt(99999) % heightPLayGround);
-        System.out.println("x : " + x + "   y :  " + y) ;
         while (true) {
             if (!(TileGrid.getTile((int)Math.floor(x / 45),(int)Math.floor(y / 45)) instanceof Wall)) {
                 array[0] = x;
