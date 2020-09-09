@@ -3,6 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
@@ -39,7 +41,7 @@ public class GameState
     private static ArrayList<Tank> tanks;
 
     // fired ammos from tanks
-    private static LinkedList<Ammo> firedAmmos;
+    private static List<Ammo> firedAmmos;
 
     // walls of the map
     private static ArrayList<Wall> walls = new ArrayList<>();
@@ -79,7 +81,7 @@ public class GameState
     {
         players = new ArrayList<>();
         tanks = new ArrayList<>();
-        firedAmmos = new LinkedList<>();
+        firedAmmos = new CopyOnWriteArrayList<>();
         playingControllers = new ArrayList<>();
         Tank tank = new Tank(0,0,"./.TANK_TROUBLE_DATA_BASE/PHOTOS/TANKS/blackTank_kind1.png");
         PlayingController playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT,KeyCode.M);
@@ -209,7 +211,7 @@ public class GameState
         return tanks;
     }
 
-    public static LinkedList<Ammo> getFiredAmmos() {
+    public static List<Ammo> getFiredAmmos() {
         return firedAmmos;
     }
 
