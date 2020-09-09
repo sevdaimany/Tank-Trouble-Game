@@ -36,7 +36,7 @@ public class LoginGameController
         tankControllerChooser = loginView.new TankControllerChooser();
         loginAction();
         startGameAction();
-
+        menuAction();
     }
 
     /*  Methods  */
@@ -68,6 +68,26 @@ public class LoginGameController
             gameView.addPlayersInfo();
 
         });
+    }
+
+     /**
+     * This method set menu button's action listener
+     */
+    public void menuAction()
+    {
+        loginView.getMenu().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
+        });
+
+        tankControllerChooser.getMenu().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
+        });
+
+
     }
 
 
