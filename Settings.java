@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.2
+ * @version 0.1.3
  */
 public final class Settings implements Serializable
 {
@@ -24,6 +24,9 @@ public final class Settings implements Serializable
 
     // life time of the ammos
     float ammosLifeTime = 4;
+
+    // game sounds
+    boolean isGameSoundMute = false;
 
 
     private static final long serialVersionUID = 3076892867441666860L;
