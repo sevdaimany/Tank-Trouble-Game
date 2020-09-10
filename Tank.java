@@ -65,7 +65,6 @@ public class Tank  extends Tile implements Serializable
     {
         super(x, y ,WIDTH ,HEIGHT , imageFilePath);
         imageView = new ImageView(super.getImage());
-        Main.getRootPlayGround().getChildren().add(imageView);
         health = 100;
         ammo = null;
         teta = 0;
@@ -80,6 +79,15 @@ public class Tank  extends Tile implements Serializable
 
 
             /*  Methods */
+
+
+    /**
+     * this method add tank's imageView to the root of game
+     */
+    public void addToGameRoot(){
+        Main.getRootPlayGround().getChildren().add(imageView);
+    }
+
             
 
     // * setter methods *

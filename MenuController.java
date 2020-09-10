@@ -111,6 +111,7 @@ public class MenuController
     public void onePlayerAction(){
         LoginGameController loginGameController = new LoginGameController();
         menuview.getButton1().setOnAction(event -> {
+            loginGameController.getTankControllerChooser().getButton().setText("Next Player");
             stage.setScene(new Scene(loginGameController.getLoginView()));
             stage.setTitle("login");
         });
