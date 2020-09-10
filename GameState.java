@@ -417,7 +417,10 @@ public class GameState
         int x = (int)(random.nextInt(99999) % widthPLayGround) ;
         int y = (int)(random.nextInt(99999) % heightPLayGround);
         while (true) {
-            if (!(TileGrid.getTile((int)Math.floor(x / 45),(int)Math.floor(y / 45)) instanceof Wall)) {
+            
+            Rectangle hiddenTank = new Rectangle(x, y ,18,20);
+
+            if(!tank_Wall_OtherTank_intersect(hiddenTank , null)) {
                 array[0] = x;
                 array[1] = y;
                 return array;
