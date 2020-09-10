@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.util.*;
+import javax.net.ssl.HttpsURLConnection;
+
 
 
 
@@ -13,7 +15,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.18.1
+ * @version 0.18.3
  */
 public class DataBase
 {
@@ -81,7 +83,7 @@ public class DataBase
 
     // * download links *
 
-    private static final String GITHUB_SERVER = "https://raw.githubusercontent.com/sevdaimany/Tank-Trouble-Game/blob/master/";
+    private static final String GITHUB_SERVER = "https://raw.githubusercontent.com/sevdaimany/Tank-Trouble-Game/master/";
     
     private static final String infoIconLink = GITHUB_SERVER + INFO_ICON;
     private static final String backgroundIconLink = GITHUB_SERVER + BACKGROUND_ICON;
@@ -585,8 +587,8 @@ public class DataBase
         catch (MalformedURLException e) {}
 
         HttpURLConnection connection = null;
-        try{ connection = (HttpURLConnection) url.openConnection(); }
-        catch (IOException e) {}
+        try{ connection = (HttpsURLConnection) url.openConnection(); }
+        catch (IOException | NullPointerException e) {}
 
         try{ connection.setRequestMethod("GET"); }
         catch (ProtocolException | SecurityException e) { return; }
@@ -603,7 +605,7 @@ public class DataBase
         {
             out.write(in.readAllBytes());
         }
-        catch (IOException | NullPointerException e) {System.out.println(e.getLocalizedMessage());}
+        catch (IOException | NullPointerException e) {System.out.println(e.getCause().getLocalizedMessage());}
 
         connection.disconnect();
     }
