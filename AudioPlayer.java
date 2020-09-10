@@ -13,7 +13,7 @@ import javax.sound.sampled.Clip;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.1.0
+ * @version 0.1.1
  */
 public class AudioPlayer 
 {
@@ -66,6 +66,7 @@ public class AudioPlayer
      */
     public void playFile()
     {
-        soundEffect.start();
+        if (!isMute)
+            soundEffect.start();
     }
 }
