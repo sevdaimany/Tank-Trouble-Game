@@ -2,7 +2,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -14,7 +13,6 @@ import javafx.event.EventHandler;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -80,28 +78,18 @@ public class GameState
      */
     public static void init() 
     {
+        keyholder();
+    }
+
+
+    /**
+     * this method new lists in game
+     */
+    public  static void  newFields(){
         players = new ArrayList<>();
         tanks = new ArrayList<>();
         firedAmmos = new CopyOnWriteArrayList<>();
         playingControllers = new ArrayList<>();
-        Tank tank = new Tank(0,0,"./.TANK_TROUBLE_DATA_BASE/PHOTOS/TANKS/blackTank_kind1.png");
-        PlayingController playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT,KeyCode.M);
-        tanks.add(tank);
-        playingControllers.add(playingController);
-        keyholder();
-        Player player = new Player("sevda","imany","sevdaiy","1234");
-        player.setPlayerTank(tank);
-        players.add(player);
-
-
-        Tank tank2 = new Tank(230,230,"./.TANK_TROUBLE_DATA_BASE/PHOTOS/TANKS/greenTank_kind2.png");
-        PlayingController playingController2 = new PlayingController(tank2, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A,KeyCode.Q);
-        tanks.add(tank2);
-        playingControllers.add(playingController2);
-        Player player2 = new Player("saina","imany","saina","1234");
-        player2.setPlayerTank(tank2);
-        players.add(player2);
-   
     }
 
 
