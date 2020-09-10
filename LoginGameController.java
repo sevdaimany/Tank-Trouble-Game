@@ -84,10 +84,10 @@ public class LoginGameController
         tankControllerChooser.getButton().setOnAction(event -> {
             if(GameState.getPlayers().size() < 2) {
 
-                boolean selectRadioButton1 = tankControllerChooser.getRadioButton1().isSelected();
-                boolean selectRadioButton2 = tankControllerChooser.getRadioButton2().isSelected();
-                boolean selectRadioButton3 = tankControllerChooser.getRadioButton3().isSelected();
-                String tankColor = tankControllerChooser.getChoiceBox().getValue();
+                boolean selectRadioButton1 = LoginView.getRadioButton1().isSelected();
+                boolean selectRadioButton2 = LoginView.getRadioButton2().isSelected();
+                boolean selectRadioButton3 = LoginView.getRadioButton3().isSelected();
+                String tankColor = LoginView.getChoiceBox().getValue();
 
                 if (!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 && tankColor == null) {
                     tankControllerChooser.getErrorLable().setText("  Please choose first.  ");

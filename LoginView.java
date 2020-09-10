@@ -56,6 +56,14 @@ public class LoginView extends BorderPane
     private Label errorLable;
 
 
+    //choose tank's color
+    private static ChoiceBox<String> choiceBox;
+    private static RadioButton radioButton1;
+    private static RadioButton radioButton2;
+    private static RadioButton radioButton3;
+
+
+
 
 
 
@@ -177,16 +185,43 @@ public class LoginView extends BorderPane
 
 
 
+       /**
+     * @return choicebox
+     */
+    public static  ChoiceBox<String> getChoiceBox() {
+        return choiceBox;
+    }
+
+    /**
+     * @return radiobutton1
+     */
+    public static RadioButton getRadioButton1() {
+        return radioButton1;
+    }
+
+    /**
+     * @return radiobutton2
+     */
+    public  static  RadioButton getRadioButton2() {
+        return radioButton2;
+    }
+
+    /**
+     * @return radiobutton3
+     */
+    public static RadioButton getRadioButton3() {
+        return radioButton3;
+    }
+
+
+
+
+
     /**
      * this inner class represent a tank and controller chooser page in game after player login
      */
     class TankControllerChooser extends BorderPane{
 
-        //choose tank's color
-        private ChoiceBox<String> choiceBox;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
         //start game button
         private Button button;
         //menu button
@@ -348,34 +383,7 @@ public class LoginView extends BorderPane
         }
 
 
-        /** 
-         * @return choicebox
-         */
-        public ChoiceBox<String> getChoiceBox() {
-            return choiceBox;
-        }
-
-        /**
-         * @return radiobutton1
-         */
-        public RadioButton getRadioButton1() {
-            return radioButton1;
-        }
-
-        /**
-         * @return radiobutton2
-         */
-        public RadioButton getRadioButton2() {
-            return radioButton2;
-        }
-
-        /**
-         * @return radiobutton3
-         */
-        public RadioButton getRadioButton3() {
-            return radioButton3;
-        }
-
+      
         /**
          * @return start game's button
          */
