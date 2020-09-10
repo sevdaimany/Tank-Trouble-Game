@@ -13,7 +13,7 @@ import javax.sound.sampled.Clip;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.2.0
+ * @version 0.3.0
  */
 public class AudioPlayer 
 {
@@ -77,5 +77,14 @@ public class AudioPlayer
     public static void mute()
     {
         isMute = true;
+    }
+
+
+    /**
+     * This method un mute the game sound
+     */
+    public static void unMute()
+    {
+        isMute = false;
     }
 }
