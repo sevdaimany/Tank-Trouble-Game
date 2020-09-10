@@ -80,61 +80,85 @@ public class LoginGameController
      */
     public void startGameAction(){
 
-        GameView gameView = new GameView();
 
         tankControllerChooser.getButton().setOnAction(event -> {
+            if(GameState.getPlayers().size() < 2) {
 
-            boolean selectRadioButton1 = tankControllerChooser.getRadioButton1().isSelected();
-            boolean selectRadioButton2 = tankControllerChooser.getRadioButton2().isSelected();
-            boolean selectRadioButton3 = tankControllerChooser.getRadioButton3().isSelected();
-            String tankColor = tankControllerChooser.getChoiceBox().getValue();
+                boolean selectRadioButton1 = tankControllerChooser.getRadioButton1().isSelected();
+                boolean selectRadioButton2 = tankControllerChooser.getRadioButton2().isSelected();
+                boolean selectRadioButton3 = tankControllerChooser.getRadioButton3().isSelected();
+                String tankColor = tankControllerChooser.getChoiceBox().getValue();
 
-            if(!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 &&  tankColor == null){
-                tankControllerChooser.getErrorLable().setText("  Please choose first.  ");
-                return;
+                if (!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 && tankColor == null) {
+                    tankControllerChooser.getErrorLable().setText("  Please choose first.  ");
+                    return;
+                }
+
+
+
+                Player player = null;
+                try {
+                    player = DataBase.getPlayer(loginView.getUsername().getText());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                Tank tank = new Tank(0, 0, DataBase.getTankImage(tankColor));
+                player.setPlayerTank(tank);
+
+
+                PlayingController playingController = null;
+
+                if (selectRadioButton1) {
+                    playingController = new PlayingController(tank, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A, KeyCode.Q);
+                } else if (selectRadioButton2) {
+                    playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.M);
+
+                }
+
+                GameState.getTanks().add(tank);
+                GameState.getPlayers().add(player);
+                GameState.getPlayingControllers().add(playingController);
+
+
+
+                if(GameState.getPlayers().size() == 2){
+
+                    GameView gameView = new GameView();
+
+                    Scene scene = new Scene(gameView);
+                    stage.setScene(scene);
+                    GameLoop game = new GameLoop();
+                    game.init(gameView);
+                    stage.setTitle("Tank Trouble");
+
+                    for(Tank tank2 : GameState.getTanks()){
+                        int[] tankXandY = GameState.randomXandY();
+                        int x = tankXandY[0];
+                        int y = tankXandY[1];
+                        tank2.setX(x);
+                        tank2.setY(y);
+                        tank2.draw();
+                        tank2.addToGameRoot();
+
+                    }
+
+                    gameView.addPlayersInfo();
+
+
+                }
+
+                else {
+
+                    LoginGameController loginGameController = new LoginGameController();
+                    stage.setScene(new Scene(loginGameController.getLoginView()));
+                    stage.setTitle("login");
+                }
+
+
             }
-
-
-            Scene scene = new Scene(gameView);
-            stage.setScene(scene);
-            GameLoop game = new GameLoop();
-            game.init(gameView);
-            stage.setTitle("Tank Trouble");
-
-
-            Player player = null;
-            try {
-                player = DataBase.getPlayer(loginView.getUsername().getText());
-            }catch (IOException e){e.printStackTrace();}
-
-
-            int[] tankXandY = GameState.randomXandY();
-            int x = tankXandY[0];
-            int y = tankXandY[1];
-            Tank tank = new Tank(x,y,DataBase.getTankImage(tankColor));
-            player.setPlayerTank(tank);
-
-
-            PlayingController playingController = null;
-
-            if(selectRadioButton1){
-                playingController = new PlayingController(tank, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A,KeyCode.Q);
-            } else if (selectRadioButton2) {
-                playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT,KeyCode.M);
-
-            }
-
-            GameState.getTanks().add(tank);
-            GameState.getPlayers().add(player);
-            GameState.getPlayingControllers().add(playingController);
-
-            gameView.addPlayersInfo();
-
-
-
 
         });
-
     }
 
 
