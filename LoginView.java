@@ -268,7 +268,7 @@ public class LoginView extends BorderPane
 
             //create a choicebox
             choiceBox = new ChoiceBox<String>();
-            choiceBox.getItems().addAll("Red","Blue","Green","Sand","Perpel","Pink","Yellow","White");
+            choiceBox.getItems().addAll("Red","Blue","Green","Sand","Purple","Pink","Yellow","Orange","White","Black","Gray");
             Label label = new Label("Choose your tank's color");
             label.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
             HBox hBox = new HBox(label,choiceBox);
