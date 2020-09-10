@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.19.0
+ * @version 0.20.0
  */
 public class DataBase
 {
@@ -334,6 +334,20 @@ public class DataBase
      * @param damage : damage of ammos to set
      */
     public static void setAmmosDamage(int damage) { SETTINGS.ammoDamage = damage; saveSettings(); }
+    /**
+     * This method sets the sound of game
+     * 
+     * @param mute : set it true if you want to mute the game sound
+     */
+    public static void muteGameSound(boolean mute) 
+    { 
+        SETTINGS.isGameSoundMute = mute;
+
+        if (mute)
+            AudioPlayer.mute();
+        else
+            AudioPlayer.unMute();
+    }
     /**
      * @return return settings of the game
      */
