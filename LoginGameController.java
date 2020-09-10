@@ -105,15 +105,19 @@ public class LoginGameController
 
                 Tank tank = new Tank(0, 0, DataBase.getTankImage(tankColor));
                 player.setPlayerTank(tank);
+                LoginView.getChoiceBox().getItems().remove(tankColor);
+
 
 
                 PlayingController playingController = null;
 
                 if (selectRadioButton1) {
                     playingController = new PlayingController(tank, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A, KeyCode.Q);
-                } else if (selectRadioButton2) {
+                    LoginView.getRadioButton1().setDisable(true);
+                } 
+                else if (selectRadioButton2) {
                     playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.M);
-
+                    LoginView.getRadioButton2().setDisable(true);
                 }
 
                 GameState.getTanks().add(tank);
