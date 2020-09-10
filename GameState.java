@@ -412,10 +412,13 @@ public class GameState
     public static int[] randomXandY(){
 
         Random random = new Random();
-        int[] array = new int[2];
+        int[] array = new int[3];
 
         int x = (int)(random.nextInt(99999) % widthPLayGround) ;
         int y = (int)(random.nextInt(99999) % heightPLayGround);
+        int teta = (int)(random.nextInt(360));
+        array[2] = teta;
+
         while (true) {
             
             Rectangle hiddenTank = new Rectangle(x, y ,18,20);

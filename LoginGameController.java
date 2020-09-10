@@ -84,12 +84,12 @@ public class LoginGameController
         tankControllerChooser.getButton().setOnAction(event -> {
             if(GameState.getPlayers().size() < 2) {
 
-                boolean selectRadioButton1 = tankControllerChooser.getRadioButton1().isSelected();
-                boolean selectRadioButton2 = tankControllerChooser.getRadioButton2().isSelected();
-                boolean selectRadioButton3 = tankControllerChooser.getRadioButton3().isSelected();
-                String tankColor = tankControllerChooser.getChoiceBox().getValue();
+                boolean selectRadioButton1 = LoginView.getRadioButton1().isSelected();
+                boolean selectRadioButton2 = LoginView.getRadioButton2().isSelected();
+                boolean selectRadioButton3 = LoginView.getRadioButton3().isSelected();
+                String tankColor = LoginView.getChoiceBox().getValue();
 
-                if (!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 && tankColor == null) {
+                if ((!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 ) || tankColor == null) {
                     tankControllerChooser.getErrorLable().setText("  Please choose first.  ");
                     return;
                 }
@@ -105,15 +105,22 @@ public class LoginGameController
 
                 Tank tank = new Tank(0, 0, DataBase.getTankImage(tankColor));
                 player.setPlayerTank(tank);
+                LoginView.getChoiceBox().getItems().remove(tankColor);
+                LoginView.getChoiceBox().setValue(null);
+
 
 
                 PlayingController playingController = null;
 
                 if (selectRadioButton1) {
                     playingController = new PlayingController(tank, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A, KeyCode.Q);
-                } else if (selectRadioButton2) {
+                    LoginView.getRadioButton1().setSelected(false);
+                    LoginView.getRadioButton1().setDisable(true);
+                } 
+                else if (selectRadioButton2) {
                     playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.M);
-
+                    LoginView.getRadioButton2().setSelected(false);
+                    LoginView.getRadioButton2().setDisable(true);
                 }
 
                 GameState.getTanks().add(tank);
@@ -136,8 +143,12 @@ public class LoginGameController
                         int[] tankXandY = GameState.randomXandY();
                         int x = tankXandY[0];
                         int y = tankXandY[1];
+                        int teta = tankXandY[2];
+
                         tank2.setX(x);
                         tank2.setY(y);
+                        tank.setTeta(teta);
+
                         tank2.draw();
                         tank2.addToGameRoot();
 
