@@ -99,7 +99,7 @@ public class TileGrid
      * @param ycoord
      * @return tile with given coordinate
      */
-    public Tile getTile(int xcoord, int ycoord)
+    public static Tile getTile(int xcoord, int ycoord)
     {
         return map[xcoord][ycoord];
     }
