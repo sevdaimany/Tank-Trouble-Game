@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.20.0
+ * @version 0.21.0
  */
 public class DataBase
 {
@@ -759,6 +759,23 @@ public class DataBase
             if (!isFileAvailable(AMMO_IMAGES + "special" + color + "Ammo" + png))
                 downloader(groundsGithubLink + "special" + color + "Ammo" + png, AMMO_IMAGES, "special" + color + "Ammo" + png);
         }
+    }
+
+
+    // this method downloads audio files
+    private static void downloadAudios()
+    {
+        if (!isFileAvailable(FIRE_SOUND))
+            downloader(audiosGithubLink + "fire.wav", AUDIOS_FOLDER, "fire.wav");
+
+        if (!isFileAvailable(AMMO_REFLECTION_SOUND))
+            downloader(audiosGithubLink + "ammoReflect.wav", AUDIOS_FOLDER, "ammoReflect.wav");
+
+        if (!isFileAvailable(TANK_EXPLOSION_SOUND))
+            downloader(audiosGithubLink + "tankExplosion.wav", AUDIOS_FOLDER, "tankExplosion.wav");
+
+        if (!isFileAvailable(WALL_EXPLOSION_SOUND))
+            downloader(audiosGithubLink + "wallExplosion.wav", AUDIOS_FOLDER, "wallExplosion.wav");
     }
 
 
