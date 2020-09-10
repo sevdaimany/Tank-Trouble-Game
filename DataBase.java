@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.18.3
+ * @version 0.18.5
  */
 public class DataBase
 {
@@ -77,6 +77,15 @@ public class DataBase
     private static final String UpDown_KEYS_IMAGE = ICONS_FOLDER + "updown.png";
     private static final String Q_BUTTON_IMAGE = ICONS_FOLDER + "q.png";
     private static final String M_BUTTON_IMAGE = ICONS_FOLDER + "m.png";
+
+
+
+    // path of audio files
+    private static final String AUDIOS_FOLDER = MAIN_FOLDER + "AUDIOS/";
+    private static final String FIRE_SOUND = AUDIOS_FOLDER + "fire.wav";
+    private static final String AMMO_REFLECTION_SOUND = AUDIOS_FOLDER + "ammoReflect.wav";
+    private static final String TANK_EXPLOSION_SOUND = AUDIOS_FOLDER + "tankExplosion.wav";
+    private static final String WALL_EXPLOSION_SOUND = AUDIOS_FOLDER + "wallExplosion.wav" ;
 
 
     
