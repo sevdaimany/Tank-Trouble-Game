@@ -136,8 +136,12 @@ public class LoginGameController
                         int[] tankXandY = GameState.randomXandY();
                         int x = tankXandY[0];
                         int y = tankXandY[1];
+                        int teta = tankXandY[2];
+
                         tank2.setX(x);
                         tank2.setY(y);
+                        tank.setTeta(teta);
+
                         tank2.draw();
                         tank2.addToGameRoot();
 
