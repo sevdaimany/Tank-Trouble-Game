@@ -13,7 +13,7 @@ import java.util.*;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.18.0
+ * @version 0.18.1
  */
 public class DataBase
 {
@@ -81,7 +81,7 @@ public class DataBase
 
     // * download links *
 
-    private static final String GITHUB_SERVER = "https://raw.githubusercontent.com/sevdaimany/Tank-Trouble-Game/master/";
+    private static final String GITHUB_SERVER = "https://raw.githubusercontent.com/sevdaimany/Tank-Trouble-Game/blob/master/";
     
     private static final String infoIconLink = GITHUB_SERVER + INFO_ICON;
     private static final String backgroundIconLink = GITHUB_SERVER + BACKGROUND_ICON;
