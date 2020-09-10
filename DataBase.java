@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.21.0
+ * @version 0.21.1
  */
 public class DataBase
 {
@@ -200,6 +200,7 @@ public class DataBase
         downloadAwards();
         downloadGrounds();
         downloadAmmos();
+        downloadAudios();
     }
 
 
