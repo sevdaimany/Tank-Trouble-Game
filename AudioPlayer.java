@@ -13,7 +13,7 @@ import javax.sound.sampled.Clip;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.0
+ * @version 0.3.2
  */
 public class AudioPlayer 
 {
@@ -22,9 +22,6 @@ public class AudioPlayer
     // is game mute or not
     private static boolean isMute = false;
 
-
-    // address of audio file
-    private String filePath;
 
     // clip object of the given file
     private Clip soundEffect;
