@@ -160,6 +160,21 @@ public class LoginView extends BorderPane
             /*  Methods  */
 
 
+     public static void firstCall(){
+        //create a choicebox
+        choiceBox = new ChoiceBox<String>();
+        choiceBox.getItems().addAll("Red","Blue","Green","Sand","Purple","Pink","Yellow","Orange","White","Black","Gray");
+
+
+        // create radio buttons
+        radioButton1 = new RadioButton("WASD");
+        radioButton2 = new RadioButton("UP DOWN");
+        radioButton3 = new RadioButton("MOUSE");
+
+    }
+
+
+
     // * getter methods *
 
     /**
@@ -237,11 +252,8 @@ public class LoginView extends BorderPane
 
 
             // create radio buttons
-            radioButton1 = new RadioButton("WASD");
             radioButton1.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
-            radioButton2 = new RadioButton("UP DOWN");
             radioButton2.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
-            radioButton3 = new RadioButton("MOUSE");
             radioButton3.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
 
 
@@ -302,8 +314,6 @@ public class LoginView extends BorderPane
 
 
             //create a choicebox
-            choiceBox = new ChoiceBox<String>();
-            choiceBox.getItems().addAll("Red","Blue","Green","Sand","Purple","Pink","Yellow","Orange","White","Black","Gray");
             Label label = new Label("Choose your tank's color");
             label.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 20));
             HBox hBox = new HBox(label,choiceBox);

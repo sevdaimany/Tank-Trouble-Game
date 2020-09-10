@@ -109,9 +109,10 @@ public class MenuController
      * this method add 1player button's actionlistener
      */
     public void onePlayerAction(){
-        LoginGameController loginGameController = new LoginGameController();
         menuview.getButton1().setOnAction(event -> {
             GameState.newFields();
+            LoginView.firstCall();
+            LoginGameController loginGameController = new LoginGameController();
             loginGameController.getTankControllerChooser().getButton().setText("Next Player");
             stage.setScene(new Scene(loginGameController.getLoginView()));
             stage.setTitle("login");
