@@ -89,7 +89,7 @@ public class LoginGameController
                 boolean selectRadioButton3 = LoginView.getRadioButton3().isSelected();
                 String tankColor = LoginView.getChoiceBox().getValue();
 
-                if (!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 && tankColor == null) {
+                if ((!selectRadioButton1 && !selectRadioButton2 && !selectRadioButton3 ) || tankColor == null) {
                     tankControllerChooser.getErrorLable().setText("  Please choose first.  ");
                     return;
                 }
@@ -106,6 +106,7 @@ public class LoginGameController
                 Tank tank = new Tank(0, 0, DataBase.getTankImage(tankColor));
                 player.setPlayerTank(tank);
                 LoginView.getChoiceBox().getItems().remove(tankColor);
+                LoginView.getChoiceBox().setValue(null);
 
 
 
@@ -113,10 +114,12 @@ public class LoginGameController
 
                 if (selectRadioButton1) {
                     playingController = new PlayingController(tank, KeyCode.W, KeyCode.S, KeyCode.D, KeyCode.A, KeyCode.Q);
+                    LoginView.getRadioButton1().setSelected(false);
                     LoginView.getRadioButton1().setDisable(true);
                 } 
                 else if (selectRadioButton2) {
                     playingController = new PlayingController(tank, KeyCode.UP, KeyCode.DOWN, KeyCode.RIGHT, KeyCode.LEFT, KeyCode.M);
+                    LoginView.getRadioButton2().setSelected(false);
                     LoginView.getRadioButton2().setDisable(true);
                 }
 
