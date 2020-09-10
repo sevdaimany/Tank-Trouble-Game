@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.18.6
+ * @version 0.19.0
  */
 public class DataBase
 {
@@ -578,6 +578,27 @@ public class DataBase
                 return null;
         }
     }
+
+
+
+    // * audios getters *
+
+    /**
+     * @return path of the fire sound file
+     */
+    public static String getFireSound() { return FIRE_SOUND; }
+    /**
+     * @return path of the ammo reflection file
+     */
+    public static String getAmmoReflectionSound() { return AMMO_REFLECTION_SOUND; }
+    /**
+     * @return path of the tank explosion file
+     */
+    public static String getTankExplosionSound() { return TANK_EXPLOSION_SOUND; }
+    /**
+     * @return path of the wall explosion file
+     */
+    public static String getWallExplosionSound() { return WALL_EXPLOSION_SOUND; }
 
 
 
