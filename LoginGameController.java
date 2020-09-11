@@ -61,6 +61,13 @@ public class LoginGameController
            isRegistered = DataBase.isPasswordCorrect(loginView.getUsername().getText() ,loginView.getPassword().getText());
             }catch (IOException e){e.printStackTrace();}
 
+            for(Player player : GameState.getPlayers()){
+                if(player.getUsername().equals(loginView.getUsername().getText())){
+                    loginView.getErrorLable().setText("  " + player.getUsername() + " has been login the game.  ");
+                    return;
+                }
+            }
+           
             if(isRegistered) {
                 stage.setScene(new Scene(this.getTankControllerChooser()));
                 stage.setTitle("Choose");
