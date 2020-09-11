@@ -1,3 +1,4 @@
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -23,6 +24,20 @@ public class GameOverController {
     public GameOverController() {
         this.gameOverView = new GameOverView();
         this.stage = Main.getStage();
+        menuAction();
+    }
+
+
+    /**
+     * this method add menu button's action listener
+     */
+    public void menuAction(){
+        gameOverView.getMenuBTN().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
+        });
+
     }
 
     /**
