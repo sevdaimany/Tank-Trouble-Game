@@ -1,5 +1,6 @@
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
@@ -18,8 +19,36 @@ import java.io.FileInputStream;
  */
 public class GameOverView  extends BorderPane {
 
+    //play again button
+    private Button playAgainBTN;
+
+    //menu button
+    private Button menuBTN;
+
+
     public GameOverView() {
-        this.setCenter(scores());
+
+        playAgainBTN = new Button(" Play Again ");
+        menuBTN = new Button("    Menu    ");
+        
+        playAgainBTN.setPrefSize(150,40);
+        playAgainBTN.setStyle("-fx-background-color: #20B2AA; -fx-background-radius: 15px; -fx-text-fill: #ffffff");
+
+
+        menuBTN.setPrefSize(150,40);
+        menuBTN.setStyle("-fx-background-color: #20B2AA; -fx-background-radius: 15px; -fx-text-fill: #ffffff");
+
+        
+        HBox  buttons = new HBox(playAgainBTN, menuBTN);
+        buttons.setAlignment(Pos.CENTER);
+        buttons.setSpacing(50);
+
+        VBox vBox = new VBox(scores() ,new Label("    "),new Label("    "), buttons);
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setSpacing(30);
+        this.setCenter(vBox);
+       
+
         FileInputStream input = null;
         try {
             input = new FileInputStream(DataBase.getDarkbackgroundIcon());
@@ -105,5 +134,20 @@ public class GameOverView  extends BorderPane {
 
         }
         return vBox;
+    }
+
+
+    /**
+     * @return play again button
+     */
+    public Button getPlayAgainBTN() {
+        return playAgainBTN;
+    }
+
+    /**
+     * @return menu button
+     */
+    public Button getMenuBTN() {
+        return menuBTN;
     }
 }
