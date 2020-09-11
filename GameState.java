@@ -43,7 +43,7 @@ public class GameState
     private static List<Ammo> firedAmmos;
 
     // walls of the map
-    private static ArrayList<Wall> walls = new ArrayList<>();
+    private static ArrayList<Wall> walls ;
 
     // playing controllers
     private static ArrayList<PlayingController> playingControllers;
@@ -91,6 +91,13 @@ public class GameState
         firedAmmos = new CopyOnWriteArrayList<>();
         playingControllers = new ArrayList<>();
     }
+
+    /**
+     * this method new walls arraylist
+     */
+    public static  void newWalls(){
+        walls = new ArrayList<>();
+   }
 
 
     /**

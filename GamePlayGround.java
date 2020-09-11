@@ -29,6 +29,7 @@ public class GamePlayGround {
      * create a new playground
      */
     public GamePlayGround(){
+        GameState.newWalls();
         TileGrid tileGrid =new TileGrid(newMap);
         tileGrid.draw();
         GameState.setHeightPLayGround((newMap.length- 0.5) * 45);
