@@ -36,6 +36,7 @@ public class GameLoop
                     GameOverController gameOverController = new GameOverController();
                     Scene scene = new Scene(gameOverController.getGameOverView());
                     Main.getStage().setScene(scene);
+                    stop();
                 }
             }
         };
