@@ -144,6 +144,7 @@ public class LoginView extends BorderPane
         //set login vbox in borderpane
         this.setCenter(login);
         this.setLeft(menu);
+        this.setRight(new Label("                               "));
         this.setPadding(new Insets(5, 5, 5, 5));
 
         this.setBackground(new Background(backgroundimage));

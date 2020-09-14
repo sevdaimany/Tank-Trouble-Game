@@ -148,6 +148,7 @@ public class RegisterView extends BorderPane
         this.setCenter(registerVBox);
 
         this.setLeft(menu);
+        this.setRight(new Label("                               "));
         this.setPadding(new Insets(5, 5, 5, 5));
 
 
