@@ -31,9 +31,7 @@ public class MenuView extends BorderPane
 
             /*  Fields  */
 
-    // 1player's button
-    private Button button1;
-
+    
     // 2player's button
     private Button button2;
 
@@ -73,11 +71,7 @@ public class MenuView extends BorderPane
      */      
     public MenuView() throws  Exception
     {
-        FileInputStream input1 = new FileInputStream(DataBase.getOnePlayerIconPath());
-        Image icon1 = new Image(input1);
-        ImageView imageView1 = new ImageView(icon1);
-        button1 = new Button("   1 PLAYER   ", imageView1);
-
+       
 
         // create 2 players button
         FileInputStream input2 = new FileInputStream(DataBase.getTwoPLAyersIconPath());
@@ -108,7 +102,7 @@ public class MenuView extends BorderPane
 
 
         // set buttons to  hbox
-        HBox hBox = new HBox(button1, button2, button3, button4, button5);
+        HBox hBox = new HBox(button2, button3, button4, button5);
         //Setting the hbox alignment
         hBox.setAlignment(Pos.CENTER);
         //setting the spacing
@@ -212,10 +206,6 @@ public class MenuView extends BorderPane
 
     // * getter methods *
 
-    /**
-     * @return 1player's button
-     */
-    public Button getButton1() { return button1; }
     /**
      * @return 2player's button
      */
