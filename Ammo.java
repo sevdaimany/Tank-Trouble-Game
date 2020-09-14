@@ -146,7 +146,8 @@ public class Ammo extends Tile
         
         if (teta%90 == 0)
         {
-            ammoMoveSpeed *= -1;
+            teta += 360;
+
             return;
         }
 
