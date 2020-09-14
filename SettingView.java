@@ -44,10 +44,14 @@ public class SettingView extends TabPane
         //create user tab
         Tab userSettingTab = new Tab("User");
         userSettingTab.setContent(register());
+        userSettingTab.setClosable(false);
+
 
         //create game tab
         Tab gameSettingTab = new Tab("Game");
         gameSettingTab.setContent(gameSetting());
+        gameSettingTab.setClosable(false);
+
 
         //add tabs to tabpane
         this.getTabs().add(userSettingTab);
