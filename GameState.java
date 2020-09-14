@@ -159,6 +159,7 @@ public class GameState
             Wall hitedWall = ammo_Wall_intersect(ammo);
             if (hitedWall != null){
                 ammo.hit(hitedWall);
+                ammo.setTank(null);
             }
 
             Tank hitedTank = ammo_Tank_intersect(ammo);
