@@ -147,4 +147,40 @@ public class GameSettingView extends BorderPane {
                gameSetting.setSpacing(5);
                this.setCenter(gameSetting);
            }
+
+
+        /**
+         * @return tank health's slider
+         */
+        public Slider getTankesHealthSlider() {
+            return tankesHealthSlider;
+        }
+    
+        /**
+         * @return bullet power's slider
+         */
+        public Slider getBulletPowerSlider() {
+            return bulletPowerSlider;
+        }
+    
+        /**
+         * @return wall health slider
+         */
+        public Slider getWallHealthSlider() {
+            return wallHealthSlider;
+        }
+    
+        /**
+         * @return ammo lifeTime's slider
+         */
+        public Slider getAmmosLifeTimeSlider() {
+            return ammosLifeTimeSlider;
+        }
+
+        /** 
+         * @return save button
+         */
+        public Button getSaveButton() {
+            return saveButton;
+        }
         }
