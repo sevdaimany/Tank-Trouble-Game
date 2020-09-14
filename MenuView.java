@@ -175,7 +175,7 @@ public class MenuView extends BorderPane
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
+                new BackgroundSize(1.0, 1.0, true, true, false, false));
 
 
         //Arranging all the nodes in the border pane

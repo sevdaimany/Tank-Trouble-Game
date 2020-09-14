@@ -140,7 +140,7 @@ public class UserSettingView extends BorderPane
                BackgroundRepeat.NO_REPEAT,
                BackgroundRepeat.NO_REPEAT,
                BackgroundPosition.DEFAULT,
-               BackgroundSize.DEFAULT);
+               new BackgroundSize(1.0, 1.0, true, true, false, false));
 
 
        Rectangle2D screenBounds = Screen.getPrimary().getBounds();
