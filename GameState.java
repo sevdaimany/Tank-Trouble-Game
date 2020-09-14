@@ -111,6 +111,7 @@ public class GameState
     {
         updateTankState();
         updateFiredAmmosState();
+        updateAwardsState();
     }
 
 
@@ -146,6 +147,18 @@ public class GameState
             controller.updateTankState();
     }
 
+    
+    /**
+     * this method updated awards state
+     */
+    public static void updateAwardsState(){
+        for(Award award : awards){
+            if(!award.isAlive()){
+                awards.remove(award);
+                award.remove();
+            }
+        }
+    }
 
     /**
      * This method updates fired ammos state
