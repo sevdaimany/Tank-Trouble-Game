@@ -12,19 +12,18 @@
  * @author Mohammad Mahdi Malmasi
  * @version 0.1.6
  */
-public abstract class Award 
+public abstract class Award  extends Tile
 {
             /*  Fields  */
 
-    // address of image file of this reward
-    private String imagePath;
-
-    // reward cordite
-    private float x, y;
-
+   
     // time of visibility of this reward in map
-    private float lifeTime;
+    private float lifeTime = 5;
 
+    // hold the creation time
+    private long createTime;
+
+    
 
 
 
@@ -34,22 +33,20 @@ public abstract class Award
          /* Constructor */
 
     /**
-     * Create a new reward with given details
-     * 
-     * 
-     * @param imageFilePath : address of reward image file
-     * @param x : x of the reward
-     * @param y : y of the reward
-     * @param lifeTime : visibility time of this reward
+     * Create a new reward 
      */
-    public Award(String imageFilePath, float x, float y, float lifeTime)
+    public Award()
     {
-        imagePath = imageFilePath;
+        super(0, 0, 30, 30, DataBase.getAward());
 
-        this.x = x;
-        this.y = y;
+        int[] randomXandY = GameState.randomXandY();
+        super.setX(randomXandY[0]);
+        super.setY(randomXandY[1]);
 
         this.lifeTime = lifeTime;
+        this.createTime = System.currentTimeMillis();
+        draw();
+
     }
 
 
