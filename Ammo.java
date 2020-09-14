@@ -110,6 +110,12 @@ public class Ammo extends Tile
     public Tank getTank() {   return tank;  }
 
 
+    /**
+     * @param tank
+     */
+    public void setTank(Tank tank) {
+        this.tank = tank;
+    }
 
 
 
