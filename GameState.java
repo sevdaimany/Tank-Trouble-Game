@@ -46,7 +46,7 @@ public class GameState
     private static ArrayList<Wall> walls ;
 
     //game awards
-    private static ArrayList<Award> awards;
+    private static List<Award> awards;
 
     // playing controllers
     private static ArrayList<PlayingController> playingControllers;
@@ -91,7 +91,7 @@ public class GameState
     public  static void  newFields(){
         players = new ArrayList<>();
         tanks = new ArrayList<>();
-        awards = new ArrayList<>();
+        awards = new CopyOnWriteArrayList<>();
         firedAmmos = new CopyOnWriteArrayList<>();
         playingControllers = new ArrayList<>();
     }
@@ -212,7 +212,7 @@ public class GameState
         return tanks;
     }
 
-    public static ArrayList<Award> getAwards() {
+    public static List<Award> getAwards() {
         return awards;
     }
 
