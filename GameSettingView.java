@@ -48,7 +48,7 @@ public class GameSettingView extends BorderPane {
                Label tankesHealth = new Label("Tank's health  :  ");
                tankesHealth.setFont(Font.font("normal" , FontWeight.BOLD , FontPosture.REGULAR, 15));
        
-               tankesHealthSlider = new Slider(0,200,DataBase.getSettings().tanksHealth);
+               tankesHealthSlider = new Slider(50,200,DataBase.getSettings().tanksHealth);
                tankesHealthSlider.setShowTickLabels(true);
                tankesHealthSlider.setMajorTickUnit(10f);
                tankesHealthSlider.setMinSize(600,10);
@@ -63,7 +63,7 @@ public class GameSettingView extends BorderPane {
                //bullet's power lable
                Label bulletPower = new Label("Ammo's power : ");
                bulletPower.setFont(Font.font("normal" ,FontWeight.BOLD ,FontPosture.REGULAR, 15));
-               bulletPowerSlider = new Slider(0,200,DataBase.getSettings().ammoDamage);
+               bulletPowerSlider = new Slider(10,200,DataBase.getSettings().ammoDamage);
        
                bulletPowerSlider.setShowTickLabels(true);
                bulletPowerSlider.setMajorTickUnit(10f);
@@ -78,7 +78,7 @@ public class GameSettingView extends BorderPane {
                //wall's health lable
                Label wallHealth = new Label("Wall's health  :  ");
                wallHealth.setFont(Font.font("normal" ,FontWeight.BOLD ,FontPosture.REGULAR, 15));
-               wallHealthSlider = new Slider(0,200,DataBase.getSettings().woodWallsHealth);
+               wallHealthSlider = new Slider(50,200,DataBase.getSettings().woodWallsHealth);
        
                wallHealthSlider.setShowTickLabels(true);
                wallHealthSlider.setMajorTickUnit(10f);
@@ -92,10 +92,10 @@ public class GameSettingView extends BorderPane {
                Label ammosLifeTime = new Label("Ammo's life time :  ");
        
                ammosLifeTime.setFont(Font.font("normal" ,FontWeight.BOLD ,FontPosture.REGULAR, 15));
-               ammosLifeTimeSlider = new Slider(0,200,DataBase.getSettings().woodWallsHealth);
+               ammosLifeTimeSlider = new Slider(1,10,DataBase.getSettings().ammosLifeTime);
        
                ammosLifeTimeSlider.setShowTickLabels(true);
-               ammosLifeTimeSlider.setMajorTickUnit(10f);
+               ammosLifeTimeSlider.setMajorTickUnit(1f);
                ammosLifeTimeSlider.setMinSize(600,10);
        
                HBox ammoLife = new HBox(ammosLifeTime, ammosLifeTimeSlider);
