@@ -1,19 +1,19 @@
 import java.io.FileInputStream;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Screen;
 
 
@@ -35,6 +35,10 @@ public class GameView extends BorderPane {
 
     //player's information hbox
     private  HBox hBoxInfo;
+
+     // award label
+     private  static Label awardLable;
+
 
 
 
@@ -87,6 +91,16 @@ public class GameView extends BorderPane {
 
         hBoxInfo = new HBox();
 
+        awardLable = new Label();
+        awardLable.setTextFill(Color.RED);
+        awardLable.setFont(Font.font(15));
+
+        VBox vBox = new VBox(awardLable , hBoxInfo);
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setSpacing(10);
+
+
+
         for (Player player : GameState.getPlayers()){
             PlayerInfoView playerInfoView = new PlayerInfoView(player);
             hBoxInfo.getChildren().add(playerInfoView);
@@ -96,7 +110,7 @@ public class GameView extends BorderPane {
 
         hBoxInfo.setAlignment(Pos.CENTER);
         hBoxInfo.setSpacing(60);
-        this.setBottom(hBoxInfo);
+        this.setBottom(vBox);
 
 
     }
@@ -111,6 +125,12 @@ public class GameView extends BorderPane {
         return gamePlayGround;
     }
 
+    /**
+     * @return award Label
+     */
+    public static Label getAwardLable() {
+        return awardLable;
+    }
 
     
 }
