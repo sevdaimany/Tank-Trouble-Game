@@ -57,9 +57,18 @@ public class LoginGameController
                 return;
             }
             boolean isRegistered = false;
+            boolean isPasswordCorrect = false;
             try {
-           isRegistered = DataBase.isPasswordCorrect(loginView.getUsername().getText() ,loginView.getPassword().getText());
+                isRegistered = DataBase.isRegistered(loginView.getUsername().getText());
+                if(isRegistered) {
+                    isPasswordCorrect = DataBase.isPasswordCorrect(loginView.getUsername().getText(), loginView.getPassword().getText());
+                }
+                else {
+                    loginView.getErrorLable().setText("  Please login first.  ");
+                    return;
+                }
             }catch (IOException e){e.printStackTrace();}
+
 
             for(Player player : GameState.getPlayers()){
                 if(player.getUsername().equals(loginView.getUsername().getText())){
@@ -67,13 +76,12 @@ public class LoginGameController
                     return;
                 }
             }
-           
-            if(isRegistered) {
+            if(isPasswordCorrect) {
                 stage.setScene(new Scene(this.getTankControllerChooser()));
                 stage.setTitle("Choose");
             }
             else{
-                loginView.getErrorLable().setText("  Please login first.  ");
+                loginView.getErrorLable().setText("  Password is not correct.  ");
             }
         });
 
