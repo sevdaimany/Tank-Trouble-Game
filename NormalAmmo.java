@@ -26,6 +26,6 @@ public class NormalAmmo extends Ammo
 
          public NormalAmmo(String color, Tank tank)
          {
-             super(DataBase.getAmmo(color, 'n'), 8, 18 , tank);
+             super(DataBase.getAmmo(color, 's'), 8, 18 , tank);
          }
 }
