@@ -64,4 +64,15 @@ public abstract class Award  extends Tile
      * @param tankToApply : tank to apply reward
      */
     public abstract void applyRewardToTank(Tank tankToApply);
+
+
+     // this method return true if award's life time not ended
+     public boolean isAlive()
+     {
+         long currentTime = System.currentTimeMillis();
+ 
+         return (float)((currentTime - createTime)/1000.0) <= lifeTime;
+ 
+     }
+ 
 }
