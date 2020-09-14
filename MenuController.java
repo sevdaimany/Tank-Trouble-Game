@@ -50,7 +50,7 @@ public class MenuController
 
         settingBTNActon();
         registerBTNAction();
-        onePlayerAction();
+        twoPlayerAction();
 
 
 
@@ -108,8 +108,8 @@ public class MenuController
     /**
      * this method add 1player button's actionlistener
      */
-    public void onePlayerAction(){
-        menuview.getButton1().setOnAction(event -> {
+    public void twoPlayerAction(){
+        menuview.getButton2().setOnAction(event -> {
             GameState.newFields();
             LoginView.firstCall();
             LoginGameController loginGameController = new LoginGameController();
