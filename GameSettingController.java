@@ -1,3 +1,4 @@
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
@@ -31,6 +32,7 @@ public class GameSettingController {
     {
         this.stage =Main.getStage();
         gameSettingView =new GameSettingView();
+        saveAction();
     }
 
 
@@ -43,6 +45,21 @@ public class GameSettingController {
 
             /*  Methods  */
 
+
+    /**
+     * this method set save button's actionListener
+     */
+     public void saveAction(){
+        gameSettingView.getSaveButton().setOnAction(event -> {
+            DataBase.getSettings().tanksHealth = (int)gameSettingView.getTankesHealthSlider().getValue();
+            DataBase.getSettings().ammoDamage = (int) gameSettingView.getBulletPowerSlider().getValue();
+            DataBase.getSettings().ammosLifeTime = (int) gameSettingView.getAmmosLifeTimeSlider().getValue();
+            DataBase.getSettings().woodWallsHealth = (int) gameSettingView.getWallHealthSlider().getValue();
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trouble");
+        });
+    }
 
     // * getter methods *
 
