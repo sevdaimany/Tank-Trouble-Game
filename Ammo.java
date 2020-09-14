@@ -311,26 +311,26 @@ public class Ammo extends Tile
         float x_delta = 0;
 
         if(teta >= 270 && teta < 360) {
-             x_delta2 = -1 * (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
-             x_delta = -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 23;
+             x_delta2 = -1 * (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 9;
+             x_delta = -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 10;
         }
         else if ( teta > 0 && teta < 90 ){
-            x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
-            x_delta =  -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 25;
+            x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 9;
+            x_delta =  -1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 11;
         }
         else if ( teta >= 90 && teta < 180 ){
-            x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
-            x_delta =   -1 *(float) Math.cos(Math.toRadians(90 - tankTeta)) * 27;
+            x_delta2 =   (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 9;
+            x_delta =   -1 *(float) Math.cos(Math.toRadians(90 - tankTeta)) * 12;
         }
         else if ( teta > 180 && teta < 270 ){
-            x_delta2 = -1 *  (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 21;
-            x_delta  =-1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 27;
+            x_delta2 = -1 *  (float) Math.signum(Math.cos(Math.toRadians(90 - tankTeta))) * 9;
+            x_delta  =-1 * (float) Math.cos(Math.toRadians(90 - tankTeta)) * 12;
         }
 
 
         
         if( teta == 180 || teta == 0)
-            x_delta += 18;
+            x_delta +=  8;
 
 
         return tankX + x_delta2  + x_delta ;
@@ -348,28 +348,28 @@ public class Ammo extends Tile
         float y_delta = 0;
 
         if(teta > 270 && teta < 360) {
-             y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
-             y_delta = (float) Math.sin(Math.toRadians(90 - tankTeta)) * 23;
+             y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 9;
+             y_delta = (float) Math.sin(Math.toRadians(90 - tankTeta)) * 10;
         }
 
         else if ( teta >= 0 && teta < 90 ) {
-            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
-            y_delta = (float) Math.sin(Math.toRadians(90 - tankTeta)) * 25;
+            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 9;
+            y_delta = (float) Math.sin(Math.toRadians(90 - tankTeta)) * 11;
         }
 
         else if ( teta > 90 && teta < 180 ) {
-            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
-            y_delta =  (float) Math.cos(Math.toRadians(90 - tankTeta)) * 18;
+            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 9;
+            y_delta =  (float) Math.cos(Math.toRadians(90 - tankTeta)) *  8;
         }
 
         else if ( teta >= 180 && teta < 270 ) {
-            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 21;
-            y_delta =  -1 *(float) Math.cos(Math.toRadians(90 - tankTeta)) * 18;
+            y_delta2 = (float) Math.signum(Math.sin(Math.toRadians(90 - tankTeta))) * 9;
+            y_delta =  -1 *(float) Math.cos(Math.toRadians(90 - tankTeta)) *  8;
         }
 
 
         if( teta == 90  || teta == 270){
-            y_delta += 16;
+            y_delta += 7;
         }
 
 
