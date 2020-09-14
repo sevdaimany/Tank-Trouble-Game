@@ -66,7 +66,10 @@ public abstract class Award  extends Tile
     public abstract void applyRewardToTank(Tank tankToApply);
 
 
-     // this method return true if award's life time not ended
+    
+     /**
+      *  this method return true if award's life time not ended
+     */
      public boolean isAlive()
      {
          long currentTime = System.currentTimeMillis();
@@ -75,4 +78,13 @@ public abstract class Award  extends Tile
  
      }
  
+
+     /**
+      * this method remove award from game playground
+      */
+     public void remove(){
+
+        Main.getRootPlayGround().getChildren().remove(this);
+
+    }
 }
