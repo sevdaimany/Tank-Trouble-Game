@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -49,12 +51,38 @@ public class LoginController
     /**
      * Set login button's action
      */
-     public void loginAction()
-     {
+    public void loginAction()
+    {
         loginView.getLoginBTN().setOnAction(event -> {
-            UserSettingController userSettingController = new UserSettingController();
-            stage.setScene(new Scene(userSettingController.getUserSettingView()));
+
+            if(loginView.getUsername().getText().equals("") || loginView.getPassword().getText().equals("")){
+                loginView.getErrorLable().setText("  Please fill out fields.  ");
+                return;
+            }
+            boolean isRegistered = false;
+            boolean isPasswordCorrect = false;
+            try {
+                isRegistered = DataBase.isRegistered(loginView.getUsername().getText());
+                if(isRegistered) {
+                    isPasswordCorrect = DataBase.isPasswordCorrect(loginView.getUsername().getText(), loginView.getPassword().getText());
+                }
+                else {
+                    loginView.getErrorLable().setText("  Please login first.  ");
+                    return;
+                }
+            }catch (IOException e){e.printStackTrace();}
+
+            if(isPasswordCorrect) {
+                UserSettingController userSettingController = new UserSettingController();
+                stage.setScene(new Scene(userSettingController.getUserSettingView()));
+                stage.setTitle("Choose");
+            }
+            else{
+                loginView.getErrorLable().setText("  Password is not correct.  ");
+            }
         });
+
+
     }
 
     /**
