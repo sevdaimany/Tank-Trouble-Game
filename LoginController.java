@@ -34,6 +34,7 @@ public class LoginController
         this.stage =Main.getStage();
         loginView = new LoginView();
         loginAction();
+        menuAction();
     }
 
     
@@ -55,6 +56,19 @@ public class LoginController
             stage.setScene(new Scene(userSettingController.getUserSettingView()));
         });
     }
+
+    /**
+     * This method set menu button's action listener
+     */
+    public void menuAction()
+    {
+        loginView.getMenu().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
+        });
+    }
+
 
 
     // * getter methods *
