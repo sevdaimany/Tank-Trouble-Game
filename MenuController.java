@@ -1,4 +1,5 @@
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 
@@ -51,6 +52,7 @@ public class MenuController
         settingBTNActon();
         registerBTNAction();
         twoPlayerAction();
+        infoAction();
 
 
 
@@ -118,5 +120,20 @@ public class MenuController
             stage.setTitle("login");
         });
     }
+
+
+    /**
+     * this method add info button's actionListener
+     */
+    public void infoAction(){
+        menuview.getInfoBTN().setOnAction(event -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setHeaderText(null);
+            alert.setContentText("TankTrouble is a fun-filled game in which you battle tanks with bouncing bullets and other cool weapons in 2-dimensional mazes!\nTank Trouble started as our university project in 2020.\nContributions, issues and feature requests are welcome!\nEmails:\nm.mahdi.m79@gmail.com\nimanysevda@gmail.com.\n\n\n");
+            alert.showAndWait();
+        });
+    }
+    
 
 }
