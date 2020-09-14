@@ -167,7 +167,7 @@ public class GameState
                 firedAmmos.remove(ammo);
                 Main.getRootPlayGround().getChildren().remove(ammo.getImageView());
                 hitedTank.reduceHealth(ammo.getDamage());
-                tankProgressBar.get(hitedTank).setProgress((double) hitedTank.getHealth()/100);
+                tankProgressBar.get(hitedTank).setProgress((double) hitedTank.getHealth()/DataBase.getSettings().tanksHealth);
 
             }
 

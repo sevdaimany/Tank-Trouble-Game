@@ -65,7 +65,7 @@ public class Tank  extends Tile implements Serializable
     {
         super(x, y ,WIDTH ,HEIGHT , imageFilePath);
         imageView = new ImageView(super.getImage());
-        health = 100;
+        health = DataBase.getSettings().tanksHealth;
         ammo = null;
         teta = 0;
     }
