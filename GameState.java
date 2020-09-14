@@ -51,6 +51,9 @@ public class GameState
     // playing controllers
     private static ArrayList<PlayingController> playingControllers;
 
+    //list of protected tanks
+    private static ArrayList<Tank> protectedTanks;
+
     //width of game's playground    
     private static double widthPLayGround;
 
@@ -94,6 +97,8 @@ public class GameState
         awards = new CopyOnWriteArrayList<>();
         firedAmmos = new CopyOnWriteArrayList<>();
         playingControllers = new ArrayList<>();
+        protectedTanks = new ArrayList<>();
+
     }
 
     /**
@@ -180,7 +185,7 @@ public class GameState
             }
 
             Tank hitedTank = ammo_Tank_intersect(ammo);
-            if(hitedTank != null &&  hitedTank != ammo.getTank()){
+            if(hitedTank != null &&  hitedTank != ammo.getTank() && !protectedTanks.contains(hitedTank)){
                 firedAmmos.remove(ammo);
                 Main.getRootPlayGround().getChildren().remove(ammo.getImageView());
                 hitedTank.reduceHealth(ammo.getDamage());
@@ -235,6 +240,11 @@ public class GameState
 
     public static ArrayList<PlayingController> getPlayingControllers() {
         return playingControllers;
+    }
+
+
+    public static ArrayList<Tank> getProtectedTanks() {
+        return protectedTanks;
     }
 
     public static ArrayList<Wall> getWalls() {
