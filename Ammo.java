@@ -117,6 +117,12 @@ public class Ammo extends Tile
         this.tank = tank;
     }
 
+    /**
+     * @param damage
+     */
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 
 
 
