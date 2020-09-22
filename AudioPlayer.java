@@ -24,6 +24,8 @@ public class AudioPlayer
 
 
 
+            /*  Methods  */
+
 
 
 
@@ -82,8 +84,28 @@ public class AudioPlayer
     }
 
 
+     /**
+     * this method play wall's explosion sound
+     */
+    public static void wallExplosionSound() {
+        if(!isMute) {
+            try {
+                AudioInputStream in = AudioSystem.getAudioInputStream(new File(DataBase.getWallExplosionSound()).getAbsoluteFile());
+                Clip soundEffect = AudioSystem.getClip();
+                soundEffect.open(in);
+                soundEffect.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
-            /*  Methods  */
+    }
+
+
+
+
+
+
 
 
 

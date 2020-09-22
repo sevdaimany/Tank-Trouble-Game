@@ -360,6 +360,7 @@ public class GameState
             if (wall instanceof WoodWall) {
                 WoodWall woodWall = (WoodWall) wall;
                 if (intersect(ammoRectangle, woodWall)) {
+                        AudioPlayer.wallExplosionSound();
                         TileGrid.setTile(woodWall.getxCoordinate() , woodWall.getyCoordinate());
                         walls.remove(woodWall);
                         return true;
