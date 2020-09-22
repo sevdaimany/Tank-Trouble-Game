@@ -250,6 +250,7 @@ public class PlayingController
     // this method fire ammo
     private void fire()
     {
+        AudioPlayer.fireSound();
         Ammo ammo = new NormalAmmo("Red" , this.tank);
 
         this.tank.setAmmo(ammo);

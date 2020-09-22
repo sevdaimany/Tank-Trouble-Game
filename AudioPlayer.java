@@ -27,6 +27,23 @@ public class AudioPlayer
 
 
 
+    /**
+     * this method play fired ammo's sound
+     */
+    public static void fireSound() {
+        if(!isMute) {
+            try {
+                AudioInputStream in = AudioSystem.getAudioInputStream(new File(DataBase.getFireSound()).getAbsoluteFile());
+                Clip soundEffect = AudioSystem.getClip();
+                soundEffect.open(in);
+                soundEffect.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
 
   
 
@@ -37,7 +54,7 @@ public class AudioPlayer
 
             /*  Methods  */
 
-    
+
 
     /**
      * This method mute the game sound
