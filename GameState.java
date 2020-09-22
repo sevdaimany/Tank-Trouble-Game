@@ -159,6 +159,11 @@ public class GameState
     {
         for (PlayingController controller : playingControllers)
             controller.updateTankState();
+
+        
+         for (Tank tank: tanks){
+              tank_Award_Intersect(tank);
+          }
     }
 
     
@@ -172,6 +177,7 @@ public class GameState
                 award.remove();
             }
         }
+
     }
 
     /**
@@ -322,6 +328,26 @@ public class GameState
 
             return false;
     }
+
+
+
+    public static void tank_Award_Intersect(Tank tank){
+        for(Award award : awards){
+            if(intersect(tank,award)){
+                award.applyRewardToTank(tank);
+                awards.remove(award);
+                award.remove();
+
+                if(award instanceof DamageAward){
+                    poweredAmmoAward.add((DamageAward) award);
+                }
+                else if(award instanceof ProtecterAward){
+                    protectedAward.add((ProtecterAward) award);
+                }
+            }
+        }
+    }
+
 
     public static boolean ammo_WoodWall_intersect(Rectangle ammoRectangle){
 
