@@ -25,6 +25,8 @@ public class GameOverController {
         this.gameOverView = new GameOverView();
         this.stage = Main.getStage();
         menuAction();
+        playAgainAction();
+
     }
 
 
@@ -39,6 +41,38 @@ public class GameOverController {
         });
 
     }
+
+    /**
+     * this method add play again button's action listener
+     */
+    public void playAgainAction(){
+        
+        gameOverView.getPlayAgainBTN().setOnAction(event -> {
+
+            GameView gameView = new GameView();
+            Scene scene = new Scene(gameView);
+            stage.setScene(scene);
+            GameLoop game = new GameLoop();
+            game.init(gameView);
+            gameView.addPlayersInfo();
+            stage.setTitle("Tank Trouble");
+
+            for(Tank tank :GameState.getTanks()){
+                tank.healthDelta(DataBase.getSettings().tanksHealth - tank.getHealth());
+                tank.addToGameRoot();
+                int[] tankXandY = GameState.randomXandY();
+                int x = tankXandY[0];
+                int y = tankXandY[1];
+                int teta = tankXandY[2];
+                tank.setX(x);
+                tank.setY(y);
+                tank.setTeta(teta);
+                tank.draw();
+            }
+
+        });
+    }
+
 
     /**
      * @return gameover view
