@@ -18,4 +18,10 @@ public class ProtecterAward extends Award {
 
     }
 
+    public  void removeAward (){
+        GameState.getProtectedTanks().remove(this.tank);
+        GameView.getAwardLable().setText("");
+
+    }
+
 }
