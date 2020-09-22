@@ -53,6 +53,7 @@ public class MenuController
         registerBTNAction();
         twoPlayerAction();
         infoAction();
+        soundAction();
 
 
 
@@ -132,6 +133,20 @@ public class MenuController
             alert.setHeaderText(null);
             alert.setContentText("TankTrouble is a fun-filled game in which you battle tanks with bouncing bullets and other cool weapons in 2-dimensional mazes!\nTank Trouble started as our university project in 2020.\nContributions, issues and feature requests are welcome!\nEmails:\nm.mahdi.m79@gmail.com\nimanysevda@gmail.com.\n\n\n");
             alert.showAndWait();
+        });
+    }
+
+    /**
+     * this method add sound's checkbox actionlistener 
+     */
+    public void soundAction(){
+        menuview.getSound().setOnAction(event -> {
+            if(menuview.getSound().isSelected()){
+                AudioPlayer.unMute();
+            }
+            else {
+                AudioPlayer.mute();
+            }
         });
     }
     
