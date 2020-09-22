@@ -22,6 +22,9 @@ public class AudioPlayer
     // is game mute or not
     private static boolean isMute = false;
 
+    private static Clip gameSoundEffect;
+
+
 
 
             /*  Methods  */
@@ -106,18 +109,17 @@ public class AudioPlayer
      * this method play game's sound
      */
     public static void gameSound(){
-        if(!isMute) {
-            try {
-                AudioInputStream in = AudioSystem.getAudioInputStream(new File(DataBase.getGameSound()).getAbsoluteFile());
-                Clip soundEffect = AudioSystem.getClip();
-                soundEffect.open(in);
-                soundEffect.start();
-                soundEffect.loop(Clip.LOOP_CONTINUOUSLY);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        try {
+            AudioInputStream in = AudioSystem.getAudioInputStream(new File(DataBase.getGameSound()).getAbsoluteFile());
+            gameSoundEffect = AudioSystem.getClip();
+            gameSoundEffect.open(in);
+            gameSoundEffect.start();
+            gameSoundEffect.loop(Clip.LOOP_CONTINUOUSLY);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    }
+
+}
 
 
 
@@ -129,6 +131,8 @@ public class AudioPlayer
     public static void mute()
     {
         isMute = true;
+        gameSoundEffect.stop();
+
     }
 
 
@@ -138,5 +142,7 @@ public class AudioPlayer
     public static void unMute()
     {
         isMute = false;
+        gameSoundEffect.start();
+
     }
 }
