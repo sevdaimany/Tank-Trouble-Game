@@ -50,6 +50,9 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception 
     {
+        AudioPlayer.gameSound();
+
+        
         rootPlayGround = new Group();
         stage = primaryStage;
         

@@ -102,8 +102,22 @@ public class AudioPlayer
     }
 
 
-
-
+/**
+     * this method play game's sound
+     */
+    public static void gameSound(){
+        if(!isMute) {
+            try {
+                AudioInputStream in = AudioSystem.getAudioInputStream(new File(DataBase.getGameSound()).getAbsoluteFile());
+                Clip soundEffect = AudioSystem.getClip();
+                soundEffect.open(in);
+                soundEffect.start();
+                soundEffect.loop(Clip.LOOP_CONTINUOUSLY);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 
 
