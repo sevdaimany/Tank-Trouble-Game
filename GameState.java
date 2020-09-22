@@ -399,6 +399,7 @@ public class GameState
 
         for (Tank tank : GameState.getTanks()) {
                 if (intersect(ammoRectangle , tank)) {
+                    AudioPlayer.tankExplosionSound();
                     return tank;
                 }
             }

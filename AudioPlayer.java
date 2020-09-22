@@ -64,8 +64,22 @@ public class AudioPlayer
     }
 
 
+     /**
+     * this method play tank's explosion sound
+     */
+    public static void tankExplosionSound() {
+        if(!isMute) {
+            try {
+                AudioInputStream in = AudioSystem.getAudioInputStream(new File(DataBase.getTankExplosionSound()).getAbsoluteFile());
+                Clip soundEffect = AudioSystem.getClip();
+                soundEffect.open(in);
+                soundEffect.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
-
+    }
 
 
 
