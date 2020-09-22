@@ -2,6 +2,7 @@
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.effect.BlendMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -9,6 +10,8 @@ import javafx.scene.layout.*;
 import java.io.FileInputStream;
 import javafx.stage.Screen;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.control.Label;
+
 
 
 
@@ -52,6 +55,10 @@ public class MenuView extends BorderPane
 
     // setting's button
     private Button settingBTN;
+
+    //sound's checkbox
+    private CheckBox sound;
+
 
     
 
@@ -162,9 +169,15 @@ public class MenuView extends BorderPane
         settingBTN = new Button("  SETTING  ", imageViewSetting);
 
 
+
+        //creating sound checkbox
+        sound = new CheckBox("SoundOn");
+        sound.setSelected(true);
+        sound.setAlignment(Pos.CENTER);
+
         //set info and setting button in VBox
-        VBox vBoxTopRight = new VBox(infoBTN, settingBTN);
-        vBoxTopRight.setAlignment(Pos.BASELINE_RIGHT);
+        VBox vBoxTopRight = new VBox(infoBTN, settingBTN ,new Label("  "), sound);
+        vBoxTopRight.setAlignment(Pos.BASELINE_CENTER);
         vBoxTopRight.setSpacing(5);
 
 
@@ -234,4 +247,9 @@ public class MenuView extends BorderPane
      * @return setting's button
      */
     public Button getSettingBTN() { return settingBTN; }
+
+    /**
+     * @return sound's checkbox
+     */
+    public CheckBox getSound() {  return sound; }
 }
