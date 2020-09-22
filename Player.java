@@ -8,9 +8,9 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.4.0
+ * @version 0.4.2
  */
-public class Player extends Identity implements Serializable
+public class Player extends Identity
 {
             /*  Fields  */
 
@@ -21,7 +21,7 @@ public class Player extends Identity implements Serializable
     private Tank playerTank;
 
     // player's controller
-    private PlayingController playerController;
+    private transient PlayingController playerController;
 
 
     private static final long serialVersionUID = 615788720176053870L;
