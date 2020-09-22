@@ -1,4 +1,6 @@
 
+import java.util.Random;
+
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 
@@ -15,6 +17,9 @@ public class GameLoop
 
     private GameView gameView;
 
+    private long time;
+
+
     
     public void init(GameView gameView) {
         this.gameView = gameView;
@@ -29,6 +34,25 @@ public class GameLoop
         final AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long timestamp) {
+                if(System.currentTimeMillis() - time > 10000){
+                    time = System.currentTimeMillis();
+                    Random random = new Random();
+                    int rnd = random.nextInt(3);
+                    if(rnd == 0){
+                        HealthAward healthAward = new HealthAward();
+                        GameState.getAwards().add(healthAward);
+
+                    }
+                    else if(rnd == 1){
+                        ProtecterAward protecterAward = new ProtecterAward();
+                        GameState.getAwards().add(protecterAward);
+                    }
+                    else if(rnd == 2){
+                        DamageAward damageAward = new DamageAward();
+                        GameState.getAwards().add(damageAward);
+                    }
+                }
+               
                 for(DamageAward damageAward : GameState.getPoweredAmmoAward()){
                     if(System.currentTimeMillis() - damageAward.getCreateTimeApply() > damageAward.getLifeTimeApply() *1000){
                         damageAward.removeAward();
