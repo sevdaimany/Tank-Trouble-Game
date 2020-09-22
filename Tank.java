@@ -26,7 +26,9 @@ public class Tank  extends Tile implements Serializable
     // ammo kind of the tank
     private transient Ammo ammo;
 
-   
+    //damage of tank's ammo
+    private int ammoDamage;
+
     // tank angel 
     private float teta;
 
@@ -66,6 +68,7 @@ public class Tank  extends Tile implements Serializable
         super(x, y ,WIDTH ,HEIGHT , imageFilePath);
         imageView = new ImageView(super.getImage());
         health = DataBase.getSettings().tanksHealth;
+        ammoDamage = DataBase.getSettings().ammoDamage;
         ammo = null;
         teta = 0;
     }
@@ -120,6 +123,19 @@ public class Tank  extends Tile implements Serializable
      * @return the ammo kind of this tank
      */
     public Ammo getAmmo() { return ammo; }
+
+
+    /**
+     * @return damage of tank's ammo
+     */
+    public int getAmmoDamage() { return ammoDamage; }
+
+    /**
+     * @param damage
+     */
+    public void setAmmoDamage(int damage) {
+        this.ammoDamage = damage;
+    }
 
     /**
      * @return tank's health
