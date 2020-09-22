@@ -91,6 +91,14 @@ public class Tank  extends Tile implements Serializable
         Main.getRootPlayGround().getChildren().add(imageView);
     }
 
+
+    /**
+     * this method remove tank's imageView from the root of game
+     */
+    public void removeFromRoot(){
+        Main.getRootPlayGround().getChildren().remove(imageView);
+    }
+
             
 
     // * setter methods *
