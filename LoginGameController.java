@@ -162,7 +162,7 @@ public class LoginGameController
 
                         tank2.setX(x);
                         tank2.setY(y);
-                        tank.setTeta(teta);
+                        tank2.setTeta(teta);
 
                         tank2.draw();
                         tank2.addToGameRoot();
