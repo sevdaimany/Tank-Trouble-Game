@@ -15,7 +15,7 @@ import javax.net.ssl.HttpsURLConnection;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.21.1
+ * @version 0.22.0
  */
 public class DataBase
 {
@@ -292,6 +292,41 @@ public class DataBase
         try { return (Player) player.readObject(); }
         catch (ClassNotFoundException e) { return null; }
         finally { player.close(); }
+    }
+
+
+    /**
+     * This method returns a sorted array of players
+     * 
+     * 
+     * @return an array of players
+     * @throws IOException if can not read the files
+     */
+    public static Player[] getLeaderBoards() throws IOException
+    {
+        File playersFolder = new File(PLAYERS_FOLDER);
+
+        ArrayList<Player> holdPlayers = new ArrayList<>();
+        for (File playerFile: playersFolder.listFiles())
+            holdPlayers.add(getPlayer(playerFile.getName().substring(0, playerFile.getName().length()-5)));
+
+        
+        Player holdToSwap;
+        Player[] output = new Player[holdPlayers.size()];
+        output = holdPlayers.toArray(output);
+        for (int i = 0; i < output.length; i++)
+            for (int j = i+1; j < output.length; j++)
+            {
+                if (output[i].getScore() < output[j].getScore())
+                {
+                    holdToSwap = output[i];
+                    output[i] = output[j];
+                    output[j] = holdToSwap;
+                }
+            }
+
+
+        return output;
     }
 
 
