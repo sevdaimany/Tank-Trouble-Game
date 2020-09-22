@@ -29,6 +29,21 @@ public class GameLoop
         final AnimationTimer timer = new AnimationTimer() {
             @Override
             public void handle(long timestamp) {
+                for(DamageAward damageAward : GameState.getPoweredAmmoAward()){
+                    if(System.currentTimeMillis() - damageAward.getCreateTimeApply() > damageAward.getLifeTimeApply() *1000){
+                        damageAward.removeAward();
+                        GameState.getPoweredAmmoAward().remove(damageAward);
+                    }
+                }
+ 
+                for(ProtecterAward protecterAward : GameState.getProtectedAward()){
+                    if(System.currentTimeMillis() - protecterAward.getCreateTimeApply() > protecterAward.getLifeTimeApply() *1000){
+                        protecterAward.removeAward();
+                        GameState.getProtectedAward().remove(protecterAward);
+                    }
+ 
+                    }
+                
                 GameState.updateStates();
                 gameView.getGamePlayGround().render();
                 
