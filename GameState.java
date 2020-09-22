@@ -200,12 +200,16 @@ public class GameState
             }
 
             Tank hitedTank = ammo_Tank_intersect(ammo);
-            if(hitedTank != null &&  hitedTank != ammo.getTank() && !protectedTanks.contains(hitedTank)){
+            if(hitedTank != null &&  hitedTank != ammo.getTank()){
+
+                if(!protectedTanks.contains(hitedTank)){
+                    hitedTank.reduceHealth(hitedTank.getAmmoDamage());
+                    tankProgressBar.get(hitedTank).setProgress((double) hitedTank.getHealth()/DataBase.getSettings().tanksHealth);
+                }
+
                 firedAmmos.remove(ammo);
                 Main.getRootPlayGround().getChildren().remove(ammo.getImageView());
-                hitedTank.reduceHealth(hitedTank.getAmmoDamage());
-                tankProgressBar.get(hitedTank).setProgress((double) hitedTank.getHealth()/DataBase.getSettings().tanksHealth);
-
+               
             }
 
         }
