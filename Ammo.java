@@ -14,8 +14,6 @@ public class Ammo extends Tile
 {
             /*  Fields  */
 
-    // damage of this Ammo
-    private int damage;
 
     // Ammo angel - for movement direction 
     private float teta;
@@ -67,8 +65,6 @@ public class Ammo extends Tile
 
         this.ammoMoveSpeed = 1;
 
-        this.damage = DataBase.getSettings().ammoDamage;
-
         this.lifeTime = DataBase.getSettings().ammosLifeTime;
 
         createTime = System.currentTimeMillis();
@@ -91,10 +87,7 @@ public class Ammo extends Tile
      * @return degree of Ammo
      */
     public float getTeta() { return teta; }
-    /**
-     * @return damage of Ammo
-     */
-    public int getDamage() { return damage; }
+  
     /**
      * @return ammo's imageView
      */
@@ -117,15 +110,7 @@ public class Ammo extends Tile
         this.tank = tank;
     }
 
-    /**
-     * @param damage
-     */
-    public void setDamage(int damage) {
-        this.damage = damage;
-    }
-
-
-
+   
 
 
     /**
