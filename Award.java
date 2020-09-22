@@ -18,7 +18,7 @@ public abstract class Award  extends Tile
 
    
     // time of visibility of this reward in map
-    private float lifeTime = 5;
+    private float lifeTime = 10;
 
     // hold the creation time
     private long createTime;
