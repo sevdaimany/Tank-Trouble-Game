@@ -20,7 +20,7 @@ public class DamageAward extends Award
     // hold the creation time
     private long createTimeApply;
 
-    
+
     private Tank tank;
 
 
@@ -35,6 +35,14 @@ public class DamageAward extends Award
 
         this.tank = tankToApply;
         createTimeApply = System.currentTimeMillis();
+
+    }
+
+    
+    public void removeAward(){
+
+        this.tank.setAmmoDamage(DataBase.getSettings().ammoDamage);
+        GameView.getAwardLable().setText("");
 
     }
 }
