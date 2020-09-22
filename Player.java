@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.3.0
+ * @version 0.4.0
  */
 public class Player extends Identity implements Serializable
 {
@@ -120,6 +120,10 @@ public class Player extends Identity implements Serializable
      * @return controller of the player
      */
     public PlayingController getPlayerController() { return playerController; }
+    /**
+     * @return score of player
+     */
+    public int getScore() { return score; }
 
 
     // * setter methods *
