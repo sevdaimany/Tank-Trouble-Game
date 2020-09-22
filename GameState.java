@@ -203,7 +203,7 @@ public class GameState
             if(hitedTank != null &&  hitedTank != ammo.getTank() && !protectedTanks.contains(hitedTank)){
                 firedAmmos.remove(ammo);
                 Main.getRootPlayGround().getChildren().remove(ammo.getImageView());
-                hitedTank.reduceHealth(ammo.getDamage());
+                hitedTank.reduceHealth(hitedTank.getAmmoDamage());
                 tankProgressBar.get(hitedTank).setProgress((double) hitedTank.getHealth()/DataBase.getSettings().tanksHealth);
 
             }
@@ -268,6 +268,7 @@ public class GameState
 
     public static List<ProtecterAward> getProtectedAward() {
         return protectedAward;
+    }
     
 
     public static ArrayList<Wall> getWalls() {
