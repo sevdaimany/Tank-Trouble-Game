@@ -31,7 +31,7 @@ public class DamageAward extends Award
     {
         GameView.getAwardLable().setText("Damage award applied");
 
-        tankToApply.setAmmoDamage(DataBase.getSettings().ammoDamage * 5);
+        tankToApply.setAmmoDamage(DataBase.getSettings().ammoDamage * 2);
 
         this.tank = tankToApply;
         createTimeApply = System.currentTimeMillis();
