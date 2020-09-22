@@ -45,4 +45,13 @@ public class DamageAward extends Award
         GameView.getAwardLable().setText("");
 
     }
+
+    
+    public float getLifeTimeApply() {
+        return lifeTimeApply;
+    }
+
+    public long getCreateTimeApply() {
+        return createTimeApply;
+    }
 }
