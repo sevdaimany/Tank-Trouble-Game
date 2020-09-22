@@ -54,6 +54,13 @@ public class GameState
     //list of protected tanks
     private static ArrayList<Tank> protectedTanks;
 
+    //list of damageAward awards
+    private static List<DamageAward> poweredAmmoAward;
+
+    //list of protecterAward awards
+    private static  List<ProtecterAward> protectedAward;
+
+
     //width of game's playground    
     private static double widthPLayGround;
 
@@ -98,6 +105,8 @@ public class GameState
         firedAmmos = new CopyOnWriteArrayList<>();
         playingControllers = new ArrayList<>();
         protectedTanks = new ArrayList<>();
+        poweredAmmoAward = new CopyOnWriteArrayList<>();
+        protectedAward = new CopyOnWriteArrayList<>();
 
     }
 
@@ -246,6 +255,14 @@ public class GameState
     public static ArrayList<Tank> getProtectedTanks() {
         return protectedTanks;
     }
+
+    public static List<DamageAward> getPoweredAmmoAward() {
+        return poweredAmmoAward;
+    }
+
+    public static List<ProtecterAward> getProtectedAward() {
+        return protectedAward;
+    
 
     public static ArrayList<Wall> getWalls() {
         return walls;
