@@ -86,6 +86,7 @@ public class DataBase
     private static final String AMMO_REFLECTION_SOUND = AUDIOS_FOLDER + "ammoReflect.wav";
     private static final String TANK_EXPLOSION_SOUND = AUDIOS_FOLDER + "tankExplosion.wav";
     private static final String WALL_EXPLOSION_SOUND = AUDIOS_FOLDER + "wallExplosion.wav" ;
+    private static final String GAME_SOUND = AUDIOS_FOLDER + "LoseYourself.wav";
 
 
 
@@ -614,6 +615,10 @@ public class DataBase
      * @return path of the wall explosion file
      */
     public static String getWallExplosionSound() { return WALL_EXPLOSION_SOUND; }
+     /**
+     * @return path of the game sound file
+     */
+    public static String getGameSound() { return GAME_SOUND; }
 
 
 
