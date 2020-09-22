@@ -14,7 +14,7 @@ public final class Settings implements Serializable
             /*  Fields  */
 
     // tank's health
-    int tanksHealth;
+    int tanksHealth = 150;
 
     // woody walls health
     int woodWallsHealth;
