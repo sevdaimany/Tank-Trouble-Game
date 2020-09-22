@@ -18,7 +18,9 @@ public class HealthAward extends Award
 
     public void applyRewardToTank(Tank tankToApply) 
     {
+        GameView.getAwardLable().setText("Health award applied");
         tankToApply.healthDelta((int)(DataBase.getSettings().tanksHealth * 0.1));
+        GameState.getTankProgressBar().get(tankToApply).setProgress((double) tankToApply.getHealth()/DataBase.getSettings().tanksHealth);
 
     }
 
