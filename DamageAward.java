@@ -14,14 +14,27 @@ public class DamageAward extends Award
 {
 
 
+    // ammo life time
+    private float lifeTimeApply =15;
+
+    // hold the creation time
+    private long createTimeApply;
+
+    
+    private Tank tank;
+
+
+
             /*  Methods  */
 
     public void applyRewardToTank(Tank tankToApply) 
     {
-        while(isAlive()) {
-            tankToApply.getAmmo().setDamage(DataBase.getSettings().ammoDamage * 2);
-        }
-        tankToApply.getAmmo().setDamage(DataBase.getSettings().ammoDamage);
+        GameView.getAwardLable().setText("Damage award applied");
+
+        tankToApply.setAmmoDamage(DataBase.getSettings().ammoDamage * 5);
+
+        this.tank = tankToApply;
+        createTimeApply = System.currentTimeMillis();
 
     }
 }
