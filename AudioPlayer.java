@@ -46,6 +46,23 @@ public class AudioPlayer
     }
 
   
+     /**
+     * this method play ammo's reflection sound
+     */
+    public static void ammoReflectionSound(){
+        if(!isMute) {
+            try {
+                AudioInputStream in = AudioSystem.getAudioInputStream(new File(DataBase.getAmmoReflectionSound()).getAbsoluteFile());
+                Clip soundEffect = AudioSystem.getClip();
+                soundEffect.open(in);
+                soundEffect.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
 
 
 

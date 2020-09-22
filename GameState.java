@@ -379,6 +379,7 @@ public class GameState
         for (Wall wall : GameState.getWalls()) {
             if(!(wall instanceof WoodWall)){
                 if (intersect(ammoRectangle , wall)) {
+                    AudioPlayer.ammoReflectionSound();
                     return wall;
                 }
 
