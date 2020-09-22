@@ -24,4 +24,15 @@ public class ProtecterAward extends Award {
 
     }
 
+
+    public float getLifeTimeApply() {
+        return lifeTimeApply;
+    }
+
+    public long getCreateTimeApply() {
+        return createTimeApply;
+    }
+
+   
+
 }
