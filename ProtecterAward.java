@@ -1,13 +1,21 @@
 public class ProtecterAward extends Award {
 
+      // ammo life time
+      private float lifeTimeApply =15;
+
+      // hold the creation time
+      private long createTimeApply;
+  
+      private Tank tank;
 
     @Override
     public void applyRewardToTank(Tank tankToApply) {
-       long endTime = System.currentTimeMillis() + 15000;
+      
         GameState.getProtectedTanks().add(tankToApply);
+        GameView.getAwardLable().setText("Protected award applied");
+        this.tank = tankToApply;
+        createTimeApply = System.currentTimeMillis();
 
-        while (System.currentTimeMillis() < endTime) {}
-        GameState.getProtectedTanks().remove(tankToApply);
     }
 
 }
