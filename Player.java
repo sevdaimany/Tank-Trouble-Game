@@ -134,4 +134,12 @@ public class Player extends Identity
     public void setPlayerTank(Tank playerTank) {
         this.playerTank = playerTank;
     }
+
+    
+    /**
+     * @param score : player's score
+     */
+    public void setScore(int score) {
+        this.score = score;
+    }
 }
