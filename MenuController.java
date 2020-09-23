@@ -54,6 +54,7 @@ public class MenuController
         twoPlayerAction();
         infoAction();
         soundAction();
+        leaderboardAction();
 
 
 
@@ -147,6 +148,19 @@ public class MenuController
             else {
                 AudioPlayer.mute();
             }
+        });
+    }
+
+    
+    /**
+     * this method add leaderboards button actionlistener 
+     */
+    public void leaderboardAction(){
+        menuview.getButton5().setOnAction(event -> {
+            LeaderBoardsController leaderBoardsController = new LeaderBoardsController();
+            stage.setScene(new Scene(leaderBoardsController.getLeaderBoardsView()));
+            stage.setTitle("LeaderBoard");
+
         });
     }
     
