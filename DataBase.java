@@ -661,6 +661,21 @@ public class DataBase
      * @return path of the game sound file
      */
     public static String getGameSound() { return GAME_SOUND; }
+    /**
+     * @return path of the gold medal file
+     */
+    public static String getGoldMedal() {   return GOLD_MEDAL; }
+    /**
+     * @return path of the silver medal file
+     */
+    public static String getSilverMedal() {    return SILVER_MEDAL; }
+    /**
+     * @return path of the bronze medal file
+     */
+    public static String getBronzeMedal() {    return BRONZE_MEDAL; }
+
+
+    
 
 
 
