@@ -17,6 +17,21 @@ public class LeaderBoardsController {
 
         leaderBoardsView = new LeaderBoardsView();
         stage = Main.getStage();
+        menuAction();
+
+    }
+
+
+      /**
+     * This method set menu button's action listener
+     */
+    public void menuAction()
+    {
+        leaderBoardsView.getMenu().setOnAction(event -> {
+            MenuController menuController = new MenuController();
+            stage.setScene(new Scene(menuController.getMenuview()));
+            stage.setTitle("Tank Trounle");
+        });
     }
 
 
