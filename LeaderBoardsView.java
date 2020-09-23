@@ -192,11 +192,20 @@ public class LeaderBoardsView extends BorderPane {
  
 
 
-        
+          //background
+        FileInputStream input2 = null;
 
+        try { input2 = new FileInputStream(DataBase.getBackgroundIconPath()); }
+        catch (Exception e){}
 
-           
-   
+        Image image2 = new Image(input2);
+        BackgroundImage backgroundimage2 = new BackgroundImage(image2,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1.0, 1.0, true, true, false, false));
+
+        this.setBackground(new Background(backgroundimage2));
 
 
     }
