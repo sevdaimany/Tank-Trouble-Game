@@ -89,6 +89,13 @@ public class DataBase
     private static final String GAME_SOUND = AUDIOS_FOLDER + "LoseYourself.wav";
 
 
+    //path of medals
+    private static final String MEDALS_FOLDER = MAIN_FOLDER +"MEDALS/";
+    private static final String GOLD_MEDAL = MEDALS_FOLDER +"gold.png";
+    private static final String SILVER_MEDAL = MEDALS_FOLDER + "silver.png";
+    private static final String BRONZE_MEDAL = MEDALS_FOLDER +"bronze.png";
+
+
 
 
     
