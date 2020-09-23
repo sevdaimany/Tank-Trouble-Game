@@ -81,6 +81,7 @@ public class GameOverView  extends BorderPane {
         }
         for(Player player : GameState.getPlayers()){
             if(player.getPlayerTank().getHealth() == winnerPoint){
+                player.setScore(player.getScore()+1);
                 return  player;
             }
         }
