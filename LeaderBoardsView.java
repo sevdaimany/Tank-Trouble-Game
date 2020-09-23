@@ -20,6 +20,9 @@ public class LeaderBoardsView extends BorderPane {
 
         VBox numbers = new VBox();
 
+        VBox scores = new VBox();
+
+
 
         try {
             Player[] players = DataBase.getLeaderBoards();
@@ -34,6 +37,12 @@ public class LeaderBoardsView extends BorderPane {
                 number.setAlignment(Pos.BASELINE_LEFT);
                 number.setFont(Font.font("Verdana", FontWeight.MEDIUM, FontPosture.REGULAR, 20));
                 numbers.getChildren().addAll(new Label("  ") , number );
+
+
+                Label score = new Label( players[i].getScore() +" wins            ");
+                score.setAlignment(Pos.BASELINE_LEFT);
+                score.setFont(Font.font("Verdana", FontWeight.MEDIUM, FontPosture.REGULAR, 20));
+                scores.getChildren().addAll(new Label("  ") , score );
 
 
 
