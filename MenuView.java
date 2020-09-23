@@ -105,7 +105,7 @@ public class MenuView extends BorderPane
         FileInputStream input5 = new FileInputStream(DataBase.getLeaderboardsIconPath());
         Image icon5 = new Image(input5);
         ImageView imageView5 = new ImageView(icon5);
-        button5 = new Button("   LEABOARDS  ", imageView5);
+        button5 = new Button("   LEADERBOARDS  ", imageView5);
 
 
         // set buttons to  hbox
