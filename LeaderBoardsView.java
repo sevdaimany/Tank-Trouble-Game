@@ -1,5 +1,10 @@
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -21,6 +26,9 @@ public class LeaderBoardsView extends BorderPane {
         VBox numbers = new VBox();
 
         VBox scores = new VBox();
+
+        VBox medals = new VBox();
+
 
 
 
@@ -46,7 +54,53 @@ public class LeaderBoardsView extends BorderPane {
 
 
 
-              
+                if( i == 0){
+                    FileInputStream input = null;
+
+                    try { input = new FileInputStream("icons/gold.png"); }
+                    catch (FileNotFoundException e) { e.printStackTrace(); }
+
+
+                    Image image = new Image(input);
+                    ImageView imageView = new ImageView(image);
+                    imageView.setFitHeight(50);
+                    imageView.setFitWidth(30);
+                    medals.getChildren().add(imageView);
+
+                }
+
+                if( i == 1){
+                    FileInputStream input = null;
+
+                    try { input = new FileInputStream("icons/silver.png"); }
+                    catch (FileNotFoundException e) { e.printStackTrace(); }
+
+
+                    Image image = new Image(input);
+                    ImageView imageView = new ImageView(image);
+                    imageView.setFitHeight(50);
+                    imageView.setFitWidth(30);
+
+                    medals.getChildren().add(imageView);
+
+                }
+
+
+                if( i == 2){
+                    FileInputStream input = null;
+
+                    try { input = new FileInputStream("icons/bronze.png"); }
+                    catch (FileNotFoundException e) { e.printStackTrace(); }
+
+
+                    Image image = new Image(input);
+                    ImageView imageView = new ImageView(image);
+                    imageView.setFitHeight(50);
+                    imageView.setFitWidth(30);
+
+                    medals.getChildren().add(imageView);
+
+                }             
 
              
             }
