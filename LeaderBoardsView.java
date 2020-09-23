@@ -1,7 +1,9 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +22,11 @@ import javafx.scene.text.Text;
  * @version 0.0.0
  */
 public class LeaderBoardsView extends BorderPane {
+
+     //menu button
+     private Button menu;
+
+
 
     public LeaderBoardsView(){
 
@@ -109,12 +116,26 @@ public class LeaderBoardsView extends BorderPane {
         }catch (Exception  e ){e.printStackTrace();}
 
 
-           //leaderBoards text
-           Text leaderBoardTXT = new Text("                  leaderBoard");
-           leaderBoardTXT.setFill(Color.ORANGE);
-           leaderBoardTXT.setStroke(Color.BLACK);
-           leaderBoardTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 70));
-           leaderBoardTXT.setStrokeWidth(2);
+       //leaderBoards text
+       Text leaderBoardTXT = new Text("                  leaderBoard");
+       leaderBoardTXT.setFill(Color.ORANGE);
+       leaderBoardTXT.setStroke(Color.BLACK);
+       leaderBoardTXT.setFont(Font.font("Verdana", FontWeight.BOLD, FontPosture.REGULAR, 70));
+       leaderBoardTXT.setStrokeWidth(2);
+
+           //set menu button
+        FileInputStream input3 = null;
+
+        try { input3 = new FileInputStream(DataBase.getGoBackIcon()); }
+        catch (IOException e){}
+
+        Image icon1 = new Image(input3);
+        ImageView imageView1 = new ImageView(icon1);
+        menu = new Button("Menu" , imageView1);
+
+
+
+           
    
 
 
