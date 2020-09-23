@@ -139,6 +139,18 @@ public class LeaderBoardsView extends BorderPane {
         topHBox.setPadding(new Insets(5,5,5,5));
 
 
+        HBox hBox = new HBox(numbers,username , scores , medals);
+        hBox.setMaxWidth(600);
+        hBox.setPadding(new Insets(20,0,20,20));
+        hBox.setStyle(
+                "-fx-border-style: solid inside;" +
+                "-fx-border-width: 2;" +
+                "-fx-border-insets: 5;" +
+                "-fx-border-radius: 5;" +
+                "-fx-border-color: darkgoldenrod;");
+
+
+
 
 
            
