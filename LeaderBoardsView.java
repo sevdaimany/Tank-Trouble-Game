@@ -182,6 +182,9 @@ public class LeaderBoardsView extends BorderPane {
  
 
 
+         this.setCenter(scrollPane);
+         this.setTop(new VBox( topHBox ,new Label( "   ") ));
+ 
 
 
         
