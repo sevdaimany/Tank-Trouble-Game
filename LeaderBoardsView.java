@@ -6,6 +6,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
@@ -150,7 +151,18 @@ public class LeaderBoardsView extends BorderPane {
                 "-fx-border-color: darkgoldenrod;");
 
 
+        ScrollPane scrollPane = new ScrollPane();
+        scrollPane.setMaxWidth(600);
+        scrollPane.setMaxHeight(500);
+        scrollPane.setContent(hBox);
+        scrollPane.fitToHeightProperty().set(true);
+        scrollPane.fitToWidthProperty().set(true);
+        scrollPane.pannableProperty().set(true);
 
+
+
+
+        
 
 
            
