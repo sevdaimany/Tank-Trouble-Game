@@ -72,6 +72,11 @@ public class GameLoop
                 gameView.getGamePlayGround().render();
                 
                 if (GameState.gameOver()) {
+
+                    try {
+                        DataBase.savePlayers(GameState.getPlayers());
+                     }catch (Exception e){e.printStackTrace();}
+ 
                     GameOverController gameOverController = new GameOverController();
                     Scene scene = new Scene(gameOverController.getGameOverView());
                     Main.getStage().setScene(scene);
