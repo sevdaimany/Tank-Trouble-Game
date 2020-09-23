@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -22,6 +23,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 
 /**
  * this class represent the Leaderboards view of the game
@@ -184,6 +186,9 @@ public class LeaderBoardsView extends BorderPane {
 
          this.setCenter(scrollPane);
          this.setTop(new VBox( topHBox ,new Label( "   ") ));
+ 
+         Rectangle2D screenBounds = Screen.getPrimary().getBounds();
+         this.setPrefSize(screenBounds.getWidth(),screenBounds.getHeight() -60);
  
 
 
