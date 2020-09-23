@@ -9,6 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -158,6 +163,23 @@ public class LeaderBoardsView extends BorderPane {
         scrollPane.fitToHeightProperty().set(true);
         scrollPane.fitToWidthProperty().set(true);
         scrollPane.pannableProperty().set(true);
+
+         //hbox background
+         FileInputStream input = null;
+         try
+         {
+             input = new FileInputStream(DataBase.getBackground2Icon());
+         }catch (Exception e){}
+ 
+         Image image = new Image(input);
+         BackgroundImage backgroundimage = new BackgroundImage(image,
+                 BackgroundRepeat.NO_REPEAT,
+                 BackgroundRepeat.NO_REPEAT,
+                 BackgroundPosition.DEFAULT,
+                 BackgroundSize.DEFAULT);
+ 
+         hBox.setBackground(new Background(backgroundimage));
+ 
 
 
 
