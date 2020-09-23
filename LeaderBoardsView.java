@@ -209,4 +209,10 @@ public class LeaderBoardsView extends BorderPane {
 
 
     }
+
+    /**
+     * @return menu button
+     */
+    public Button getMenu() { return menu; }
+
 }
