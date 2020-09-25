@@ -8,7 +8,7 @@ import java.io.Serializable;
  * 
  * 
  * @author Mohammad Mahdi Malmasi
- * @version 0.5.0
+ * @version 0.5.1
  */
 public class Player extends Identity
 {
@@ -152,6 +152,7 @@ public class Player extends Identity
     {
         return "name: " + getName() + "  " +
                "lastname: " + getLastName() + "  " +
-               "usernaem: " + getUsername() + "  \n";
+               "usernaem: " + getUsername() + "  " +
+               "score: " + score + " \n";
     }
 }
